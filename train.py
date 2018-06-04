@@ -13,14 +13,11 @@ def main():
     # model.restore_session("results/crf/model.weights/") # optional, restore weights
     # model.reinitialize_weights("proj")
 
-    # create datasets
-    dev   = CoNLLDataset(config.filename_dev, config.processing_word,
-                         config.processing_tag, config.max_iter)
-    train = CoNLLDataset(config.filename_train, config.processing_word,
-                         config.processing_tag, config.max_iter)
+    def conll_dataset(filename):
+        return CoNLLDataset(filename, config.processing_word, config.processing_tag, config.max_iter)
 
-    # train model
-    model.train(train, dev)
+    model.train(train=conll_dataset(config.filename_train),
+                dev=conll_dataset(config.filename_dev))
 
 if __name__ == "__main__":
     main()
