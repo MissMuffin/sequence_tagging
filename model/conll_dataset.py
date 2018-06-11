@@ -1,3 +1,6 @@
+import sys
+
+
 class CoNLLDataset(object):
     """Class that iterates over CoNLL Dataset
 
@@ -16,7 +19,7 @@ class CoNLLDataset(object):
         ```
 
     """
-    def __init__(self, filename, processing_word=None, processing_tag=None, max_iter=None):
+    def __init__(self, filename, processing_word=None, processing_tag=None, max_iter=sys.maxsize):
         """
         Args:
             filename: path to the file
@@ -40,7 +43,7 @@ class CoNLLDataset(object):
                 if len(line) == 0 or line.startswith("-DOCSTART-"):
                     if len(words) != 0:
                         niter += 1
-                        if self.max_iter is not None and niter > self.max_iter:
+                        if niter > self.max_iter:
                             break
                         yield words, tags
                         words, tags = [], []

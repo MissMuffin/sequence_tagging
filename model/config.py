@@ -1,4 +1,5 @@
 import os
+import sys
 
 from .general_utils import get_logger
 from .data_utils import get_trimmed_glove_vectors, load_vocab, get_processing_word
@@ -30,7 +31,7 @@ class Config:
     ilename_dev = filename_test = filename_train = "data/test.txt"  # test
     # filename_dev = filename_test = filename_train = "data/germeval/NER-de-train-CoNLL2003.tsv"  # test
 
-    max_iter = None  # if not None, max number of examples in Dataset
+    max_iter = sys.maxsize  # max number of examples in a dataset
 
     # vocab (created from dataset with build_data.py)
     filename_words = "data/words.txt"
