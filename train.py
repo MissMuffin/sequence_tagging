@@ -1,6 +1,5 @@
-from model.data_utils import CoNLLDataset
-from model.ner_model import NERModel
 from model.config import Config
+from model.ner_model import NERModel
 
 
 def main():
@@ -12,11 +11,7 @@ def main():
     # model.restore_session("results/crf/model.weights/") # optional, restore weights
     # model.reinitialize_weights("proj")
 
-    def conll_dataset(filename):
-        return CoNLLDataset(filename, config.processing_word, config.processing_tag, config.max_iter)
-
-    model.train(train=conll_dataset(config.filename_train),
-                dev=conll_dataset(config.filename_dev))
+    model.train(train=config.dataset_train, dev=config.dataset_dev)
 
 
 if __name__ == "__main__":

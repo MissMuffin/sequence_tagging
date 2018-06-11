@@ -2,6 +2,7 @@ import os
 
 from .general_utils import get_logger
 from .data_utils import get_trimmed_glove_vectors, load_vocab, get_processing_word
+from model.conll_dataset import CoNLLDataset
 
 
 class Config:
@@ -72,7 +73,7 @@ class Config:
 
         # load if requested (default)
         if load:
-            """Loads vocabulary, processing functions and embeddings
+            """Loads vocabulary, processing functions, embeddings and datasets
 
             Supposes that build_data.py has been run successfully and that
             the corresponding files have been created (vocab and trimmed GloVe
@@ -95,3 +96,8 @@ class Config:
 
             # 3. get pre-trained embeddings
             self.embeddings = get_trimmed_glove_vectors(self.filename_trimmed) if self.use_pretrained else None
+
+            # 4. get datasets
+            self.dataset_dev = CoNLLDataset(self.filename_dev, self.processing_word, self.processing_tag, self.max_iter)
+            self.dataset_train = CoNLLDataset(self.filename_train, self.processing_word, self.processing_tag, self.max_iter)
+            self.dataset_test = CoNLLDataset(self.filename_test, self.processing_word, self.processing_tag, self.max_iter)
