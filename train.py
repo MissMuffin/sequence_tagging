@@ -9,7 +9,6 @@ def main():
 
     # build model
     model = NERModel(config)
-    model.build()
     # model.restore_session("results/crf/model.weights/") # optional, restore weights
     # model.reinitialize_weights("proj")
 
@@ -18,6 +17,7 @@ def main():
 
     model.train(train=conll_dataset(config.filename_train),
                 dev=conll_dataset(config.filename_dev))
+
 
 if __name__ == "__main__":
     main()

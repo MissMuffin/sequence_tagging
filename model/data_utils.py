@@ -88,9 +88,6 @@ class CoNLLDataset(object):
     def get_char_vocab(self):
         """Build char vocabulary from an iterable of datasets objects
 
-        Args:
-            dataset: a iterator yielding tuples (sentence, tags)
-
         Returns:
             a set of all the characters in the dataset
 
@@ -151,17 +148,10 @@ def write_vocab(vocab, filename):
         vocab: iterable that yields word
         filename: path to vocab file
 
-    Returns:
-        write a word per line
-
     """
     print("Writing vocab...")
     with open(filename, "w") as f:
-        for i, word in enumerate(vocab):
-            if i != len(vocab) - 1:
-                f.write("{}\n".format(word))
-            else:
-                f.write(word)
+        f.write("\n".join(vocab))
     print("- done. {} tokens".format(len(vocab)))
 
 
@@ -176,15 +166,10 @@ def load_vocab(filename):
 
     """
     try:
-        d = dict()
         with open(filename) as f:
-            for idx, word in enumerate(f):
-                word = word.strip()
-                d[word] = idx
-
+            return {word.strip(): idx for idx, word in enumerate(f)}
     except IOError:
         raise MyIOError(filename)
-    return d
 
 
 def export_trimmed_glove_vectors(vocab, glove_filename, trimmed_filename, dim):
@@ -227,8 +212,7 @@ def get_trimmed_glove_vectors(filename):
         raise MyIOError(filename)
 
 
-def get_processing_word(vocab_words=None, vocab_chars=None,
-                        lowercase=False, chars=False, allow_unk=True):
+def get_processing_word(vocab_words=None, vocab_chars=None, lowercase=False, allow_unk=True):
     """Return lambda function that transform a word (string) into list,
     or tuple of (list, id) of int corresponding to the ids of the word and
     its corresponding characters.
@@ -243,14 +227,6 @@ def get_processing_word(vocab_words=None, vocab_chars=None,
     """
 
     def f(word):
-        # 0. get chars of words
-        if vocab_chars is not None and chars is True:
-            char_ids = []
-            for char in word:
-                # ignore chars out of vocabulary
-                if char in vocab_chars:
-                    char_ids += [vocab_chars[char]]
-
         # 1. preprocess word
         if lowercase:
             word = word.lower()
@@ -258,21 +234,22 @@ def get_processing_word(vocab_words=None, vocab_chars=None,
             word = NUM
 
         # 2. get id of word
-        if vocab_words is not None:
+        if vocab_words is None:
+            word_id = word
+        else:
             if word in vocab_words:
-                word = vocab_words[word]
+                word_id = vocab_words[word]
+            elif allow_unk:
+                word_id = vocab_words[UNK]
             else:
-                if allow_unk:
-                    word = vocab_words[UNK]
-                else:
-                    raise Exception("Unknown key is not allowed. Check that your vocab (tags?) is correct")
+                raise Exception("Unknown key is not allowed. Check that your vocab (tags?) is correct")
 
         # 3. return tuple char ids, word id
-        if vocab_chars is not None and chars is True:
-            return char_ids, word
+        if vocab_chars is None:
+            return word_id
         else:
-            return word
-
+            char_ids = [vocab_chars[char] for char in word if char in vocab_chars]
+            return char_ids, word_id
     return f
 
 

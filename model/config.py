@@ -1,8 +1,7 @@
 import os
 
 from .general_utils import get_logger
-from .data_utils import get_trimmed_glove_vectors, load_vocab, \
-    get_processing_word
+from .data_utils import get_trimmed_glove_vectors, load_vocab, get_processing_word
 
 
 class Config:
@@ -45,7 +44,7 @@ class Config:
     lr_method        = "adam"
     lr               = 0.001
     lr_decay         = 0.9
-    clip             = -1 # if negative, no clipping
+    clip             = -1  # if negative, no clipping
     nepoch_no_imprv  = 3
 
     # model hyperparameters
@@ -81,19 +80,18 @@ class Config:
 
             """
             # 1. vocabulary
-            self.vocab_chars    = load_vocab(self.filename_chars)
-            self.vocab_words    = load_vocab(self.filename_words)
-            self.vocab_tags     = load_vocab(self.filename_tags)
+            self.vocab_chars = load_vocab(self.filename_chars)
+            self.vocab_words = load_vocab(self.filename_words)
+            self.vocab_tags  = load_vocab(self.filename_tags)
 
             # 2. get processing functions that map str -> id
             self.processing_word = get_processing_word(self.vocab_words,
-                                                       self.vocab_chars,
+                                                       self.vocab_chars if self.use_chars else None,
                                                        lowercase=True,
-                                                       chars=self.use_chars)
+                                                       allow_unk=True)
             self.processing_tag = get_processing_word(self.vocab_tags,
                                                       lowercase=False,
                                                       allow_unk=False)
 
             # 3. get pre-trained embeddings
-            self.embeddings = (get_trimmed_glove_vectors(self.filename_trimmed)
-                               if self.use_pretrained else None)
+            self.embeddings = get_trimmed_glove_vectors(self.filename_trimmed) if self.use_pretrained else None

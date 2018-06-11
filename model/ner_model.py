@@ -1,157 +1,161 @@
-import numpy as np
 import os
+
+import numpy as np
 import tensorflow as tf
 
 from .data_utils import minibatches, pad_sequences, get_chunks
 from .general_utils import Progbar
-from .base_model import BaseModel
 
 
-class NERModel(BaseModel):
+class NERModel:
     """Specialized class of Model for NER"""
 
     def __init__(self, config):
-        super(NERModel, self).__init__(config)
-        self.idx_to_tag = {idx: tag for tag, idx in
-                           self.config.vocab_tags.items()}
+        self.config = config
+        self.logger = config.logger
 
-    def build(self):
-        # NER specific functions
-        def add_placeholders():
-            """Define placeholders = entries to computational graph"""
-            # shape = (batch size, max length of sentence in batch)
-            self.word_ids = tf.placeholder(tf.int32, shape=[None, None], name="word_ids")
-            # shape = (batch size)
-            self.sequence_lengths = tf.placeholder(tf.int32, shape=[None], name="sequence_lengths")
-            # shape = (batch size, max length of sentence, max length of word)
-            self.char_ids = tf.placeholder(tf.int32, shape=[None, None, None], name="char_ids")
-            # shape = (batch_size, max_length of sentence)
-            self.word_lengths = tf.placeholder(tf.int32, shape=[None, None], name="word_lengths")
-            # shape = (batch size, max length of sentence in batch)
-            self.labels = tf.placeholder(tf.int32, shape=[None, None], name="labels")
-            # hyper parameters
-            self.dropout = tf.placeholder(dtype=tf.float32, shape=[], name="dropout")
-            self.lr = tf.placeholder(dtype=tf.float32, shape=[], name="lr")
+        """Define placeholders = entries to computational graph"""
+        # shape = (batch size, max length of sentence in batch)
+        self.word_ids = tf.placeholder(tf.int32, shape=[None, None], name="word_ids")
+        # shape = (batch size)
+        self.sequence_lengths = tf.placeholder(tf.int32, shape=[None], name="sequence_lengths")
+        # shape = (batch size, max length of sentence, max length of word)
+        self.char_ids = tf.placeholder(tf.int32, shape=[None, None, None], name="char_ids")
+        # shape = (batch_size, max_length of sentence)
+        self.word_lengths = tf.placeholder(tf.int32, shape=[None, None], name="word_lengths")
+        # shape = (batch size, max length of sentence in batch)
+        self.labels = tf.placeholder(tf.int32, shape=[None, None], name="labels")
+        # hyper parameters
+        self.dropout = tf.placeholder(dtype=tf.float32, shape=[], name="dropout")
+        self.lr = tf.placeholder(dtype=tf.float32, shape=[], name="lr")
 
-        add_placeholders()
-
-        def add_word_embeddings_op():
-            """Defines self.word_embeddings
-
-            If self.config.embeddings is not None and is a np array initialized
-            with pre-trained word vectors, the word embeddings is just a look-up
-            and we don't train the vectors. Otherwise, a random matrix with
-            the correct shape is initialized.
-            """
-            with tf.variable_scope("words"):
-                if self.config.embeddings is None:
-                    self.logger.info("WARNING: randomly initializing word vectors")
-                    _word_embeddings = tf.get_variable(
-                        name="_word_embeddings",
-                        dtype=tf.float32,
-                        shape=[len(self.config.vocab_words), self.config.dim_word])
-                else:
-                    _word_embeddings = tf.Variable(
-                        initial_value=self.config.embeddings,
-                        trainable=self.config.train_embeddings,
-                        name="_word_embeddings",
-                        dtype=tf.float32)
-                word_embeddings = tf.nn.embedding_lookup(params=_word_embeddings, ids=self.word_ids,
-                                                         name="word_embeddings")
-
-            with tf.variable_scope("chars"):
-                if self.config.use_chars:
-                    # get char embeddings matrix
-                    _char_embeddings = tf.get_variable(
-                        name="_char_embeddings",
-                        dtype=tf.float32,
-                        shape=[len(self.config.vocab_chars), self.config.dim_char])
-                    char_embeddings = tf.nn.embedding_lookup(params=_char_embeddings, ids=self.char_ids,
-                                                             name="char_embeddings")
-
-                    # put the time dimension on axis=1
-                    # bi lstm on chars
-                    _shape = tf.shape(char_embeddings)
-                    _outputs, _output_states = tf.nn.bidirectional_dynamic_rnn(
-                        cell_fw=tf.contrib.rnn.LSTMCell(num_units=self.config.hidden_size_char, state_is_tuple=True),
-                        cell_bw=tf.contrib.rnn.LSTMCell(num_units=self.config.hidden_size_char, state_is_tuple=True),
-                        inputs=tf.reshape(char_embeddings, shape=[_shape[0] * _shape[1], _shape[-2], self.config.dim_char]),
-                        sequence_length=tf.reshape(self.word_lengths, shape=[_shape[0] * _shape[1]]),
-                        dtype=tf.float32)
-
-                    # read and concat output
-                    _output_state_fw, _output_state_bw = _output_states
-                    _, output_fw = _output_state_fw
-                    _, output_bw = _output_state_bw
-
-                    # shape = (batch size, max sentence length, char hidden size)
-                    output = tf.reshape(tensor=tf.concat([output_fw, output_bw], axis=-1),
-                                        shape=[_shape[0], _shape[1], 2 * self.config.hidden_size_char])
-
-                    word_embeddings = tf.concat([word_embeddings, output], axis=-1)
-
-            self.word_embeddings = tf.nn.dropout(word_embeddings, self.dropout)
-
-        add_word_embeddings_op()
-
-        def add_logits_op():
-            """Defines self.logits
-
-            For each word in each sentence of the batch, it corresponds to a vector
-            of scores, of dimension equal to the number of tags.
-            """
-            with tf.variable_scope("bi-lstm"):
-                (output_fw, output_bw), _ = tf.nn.bidirectional_dynamic_rnn(
-                    cell_fw=tf.contrib.rnn.LSTMCell(self.config.hidden_size_lstm),
-                    cell_bw=tf.contrib.rnn.LSTMCell(self.config.hidden_size_lstm),
-                    inputs=self.word_embeddings,
-                    sequence_length=self.sequence_lengths,
-                    dtype=tf.float32)
-                output = tf.nn.dropout(x=tf.concat([output_fw, output_bw], axis=-1), keep_prob=self.dropout)
-
-            with tf.variable_scope("proj"):
-                pred = tf.matmul(a=tf.reshape(output, [-1, 2 * self.config.hidden_size_lstm]),
-                                 b=tf.get_variable("W", dtype=tf.float32, shape=[2 * self.config.hidden_size_lstm,
-                                                                                 len(self.config.vocab_tags)])) \
-                       + tf.get_variable("b", shape=[len(self.config.vocab_tags)], dtype=tf.float32,
-                                         initializer=tf.zeros_initializer())
-                nsteps = tf.shape(output)[1]
-                self.logits = tf.reshape(pred, [-1, nsteps, len(self.config.vocab_tags)])
-
-        add_logits_op()
-
-        def add_pred_op():
-            """Defines self.labels_pred
-
-            This op is defined only in the case where we don't use a CRF since in
-            that case we can make the prediction "in the graph" (thanks to tf
-            functions in other words). With theCRF, as the inference is coded
-            in python and not in pure tensroflow, we have to make the prediciton
-            outside the graph.
-            """
-            if not self.config.use_crf:
-                self.labels_pred = tf.cast(tf.argmax(self.logits, axis=-1), tf.int32)
-
-        add_pred_op()
-
-        def add_loss_op():
-            """Defines the loss"""
-            if self.config.use_crf:
-                log_likelihood, self.trans_params = tf.contrib.crf.crf_log_likelihood(self.logits, self.labels,
-                                                                                      self.sequence_lengths)
-                self.loss = tf.reduce_mean(-log_likelihood)
+        """
+        Defines self.word_embeddings
+        If self.config.embeddings is not None and is a np array initialized
+        with pre-trained word vectors, the word embeddings is just a look-up
+        and we don't train the vectors. Otherwise, a random matrix with
+        the correct shape is initialized.
+        """
+        with tf.variable_scope("words"):
+            if self.config.embeddings is None:
+                self.logger.info("WARNING: randomly initializing word vectors")
+                _word_embeddings = tf.get_variable(
+                    name="_word_embeddings",
+                    dtype=tf.float32,
+                    shape=[len(self.config.vocab_words), self.config.dim_word])
             else:
-                losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=self.logits, labels=self.labels)
-                self.loss = tf.reduce_mean(tf.boolean_mask(tensor=losses, mask=tf.sequence_mask(self.sequence_lengths)))
+                _word_embeddings = tf.Variable(
+                    initial_value=self.config.embeddings,
+                    trainable=self.config.train_embeddings,
+                    name="_word_embeddings",
+                    dtype=tf.float32)
+            word_embeddings = tf.nn.embedding_lookup(params=_word_embeddings, ids=self.word_ids,
+                                                     name="word_embeddings")
 
-            # for tensorboard
-            tf.summary.scalar("loss", self.loss)
+        with tf.variable_scope("chars"):
+            if self.config.use_chars:
+                # get char embeddings matrix
+                _char_embeddings = tf.get_variable(
+                    name="_char_embeddings",
+                    dtype=tf.float32,
+                    shape=[len(self.config.vocab_chars), self.config.dim_char])
+                char_embeddings = tf.nn.embedding_lookup(params=_char_embeddings, ids=self.char_ids,
+                                                         name="char_embeddings")
 
-        add_loss_op()
+                # put the time dimension on axis=1
+                # bi lstm on chars
+                _shape = tf.shape(char_embeddings)
+                _outputs, _output_states = tf.nn.bidirectional_dynamic_rnn(
+                    cell_fw=tf.contrib.rnn.LSTMCell(num_units=self.config.hidden_size_char, state_is_tuple=True),
+                    cell_bw=tf.contrib.rnn.LSTMCell(num_units=self.config.hidden_size_char, state_is_tuple=True),
+                    inputs=tf.reshape(char_embeddings, shape=[_shape[0] * _shape[1], _shape[-2], self.config.dim_char]),
+                    sequence_length=tf.reshape(self.word_lengths, shape=[_shape[0] * _shape[1]]),
+                    dtype=tf.float32)
 
-        # Generic functions that add training op and initialize session
-        self.add_train_op(self.config.lr_method, self.lr, self.loss, self.config.clip)
-        self.initialize_session()  # now self.sess is defined and vars are init
+                # read and concat output
+                _output_state_fw, _output_state_bw = _output_states
+                _, output_fw = _output_state_fw
+                _, output_bw = _output_state_bw
+
+                # shape = (batch size, max sentence length, char hidden size)
+                output = tf.reshape(tensor=tf.concat([output_fw, output_bw], axis=-1),
+                                    shape=[_shape[0], _shape[1], 2 * self.config.hidden_size_char])
+
+                word_embeddings = tf.concat([word_embeddings, output], axis=-1)
+
+        word_embeddings = tf.nn.dropout(word_embeddings, self.dropout)
+
+        """
+        Defines self.logits
+        For each word in each sentence of the batch, it corresponds to a vector
+        of scores, of dimension equal to the number of tags.
+        """
+        with tf.variable_scope("bi-lstm"):
+            (output_fw, output_bw), _ = tf.nn.bidirectional_dynamic_rnn(
+                cell_fw=tf.contrib.rnn.LSTMCell(self.config.hidden_size_lstm),
+                cell_bw=tf.contrib.rnn.LSTMCell(self.config.hidden_size_lstm),
+                inputs=word_embeddings,
+                sequence_length=self.sequence_lengths,
+                dtype=tf.float32)
+            output = tf.nn.dropout(x=tf.concat([output_fw, output_bw], axis=-1), keep_prob=self.dropout)
+
+        with tf.variable_scope("proj"):
+            pred = tf.matmul(a=tf.reshape(output, [-1, 2 * self.config.hidden_size_lstm]),
+                             b=tf.get_variable("W", dtype=tf.float32, shape=[2 * self.config.hidden_size_lstm,
+                                                                             len(self.config.vocab_tags)])) \
+                   + tf.get_variable("b", shape=[len(self.config.vocab_tags)], dtype=tf.float32,
+                                     initializer=tf.zeros_initializer())
+            nsteps = tf.shape(output)[1]
+            self.logits = tf.reshape(pred, [-1, nsteps, len(self.config.vocab_tags)])
+
+        """
+        Defines self.labels_pred
+        This op is defined only in the case where we don't use a CRF since in
+        that case we can make the prediction "in the graph" (thanks to tf
+        functions in other words). With theCRF, as the inference is coded
+        in python and not in pure tensroflow, we have to make the prediciton
+        outside the graph.
+        """
+        if not self.config.use_crf:
+            self.labels_pred = tf.cast(tf.argmax(self.logits, axis=-1), tf.int32)
+
+        """Defines the loss"""
+        if self.config.use_crf:
+            log_likelihood, self.trans_params = tf.contrib.crf.crf_log_likelihood(self.logits, self.labels, self.sequence_lengths)
+            self.loss = tf.reduce_mean(-log_likelihood)
+        else:
+            losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=self.logits, labels=self.labels)
+            self.loss = tf.reduce_mean(tf.boolean_mask(tensor=losses, mask=tf.sequence_mask(self.sequence_lengths)))
+
+        # for tensorboard
+        tf.summary.scalar("loss", self.loss)
+
+        """Defines self.train_op that performs an update on a batch"""
+        with tf.variable_scope("train_step"):
+            _lr_m = self.config.lr_method.lower()  # lower to make sure
+            if _lr_m == 'adam':  # sgd method
+                optimizer = tf.train.AdamOptimizer(self.lr)
+            elif _lr_m == 'adagrad':
+                optimizer = tf.train.AdagradOptimizer(self.lr)
+            elif _lr_m == 'sgd':
+                optimizer = tf.train.GradientDescentOptimizer(self.lr)
+            elif _lr_m == 'rmsprop':
+                optimizer = tf.train.RMSPropOptimizer(self.lr)
+            else:
+                raise NotImplementedError("Unknown method {}".format(_lr_m))
+
+            if self.config.clip > 0:  # gradient clipping if clip is positive
+                grads, vs = zip(*optimizer.compute_gradients(self.loss))
+                grads, gnorm = tf.clip_by_global_norm(grads, self.config.clip)
+                self.train_op = optimizer.apply_gradients(zip(grads, vs))
+            else:
+                self.train_op = optimizer.minimize(self.loss)
+
+        """Defines self.sess and initialize the variables"""
+        self.logger.info("Initializing tf session")
+        self.sess = tf.Session()
+        self.sess.run(tf.global_variables_initializer())
+        self.saver = tf.train.Saver()
 
     def get_feed_dict(self, words, labels=None, lr=None, dropout=None):
         """Given some data, pad it and build a feed dictionary
@@ -170,16 +174,15 @@ class NERModel(BaseModel):
         # perform padding of the given data
         if self.config.use_chars:
             char_ids, word_ids = zip(*words)
-            word_ids, sequence_lengths = pad_sequences(word_ids, 0)
             char_ids, word_lengths = pad_sequences(char_ids, pad_tok=0, nlevels=2)
+            word_ids, sequence_lengths = pad_sequences(word_ids, 0)
         else:
             word_ids, sequence_lengths = pad_sequences(words, 0)
 
         # build feed dictionary
-        feed = {
-            self.word_ids: word_ids,
-            self.sequence_lengths: sequence_lengths
-        }
+        feed = {}
+        feed[self.word_ids] = word_ids
+        feed[self.sequence_lengths] = sequence_lengths
 
         if self.config.use_chars:
             feed[self.char_ids] = char_ids
@@ -277,8 +280,7 @@ class NERModel(BaseModel):
         for words, labels in minibatches(test, self.config.batch_size):
             labels_pred, sequence_lengths = self.predict_batch(words)
 
-            for lab, lab_pred, length in zip(labels, labels_pred,
-                                             sequence_lengths):
+            for lab, lab_pred, length in zip(labels, labels_pred, sequence_lengths):
                 lab = lab[:length]
                 lab_pred = lab_pred[:length]
                 accs += [a == b for (a, b) in zip(lab, lab_pred)]
@@ -310,7 +312,86 @@ class NERModel(BaseModel):
         words = [self.config.processing_word(w) for w in words_raw]
         if type(words[0]) == tuple:
             words = zip(*words)
+        idx_to_tag = {idx: tag for tag, idx in self.config.vocab_tags.items()}
         pred_ids, _ = self.predict_batch([words])
-        preds = [self.idx_to_tag[idx] for idx in list(pred_ids[0])]
+        preds = [idx_to_tag[idx] for idx in list(pred_ids[0])]
 
         return preds
+
+    def reinitialize_weights(self, scope_name):
+        """Reinitializes the weights of a given layer"""
+        variables = tf.contrib.framework.get_variables(scope_name)
+        init = tf.variables_initializer(variables)
+        self.sess.run(init)
+
+    def restore_session(self, dir_model):
+        """Reload weights into session
+
+        Args:
+            sess: tf.Session()
+            dir_model: dir with weights
+
+        """
+        self.logger.info("Reloading the latest trained model...")
+        self.saver.restore(self.sess, dir_model)
+
+    def save_session(self):
+        """Saves session = weights"""
+        if not os.path.exists(self.config.dir_model):
+            os.makedirs(self.config.dir_model)
+        self.saver.save(self.sess, self.config.dir_model)
+
+    def close_session(self):
+        """Closes the session"""
+        self.sess.close()
+
+    def add_summary(self):
+        """Defines variables for Tensorboard
+
+        Args:
+            dir_output: (string) where the results are written
+
+        """
+        self.merged = tf.summary.merge_all()
+        self.file_writer = tf.summary.FileWriter(self.config.dir_output, self.sess.graph)
+
+    def train(self, train, dev):
+        """Performs training with early stopping and lr exponential decay
+
+        Args:
+            train: dataset that yields tuple of (sentences, tags)
+            dev: dataset
+
+        """
+        best_score = 0
+        nepoch_no_imprv = 0  # for early stopping
+        self.add_summary()  # tensorboard
+
+        for epoch in range(self.config.nepochs):
+            self.logger.info("Epoch {:} out of {:}".format(epoch + 1, self.config.nepochs))
+
+            score = self.run_epoch(train, dev, epoch)
+            self.config.lr *= self.config.lr_decay  # decay learning rate
+
+            # early stopping and saving best parameters
+            if score >= best_score:
+                nepoch_no_imprv = 0
+                best_score = score
+                self.save_session()
+                self.logger.info("- new best score!")
+            else:
+                nepoch_no_imprv += 1
+                if nepoch_no_imprv >= self.config.nepoch_no_imprv:
+                    self.logger.info("- early stopping {} epochs without improvement".format(nepoch_no_imprv))
+                    break
+
+    def evaluate(self, test):
+        """Evaluate model on test set
+
+        Args:
+            test: instance of class Dataset
+
+        """
+        self.logger.info("Testing model over test set")
+        metrics = self.run_evaluate(test)
+        self.logger.info(msg=" - ".join(["{} {:04.2f}".format(k, v) for k, v in metrics.items()]))
