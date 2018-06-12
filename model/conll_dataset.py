@@ -5,65 +5,53 @@ class CoNLLDataset(object):
     """Class that iterates over CoNLL Dataset
 
     __iter__ method yields a tuple (words, tags)
-        words: list of raw words
-        tags: list of raw tags
-
-    If processing_word and processing_tag are not None,
-    optional preprocessing is appplied
+        words: list of processed words in a sentence
+        tags: list of processed tags in a sentence
 
     Example:
         ```python
         data = CoNLLDataset(filename)
-        for sentence, tags in data:
+        for words, tags in data:
             pass
         ```
 
     """
-    def __init__(self, filename, processing_word=None, processing_tag=None, max_iter=sys.maxsize):
+    def __init__(self, filename, processing_word=lambda word: word, processing_tag=lambda tag: tag, max_sentences=sys.maxsize):
         """
         Args:
             filename: path to the file
-            processing_words: (optional) function that takes a word as input
-            processing_tags: (optional) function that takes a tag as input
-            max_iter: (optional) max number of sentences to yield
+            processing_word: (optional) function that takes a word as input
+            processing_tag: (optional) function that takes a tag as input
+            max_sentences: (optional) max number of sentences to yield
 
         """
         self.filename = filename
         self.processing_word = processing_word
         self.processing_tag = processing_tag
-        self.max_iter = max_iter
+        self.max_sentences = max_sentences
         self.length = None
 
     def __iter__(self):
-        niter = 0
+        sentences: int = 0
         with open(self.filename) as f:
             words, tags = [], []
             for line in f:
                 line = line.strip()
-                if len(line) == 0 or line.startswith("-DOCSTART-"):
-                    if len(words) != 0:
-                        niter += 1
-                        if niter > self.max_iter:
-                            break
-                        yield words, tags
-                        words, tags = [], []
-                else:
+                if line and not line.startswith("-DOCSTART-"):
                     ls = line.split(' ')
-                    word, tag = ls[0], ls[-1]
-                    if self.processing_word is not None:
-                        word = self.processing_word(word)
-                    if self.processing_tag is not None:
-                        tag = self.processing_tag(tag)
-                    words += [word]
-                    tags += [tag]
+                    words.append(self.processing_word(ls[0]))
+                    tags.append(self.processing_tag(ls[-1]))
+                elif words:
+                    sentences += 1
+                    if sentences > self.max_sentences:
+                        break
+                    yield words, tags
+                    words, tags = [], []
 
     def __len__(self):
         """Iterates once over the corpus to set and store length"""
         if self.length is None:
-            self.length = 0
-            for _ in self:
-                self.length += 1
-
+            self.length = sum(1 for _ in self)
         return self.length
 
     def get_char_vocab(self):
@@ -83,7 +71,7 @@ class CoNLLDataset(object):
             datasets: a list of dataset objects
 
         Returns:
-            a set of all the words in the dataset
+            a set of all words in the dataset
 
         """
         print("Building vocab...")
