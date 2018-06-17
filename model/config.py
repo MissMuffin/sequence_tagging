@@ -28,7 +28,7 @@ class Config:
     # filename_test = "data/coNLL/eng/eng.testb.iob"
     # filename_train = "data/coNLL/eng/eng.train.iob"
 
-    ilename_dev = filename_test = filename_train = "data/test.txt"  # test
+    filename_dev = filename_test = filename_train = "data/test.txt"  # test
     # filename_dev = filename_test = filename_train = "data/germeval/NER-de-train-CoNLL2003.tsv"  # test
 
     max_iter = sys.maxsize  # max number of examples in a dataset
