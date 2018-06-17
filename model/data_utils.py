@@ -29,13 +29,13 @@ def get_glove_vocab(filename):
     Returns:
         vocab: set() of strings
     """
-    print("Building vocab...")
+    print("Building glove vocab from {}...".format(filename))
     vocab = set()
     with open(filename) as f:
         for line in f:
             word = line.strip().split(' ')[0]
             vocab.add(word)
-    print("- done. {} tokens".format(len(vocab)))
+    print("- done. {} words".format(len(vocab)))
     return vocab
 
 
@@ -49,7 +49,7 @@ def write_vocab(vocab, filename):
         filename: path to vocab file
 
     """
-    print("Writing vocab...")
+    print("Writing vocab in {}...".format(filename))
     with open(filename, "w") as f:
         f.write("\n".join(vocab))
     print("- done. {} tokens".format(len(vocab)))

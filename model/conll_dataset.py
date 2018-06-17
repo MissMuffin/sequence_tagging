@@ -16,37 +16,38 @@ class CoNLLDataset(object):
         ```
 
     """
-    def __init__(self, filename, processing_word=lambda word: word, processing_tag=lambda tag: tag, max_sentences=sys.maxsize):
+    def __init__(self, filenames, processing_word=lambda word: word, processing_tag=lambda tag: tag, max_sentences=sys.maxsize):
         """
         Args:
-            filename: path to the file
+            filenames: a single or multiple paths to the files
             processing_word: (optional) function that takes a word as input
             processing_tag: (optional) function that takes a tag as input
             max_sentences: (optional) max number of sentences to yield
 
         """
-        self.filename = filename
+        self.filenames = filenames if isinstance(filenames, list) else [filenames]
         self.processing_word = processing_word
         self.processing_tag = processing_tag
         self.max_sentences = max_sentences
         self.length = None
 
     def __iter__(self):
-        sentences: int = 0
-        with open(self.filename) as f:
-            words, tags = [], []
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith("-DOCSTART-"):
-                    ls = line.split(' ')
-                    words.append(self.processing_word(ls[0]))
-                    tags.append(self.processing_tag(ls[-1]))
-                elif words:
-                    sentences += 1
-                    if sentences > self.max_sentences:
-                        break
-                    yield words, tags
-                    words, tags = [], []
+        sentences = 0
+        words, tags = [], []
+        for filename in self.filenames:
+            with open(filename) as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith("-DOCSTART-"):
+                        ls = line.split(' ')
+                        words.append(self.processing_word(ls[0]))
+                        tags.append(self.processing_tag(ls[-1]))
+                    elif words:
+                        sentences += 1
+                        if sentences > self.max_sentences:
+                            break
+                        yield words, tags
+                        words, tags = [], []
 
     def __len__(self):
         """Iterates once over the corpus to set and store length"""
@@ -55,31 +56,29 @@ class CoNLLDataset(object):
         return self.length
 
     def get_char_vocab(self):
-        """Build char vocabulary from an iterable of datasets objects
+        """Build char vocabulary
 
         Returns:
-            a set of all the characters in the dataset
+            a set of characters in the dataset
 
         """
-        return {char for words, _ in self for word in words for char in word}
+        print("Building char vocab from {}...".format(self.filenames))
+        vocab_chars = {char for words, tags in self for word in words for char in word}
+        print("-done. {} chars".format(len(vocab_chars)))
+        return vocab_chars
 
-    @staticmethod
-    def get_vocabs(datasets):
-        """Build vocabulary from an iterable of datasets objects
-
-        Args:
-            datasets: a list of dataset objects
+    def get_word_tag_vocabs(self):
+        """Build words and tags vocabularies
 
         Returns:
-            a set of all words in the dataset
+            two sets of words and tags
 
         """
-        print("Building vocab...")
+        print("Building word and tag vocab from {}...".format(self.filenames))
         vocab_words = set()
         vocab_tags = set()
-        for dataset in datasets:
-            for words, tags in dataset:
-                vocab_words.update(words)
-                vocab_tags.update(tags)
-        print("- done. {} tokens".format(len(vocab_words)))
+        for words, tags in self:
+            vocab_words.update(words)
+            vocab_tags.update(tags)
+        print("- done. {} words and {} tags".format(len(vocab_words), len(vocab_tags)))
         return vocab_words, vocab_tags

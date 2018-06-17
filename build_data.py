@@ -22,10 +22,10 @@ def main():
     # get config and processing of words
     config = Config(load=False)
 
-    # Build Word and Tag vocab
-    vocab_words, vocab_tags = CoNLLDataset.get_vocabs([CoNLLDataset(config.filename_dev, get_processing_word(lowercase=True)),
-                                                       CoNLLDataset(config.filename_train, get_processing_word(lowercase=True)),
-                                                       CoNLLDataset(config.filename_test, get_processing_word(lowercase=True))])
+    # Build word and tag vocabs
+    vocab_words, vocab_tags = CoNLLDataset([config.filename_dev, config.filename_train, config.filename_test],
+                                           get_processing_word(lowercase=True)).get_word_tag_vocabs()
+
     vocab_glove = get_glove_vocab(config.filename_glove)
 
     vocab = vocab_words & vocab_glove
