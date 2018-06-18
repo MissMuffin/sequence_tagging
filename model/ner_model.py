@@ -157,78 +157,35 @@ class NERModel:
         self.sess.run(tf.global_variables_initializer())
         self.saver = tf.train.Saver()
 
-    def get_feed_dict(self, words, labels=None, lr=None, dropout=None):
-        """Given some data, pad it and build a feed dictionary
+    def train(self, train, dev):
+        """Performs training with early stopping and lr exponential decay
 
         Args:
-            words: list of sentences. A sentence is a list of ids of a list of
-                words. A word is a list of ids
-            labels: list of ids
-            lr: (float) learning rate
-            dropout: (float) keep prob
-
-        Returns:
-            dict {placeholder: value}
+            train: dataset that yields tuple of (sentences, tags)
+            dev: dataset
 
         """
-        # perform padding of the given data
-        if self.config.use_chars:
-            char_ids, word_ids = zip(*words)
-            char_ids, word_lengths = pad_sequences(char_ids, pad_tok=0, nlevels=2)
-            word_ids, sequence_lengths = pad_sequences(word_ids, 0)
-        else:
-            word_ids, sequence_lengths = pad_sequences(words, 0)
+        best_score = 0
+        nepoch_no_imprv = 0  # for early stopping
+        self.add_summary()  # tensorboard
 
-        # build feed dictionary
-        feed = {}
-        feed[self.word_ids] = word_ids
-        feed[self.sequence_lengths] = sequence_lengths
+        for epoch in range(self.config.nepochs):
+            self.logger.info("Epoch {:} out of {:}".format(epoch + 1, self.config.nepochs))
 
-        if self.config.use_chars:
-            feed[self.char_ids] = char_ids
-            feed[self.word_lengths] = word_lengths
+            score = self.run_epoch(train, dev, epoch)
+            self.config.lr *= self.config.lr_decay  # decay learning rate
 
-        if labels is not None:
-            labels, _ = pad_sequences(labels, 0)
-            feed[self.labels] = labels
-
-        if lr is not None:
-            feed[self.lr] = lr
-
-        if dropout is not None:
-            feed[self.dropout] = dropout
-
-        return feed, sequence_lengths
-
-    def predict_batch(self, words):
-        """
-        Args:
-            words: list of sentences
-
-        Returns:
-            labels_pred: list of labels for each sentence
-            sequence_length
-
-        """
-        fd, sequence_lengths = self.get_feed_dict(words, dropout=1.0)
-
-        if self.config.use_crf:
-            # get tag scores and transition params of CRF
-            viterbi_sequences = []
-            logits, trans_params = self.sess.run([self.logits, self.trans_params], feed_dict=fd)
-
-            # iterate over the sentences because no batching in vitervi_decode
-            for logit, sequence_length in zip(logits, sequence_lengths):
-                logit = logit[:sequence_length]  # keep only the valid steps
-                viterbi_seq, viterbi_score = tf.contrib.crf.viterbi_decode(logit, trans_params)
-                viterbi_sequences += [viterbi_seq]
-
-            return viterbi_sequences, sequence_lengths
-
-        else:
-            labels_pred = self.sess.run(self.labels_pred, feed_dict=fd)
-
-            return labels_pred, sequence_lengths
+            # early stopping and saving best parameters
+            if score >= best_score:
+                nepoch_no_imprv = 0
+                best_score = score
+                self.save_session()
+                self.logger.info("- new best score!")
+            else:
+                nepoch_no_imprv += 1
+                if nepoch_no_imprv >= self.config.nepoch_no_imprv:
+                    self.logger.info("- early stopping {} epochs without improvement".format(nepoch_no_imprv))
+                    break
 
     def run_epoch(self, train, dev, epoch):
         """Performs one complete pass over the train set and evaluate on dev
@@ -264,6 +221,17 @@ class NERModel:
         self.logger.info(msg)
 
         return metrics["f1"]
+
+    def evaluate(self, test):
+        """Evaluate model on test set
+
+        Args:
+            test: instance of class Dataset
+
+        """
+        self.logger.info("Testing model over test set")
+        metrics = self.run_evaluate(test)
+        self.logger.info(msg=" - ".join(["{} {:04.2f}".format(k, v) for k, v in metrics.items()]))
 
     def run_evaluate(self, test):
         """Evaluates performance on test set
@@ -318,6 +286,79 @@ class NERModel:
 
         return preds
 
+    def predict_batch(self, words):
+        """
+        Args:
+            words: list of sentences
+
+        Returns:
+            labels_pred: list of labels for each sentence
+            sequence_length
+
+        """
+        fd, sequence_lengths = self.get_feed_dict(words, dropout=1.0)
+
+        if self.config.use_crf:
+            # get tag scores and transition params of CRF
+            viterbi_sequences = []
+            logits, trans_params = self.sess.run([self.logits, self.trans_params], feed_dict=fd)
+
+            # iterate over the sentences because no batching in vitervi_decode
+            for logit, sequence_length in zip(logits, sequence_lengths):
+                logit = logit[:sequence_length]  # keep only the valid steps
+                viterbi_seq, viterbi_score = tf.contrib.crf.viterbi_decode(logit, trans_params)
+                viterbi_sequences += [viterbi_seq]
+
+            return viterbi_sequences, sequence_lengths
+
+        else:
+            labels_pred = self.sess.run(self.labels_pred, feed_dict=fd)
+
+            return labels_pred, sequence_lengths
+
+    def get_feed_dict(self, words, labels=None, lr=None, dropout=None):
+        """Given some data, pad it and build a feed dictionary
+
+        Args:
+            words: list of sentences. A sentence is a list of ids of a list of
+                words. A word is a list of ids
+            labels: list of ids
+            lr: (float) learning rate
+            dropout: (float) keep prob
+
+        Returns:
+            dict {placeholder: value}
+
+        """
+        # perform padding of the given data
+        if self.config.use_chars:
+            char_ids, word_ids = zip(*words)
+            char_ids, word_lengths = pad_sequences(char_ids, pad_tok=0, nlevels=2)
+            word_ids, sequence_lengths = pad_sequences(word_ids, 0)
+        else:
+            word_ids, sequence_lengths = pad_sequences(words, 0)
+
+        # build feed dictionary
+        feed = {}
+        feed[self.word_ids] = word_ids
+        feed[self.sequence_lengths] = sequence_lengths
+
+        if self.config.use_chars:
+            feed[self.char_ids] = char_ids
+            feed[self.word_lengths] = word_lengths
+
+        if labels is not None:
+            labels, _ = pad_sequences(labels, 0)
+            feed[self.labels] = labels
+
+        if lr is not None:
+            feed[self.lr] = lr
+
+        if dropout is not None:
+            feed[self.dropout] = dropout
+
+        return feed, sequence_lengths
+
     def reinitialize_weights(self, scope_name):
         """Reinitializes the weights of a given layer"""
         variables = tf.contrib.framework.get_variables(scope_name)
@@ -354,44 +395,3 @@ class NERModel:
         """
         self.merged = tf.summary.merge_all()
         self.file_writer = tf.summary.FileWriter(self.config.dir_output, self.sess.graph)
-
-    def train(self, train, dev):
-        """Performs training with early stopping and lr exponential decay
-
-        Args:
-            train: dataset that yields tuple of (sentences, tags)
-            dev: dataset
-
-        """
-        best_score = 0
-        nepoch_no_imprv = 0  # for early stopping
-        self.add_summary()  # tensorboard
-
-        for epoch in range(self.config.nepochs):
-            self.logger.info("Epoch {:} out of {:}".format(epoch + 1, self.config.nepochs))
-
-            score = self.run_epoch(train, dev, epoch)
-            self.config.lr *= self.config.lr_decay  # decay learning rate
-
-            # early stopping and saving best parameters
-            if score >= best_score:
-                nepoch_no_imprv = 0
-                best_score = score
-                self.save_session()
-                self.logger.info("- new best score!")
-            else:
-                nepoch_no_imprv += 1
-                if nepoch_no_imprv >= self.config.nepoch_no_imprv:
-                    self.logger.info("- early stopping {} epochs without improvement".format(nepoch_no_imprv))
-                    break
-
-    def evaluate(self, test):
-        """Evaluate model on test set
-
-        Args:
-            test: instance of class Dataset
-
-        """
-        self.logger.info("Testing model over test set")
-        metrics = self.run_evaluate(test)
-        self.logger.info(msg=" - ".join(["{} {:04.2f}".format(k, v) for k, v in metrics.items()]))
