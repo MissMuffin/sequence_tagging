@@ -3,7 +3,7 @@ import os
 import numpy as np
 import tensorflow as tf
 
-from .data_utils import minibatches, pad_sequences, get_chunks
+from .data_utils import pad_sequences, get_chunks
 from .general_utils import Progbar
 
 
@@ -205,7 +205,7 @@ class NERModel:
         prog = Progbar(target=nbatches)
 
         # iterate over dataset
-        for i, (words, labels) in enumerate(minibatches(train, batch_size)):
+        for i, (words, labels) in enumerate(train.get_minibatches(batch_size)):
             fd, _ = self.get_feed_dict(words, labels, self.config.lr, self.config.dropout)
 
             _, train_loss, summary = self.sess.run([self.train_op, self.loss, self.merged], feed_dict=fd)
@@ -245,7 +245,7 @@ class NERModel:
         """
         accs = []
         correct_preds, total_correct, total_preds = 0., 0., 0.
-        for words, labels in minibatches(test, self.config.batch_size):
+        for words, labels in test.get_minibatches(self.config.batch_size):
             labels_pred, sequence_lengths = self.predict_batch(words)
 
             for lab, lab_pred, length in zip(labels, labels_pred, sequence_lengths):

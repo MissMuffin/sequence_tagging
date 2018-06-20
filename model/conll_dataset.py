@@ -82,3 +82,26 @@ class CoNLLDataset(object):
             vocab_tags.update(tags)
         print("- done. {} words and {} tags".format(len(vocab_words), len(vocab_tags)))
         return vocab_words, vocab_tags
+
+    def get_minibatches(self, minibatch_size):
+        """
+        Args:
+            minibatch_size: (int)
+
+        Yields:
+            list of tuples (words, tags)
+        """
+        words_batch, tags_batch = [], []
+        for words, tags in self:
+            if len(words_batch) == minibatch_size:
+                yield words_batch, tags_batch
+                words_batch, tags_batch = [], []
+
+            if type(words[0]) == tuple:
+                words = zip(*words)
+
+            words_batch.append(words)
+            tags_batch.append(tags)
+
+        if len(words_batch) != 0:
+            yield words_batch, tags_batch
