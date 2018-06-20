@@ -127,6 +127,10 @@ def get_processing_word(vocab_words=None, vocab_chars=None, lowercase=False, all
     """
 
     def f(word):
+        # 0. get chars of word
+        if vocab_chars is not None:
+            char_ids = [vocab_chars[char] for char in word if char in vocab_chars]
+
         # 1. preprocess word
         if lowercase:
             word = word.lower()
@@ -148,8 +152,8 @@ def get_processing_word(vocab_words=None, vocab_chars=None, lowercase=False, all
         if vocab_chars is None:
             return word_id
         else:
-            char_ids = [vocab_chars[char] for char in word if char in vocab_chars]
             return char_ids, word_id
+
     return f
 
 
