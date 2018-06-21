@@ -157,6 +157,62 @@ def get_processing_word(vocab_words=None, vocab_chars=None, lowercase=False, all
     return f
 
 
+def processing_chars_word_id(vocab_chars, vocab_words, lowercase=False, allow_unk=True):
+    """Return a lambda function that transform a word (string) into
+    a tuple (list, int) of the ids of the characters and the id of the word.
+
+    Args:
+        vocab_chars: dict[char] = idx
+        vocab_words: dict[word] = idx
+
+    Returns:
+        f("cat") = ([12, 4, 32], 12345)
+                 = (list of char ids, word id)
+    """
+    def f(word):
+        char_ids = [vocab_chars[char] for char in word if char in vocab_chars]
+        word_id = processing_word_id(vocab_words, lowercase, allow_unk)(word)
+        return char_ids, word_id
+
+    return f
+
+
+def processing_word_id(vocab_words, lowercase=False, allow_unk=True):
+    """Return a lambda function that transform a word (string) into its id.
+
+    Args:
+        vocab: dict[word] = idx
+
+    Returns:
+        f("cat") = 12345
+                 = word id
+    """
+    def f(word):
+        word = processing_word(lowercase)(word)
+        if word in vocab_words:
+            return vocab_words[word]
+        if allow_unk:
+            return vocab_words[UNK]
+        raise Exception("Unknown key is not allowed. Check that your vocab (tags?) is correct")
+
+    return f
+
+
+def processing_word(lowercase=False):
+    """Return a lambda function that processes a word (string).
+
+    Returns:
+        The a lambda function that processes a word (string).
+    """
+    def f(word):
+        if lowercase:
+            word = word.lower()
+        if word.isdigit():  # TODO: Filter decimal, Replace digit by 'D'
+            word = NUM
+        return word
+
+    return f
+
 def pad_words(words_ids, pad_tok=0):
     """
     Args:

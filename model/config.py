@@ -1,9 +1,10 @@
 import os
 import sys
 
-from .general_utils import get_logger
-from .data_utils import get_trimmed_glove_vectors, load_vocab, get_processing_word
 from model.conll_dataset import CoNLLDataset
+from .data_utils import get_trimmed_glove_vectors, load_vocab, processing_chars_word_id, \
+    processing_word_id
+from .general_utils import get_logger
 
 
 class Config:
@@ -87,13 +88,12 @@ class Config:
             self.vocab_tags  = load_vocab(self.filename_tags)
 
             # 2. get processing functions that map str -> id
-            self.processing_word = get_processing_word(self.vocab_words,
-                                                       self.vocab_chars if self.use_chars else None,
-                                                       lowercase=True,
-                                                       allow_unk=True)
-            self.processing_tag = get_processing_word(self.vocab_tags,
-                                                      lowercase=False,
-                                                      allow_unk=False)
+            if self.use_chars:
+                self.processing_word = processing_chars_word_id(self.vocab_chars, self.vocab_words, lowercase=True, allow_unk=True)
+            else:
+                self.processing_word = processing_word_id(self.vocab_words, lowercase=True, allow_unk=True)
+
+            self.processing_tag = processing_word_id(self.vocab_tags, lowercase=False, allow_unk=False)
 
             # 3. get pre-trained embeddings
             self.embeddings = get_trimmed_glove_vectors(self.filename_trimmed) if self.use_pretrained else None
