@@ -157,6 +157,44 @@ def get_processing_word(vocab_words=None, vocab_chars=None, lowercase=False, all
     return f
 
 
+def pad_words(words_ids, pad_tok=0):
+    """
+    Args:
+        words_ids: the sentences with ids of words
+        pad_tok: the char to pad with
+
+    Returns:
+        a list of lists where each sublist has same length
+
+    """
+    max_length = max(map(lambda x: len(x), words_ids))
+    return _pad_sequences(words_ids, pad_tok, max_length)
+
+
+def pad_chars(charss_ids, pad_tok=0):
+    """
+    Args:
+        charss_ids: the sentences with ids of chars
+        pad_tok: the char to pad with
+
+    Returns:
+        a list of lists of lists where each sublist has same length
+
+    """
+    max_length_word = max([max(map(lambda x: len(x), char_ids)) for char_ids in charss_ids])
+    sequence_padded, sequence_length = [], []
+    for chars_ids in charss_ids:
+        # all words are same length now
+        sp, sl = _pad_sequences(chars_ids, pad_tok, max_length_word)
+        sequence_padded.append(sp)
+        sequence_length.append(sl)
+
+    max_length_sentence = max(map(lambda x: len(x), charss_ids))
+    sequence_padded, _ = _pad_sequences(sequence_padded, [pad_tok] * max_length_word, max_length_sentence)
+    sequence_length, _ = _pad_sequences(sequence_length, 0, max_length_sentence)
+    return sequence_padded, sequence_length
+
+
 def _pad_sequences(sequences, pad_tok, max_length):
     """
     Args:
@@ -171,40 +209,8 @@ def _pad_sequences(sequences, pad_tok, max_length):
     for seq in sequences:
         seq = list(seq)
         seq_ = seq[:max_length] + [pad_tok] * max(max_length - len(seq), 0)
-        sequence_padded += [seq_]
-        sequence_length += [min(len(seq), max_length)]
-
-    return sequence_padded, sequence_length
-
-
-def pad_sequences(sequences, pad_tok, nlevels=1):
-    """
-    Args:
-        sequences: a generator of list or tuple
-        pad_tok: the char to pad with
-        nlevels: "depth" of padding, for the case where we have characters ids
-
-    Returns:
-        a list of list where each sublist has same length
-
-    """
-    if nlevels == 1:
-        max_length = max(map(lambda x: len(x), sequences))
-        sequence_padded, sequence_length = _pad_sequences(sequences, pad_tok, max_length)
-
-    elif nlevels == 2:
-        max_length_word = max([max(map(lambda x: len(x), seq))
-                               for seq in sequences])
-        sequence_padded, sequence_length = [], []
-        for seq in sequences:
-            # all words are same length now
-            sp, sl = _pad_sequences(seq, pad_tok, max_length_word)
-            sequence_padded += [sp]
-            sequence_length += [sl]
-
-        max_length_sentence = max(map(lambda x: len(x), sequences))
-        sequence_padded, _ = _pad_sequences(sequence_padded, [pad_tok] * max_length_word, max_length_sentence)
-        sequence_length, _ = _pad_sequences(sequence_length, 0, max_length_sentence)
+        sequence_padded.append(seq_)
+        sequence_length.append(min(len(seq), max_length))
 
     return sequence_padded, sequence_length
 

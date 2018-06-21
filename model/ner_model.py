@@ -3,7 +3,7 @@ import os
 import numpy as np
 import tensorflow as tf
 
-from .data_utils import pad_sequences, get_chunks
+from .data_utils import get_chunks, pad_words, pad_chars
 from .general_utils import Progbar
 
 
@@ -333,10 +333,10 @@ class NERModel:
         # perform padding of the given data
         if self.config.use_chars:
             char_ids, word_ids = zip(*words)
-            char_ids, word_lengths = pad_sequences(char_ids, pad_tok=0, nlevels=2)
-            word_ids, sequence_lengths = pad_sequences(word_ids, 0)
+            char_ids, word_lengths = pad_chars(char_ids)
+            word_ids, sequence_lengths = pad_words(word_ids)
         else:
-            word_ids, sequence_lengths = pad_sequences(words, 0)
+            word_ids, sequence_lengths = pad_words(words)
 
         # build feed dictionary
         feed = {}
@@ -348,7 +348,7 @@ class NERModel:
             feed[self.word_lengths] = word_lengths
 
         if labels is not None:
-            labels, _ = pad_sequences(labels, 0)
+            labels, _ = pad_words(labels)
             feed[self.labels] = labels
 
         if lr is not None:
