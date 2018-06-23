@@ -25,12 +25,9 @@ class Config:
     use_pretrained = True
 
     # dataset
-    # filename_dev = "data/coNLL/eng/eng.testa.iob"
-    # filename_test = "data/coNLL/eng/eng.testb.iob"
-    # filename_train = "data/coNLL/eng/eng.train.iob"
-
-    filename_dev = filename_test = filename_train = "data/test.txt"  # test
-    # filename_dev = filename_test = filename_train = "data/germeval/NER-de-train-CoNLL2003.tsv"  # test
+    filename_dev = "data/germeval2014/NER-de-dev-CoNLL2003.txt"
+    filename_test = "data/germeval2014/NER-de-test-CoNLL2003.txt"
+    filename_train = "data/germeval2014/NER-de-train-CoNLL2003.txt"
 
     max_iter = sys.maxsize  # max number of examples in a dataset
 
