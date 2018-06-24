@@ -1,7 +1,7 @@
 from model.config import Config
 from model.conll_dataset import CoNLLDataset
-from model.data_utils import UNK, NUM, \
-    get_glove_vocab, write_vocab, load_vocab, export_trimmed_glove_vectors, processing_word
+from model.data_utils import WORD_UNK, WORD_NUM, \
+    get_glove_vocab, write_vocab, load_vocab, export_trimmed_glove_vectors, processing_word, CHAR_NUM
 
 
 def main():
@@ -27,7 +27,7 @@ def main():
                                            processing_word(lowercase=True)).get_word_tag_vocabs()
 
     vocab_glove = get_glove_vocab(config.filename_glove)
-    vocab = vocab_words & vocab_glove | {UNK, NUM}
+    vocab = vocab_words & vocab_glove | {WORD_UNK, WORD_NUM}
 
     # Save vocab
     write_vocab(vocab,      config.filename_words)
@@ -41,7 +41,7 @@ def main():
                                  config.dim_word)
 
     # Build and save char vocab
-    vocab_chars = CoNLLDataset(config.filename_train).get_char_vocab()
+    vocab_chars = CoNLLDataset(config.filename_train).get_char_vocab() | {CHAR_NUM}
     write_vocab(vocab_chars, config.filename_chars)
 
 

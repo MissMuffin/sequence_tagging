@@ -3,9 +3,11 @@ from typing import Set, List, Dict, Callable, Tuple
 import numpy as np
 
 # shared global variables to be imported from model also
-UNK = "$UNK$"
-NUM = "$NUM$"
 NONE = "O"
+WORD_UNK = "$UNK$"
+WORD_NUM = "$NUM$"
+
+CHAR_NUM = "#"
 
 
 # special error message
@@ -128,7 +130,8 @@ def processing_chars_word_id(vocab_chars: Dict[str, int], vocab_words: Dict[str,
                  = (list of char ids, word id)
     """
     def f(word):
-        char_ids = [vocab_chars[char] for char in word if char in vocab_chars]
+        chars = [CHAR_NUM if char.isdigit() else char for char in word]
+        char_ids = [vocab_chars[char] for char in chars if char in vocab_chars]
         word_id = processing_word_id(vocab_words, lowercase, allow_unk)(word)
         return char_ids, word_id
 
@@ -150,7 +153,7 @@ def processing_word_id(vocab_words: Dict[str, int], lowercase=False, allow_unk=T
         if word in vocab_words:
             return vocab_words[word]
         if allow_unk:
-            return vocab_words[UNK]
+            return vocab_words[WORD_UNK]
         raise Exception("Unknown key is not allowed. Check that your vocab (tags?) is correct")
 
     return f
@@ -166,7 +169,7 @@ def processing_word(lowercase=False) -> Callable[[str], str]:
         if lowercase:
             word = word.lower()
         if word.isdigit():  # TODO: Filter decimal, Replace digit by 'D'
-            word = NUM
+            word = WORD_NUM
         return word
 
     return f
