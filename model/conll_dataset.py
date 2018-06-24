@@ -1,5 +1,5 @@
 import sys
-from typing import Set, Tuple, List, Generator, Callable, Union
+from typing import Set, Tuple, List, Generator, Callable, Union, TypeVar
 
 
 class CoNLLDataset(object):
@@ -17,9 +17,11 @@ class CoNLLDataset(object):
         ```
 
     """
+    T = TypeVar('T')
+
     def __init__(self, filenames: Union[str, List[str]],
-                 processing_word: Callable[[str], any] = lambda word: word,
-                 processing_tag: Callable[[str], any] = lambda tag: tag,
+                 processing_word: Callable[[str], T] = lambda word: word,
+                 processing_tag: Callable[[str], T] = lambda tag: tag,
                  max_sentences: int = sys.maxsize):
         """
         Args:
@@ -59,7 +61,7 @@ class CoNLLDataset(object):
             self.length = sum(1 for _ in self)
         return self.length
 
-    def get_char_vocab(self) -> Set[str]:
+    def get_char_vocab(self) -> Set[T]:
         """Build char vocabulary
 
         Returns:
@@ -71,7 +73,7 @@ class CoNLLDataset(object):
         print("-done. {} chars".format(len(vocab_chars)))
         return vocab_chars
 
-    def get_word_tag_vocabs(self) -> Tuple[Set[str], Set[str]]:
+    def get_word_tag_vocabs(self) -> Tuple[Set[T], Set[T]]:
         """Build words and tags vocabularies
 
         Returns:
@@ -87,7 +89,7 @@ class CoNLLDataset(object):
         print("- done. {} words and {} tags".format(len(vocab_words), len(vocab_tags)))
         return vocab_words, vocab_tags
 
-    def get_minibatches(self, minibatch_size: int) -> Generator[Tuple[List[str], List[str]], None, None]:
+    def get_minibatches(self, minibatch_size: int) -> Generator[Tuple[List[T], List[T]], None, None]:
         """
         Args:
             minibatch_size: (int)

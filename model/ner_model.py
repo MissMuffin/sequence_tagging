@@ -189,7 +189,7 @@ class NERModel:
                     self.logger.info("- early stopping {} epochs without improvement".format(nepoch_no_imprv))
                     break
 
-    def run_epoch(self, train: CoNLLDataset, dev: CoNLLDataset, epoch: int) -> None:
+    def run_epoch(self, train: CoNLLDataset, dev: CoNLLDataset, epoch: int) -> int:
         """Performs one complete pass over the train set and evaluate on dev
 
         Args:
