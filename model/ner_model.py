@@ -1,8 +1,10 @@
 import os
+from typing import Dict, List, Tuple
 
 import numpy as np
 import tensorflow as tf
 
+from model.conll_dataset import CoNLLDataset
 from .data_utils import get_chunks, pad_words, pad_chars
 from .general_utils import Progbar
 
@@ -157,7 +159,7 @@ class NERModel:
         self.sess.run(tf.global_variables_initializer())
         self.saver = tf.train.Saver()
 
-    def train(self, train, dev):
+    def train(self, train: CoNLLDataset, dev: CoNLLDataset) -> None:
         """Performs training with early stopping and lr exponential decay
 
         Args:
@@ -187,7 +189,7 @@ class NERModel:
                     self.logger.info("- early stopping {} epochs without improvement".format(nepoch_no_imprv))
                     break
 
-    def run_epoch(self, train, dev, epoch):
+    def run_epoch(self, train: CoNLLDataset, dev: CoNLLDataset, epoch: int) -> None:
         """Performs one complete pass over the train set and evaluate on dev
 
         Args:
@@ -222,7 +224,7 @@ class NERModel:
 
         return metrics["f1"]
 
-    def evaluate(self, test):
+    def evaluate(self, test: CoNLLDataset) -> None:
         """Evaluate model on test set
 
         Args:
@@ -233,7 +235,7 @@ class NERModel:
         metrics = self.run_evaluate(test)
         self.logger.info(msg=" - ".join(["{} {:04.2f}".format(k, v) for k, v in metrics.items()]))
 
-    def run_evaluate(self, test):
+    def run_evaluate(self, test: CoNLLDataset) -> Dict[str, int]:
         """Evaluates performance on test set
 
         Args:
@@ -267,7 +269,7 @@ class NERModel:
 
         return {"acc": 100 * acc, "f1": 100 * f1}
 
-    def predict(self, words_raw):
+    def predict(self, words_raw: List[str]) -> List[str]:
         """Returns list of tags
 
         Args:
@@ -286,17 +288,17 @@ class NERModel:
 
         return preds
 
-    def predict_batch(self, words):
+    def predict_batch(self, sentences: List[List[int]]) -> Tuple[List[List[int]], int]:
         """
         Args:
-            words: list of sentences
+            sentences: list of sentences
 
         Returns:
             labels_pred: list of labels for each sentence
             sequence_length
 
         """
-        fd, sequence_lengths = self.get_feed_dict(words, dropout=1.0)
+        fd, sequence_lengths = self.get_feed_dict(sentences, dropout=1.0)
 
         if self.config.use_crf:
             # get tag scores and transition params of CRF
@@ -316,11 +318,14 @@ class NERModel:
 
             return labels_pred, sequence_lengths
 
-    def get_feed_dict(self, words, labels=None, lr=None, dropout=None):
+    def get_feed_dict(self,
+                      sentences: List[List[int]],
+                      labels: List[List[int]] = None,
+                      lr: float = None, dropout: float = None) -> Tuple[Dict, int]:
         """Given some data, pad it and build a feed dictionary
 
         Args:
-            words: list of sentences. A sentence is a list of ids of a list of
+            sentences: list of sentences. A sentence is a list of ids of a list of
                 words. A word is a list of ids
             labels: list of ids
             lr: (float) learning rate
@@ -332,11 +337,11 @@ class NERModel:
         """
         # perform padding of the given data
         if self.config.use_chars:
-            char_ids, word_ids = zip(*words)
+            char_ids, word_ids = zip(*sentences)
             char_ids, word_lengths = pad_chars(char_ids)
             word_ids, sequence_lengths = pad_words(word_ids)
         else:
-            word_ids, sequence_lengths = pad_words(words)
+            word_ids, sequence_lengths = pad_words(sentences)
 
         # build feed dictionary
         feed = {}

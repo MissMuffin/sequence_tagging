@@ -27,10 +27,7 @@ def main():
                                            processing_word(lowercase=True)).get_word_tag_vocabs()
 
     vocab_glove = get_glove_vocab(config.filename_glove)
-
-    vocab = vocab_words & vocab_glove
-    vocab.add(UNK)
-    vocab.add(NUM)
+    vocab = vocab_words & vocab_glove | {UNK, NUM}
 
     # Save vocab
     write_vocab(vocab,      config.filename_words)
