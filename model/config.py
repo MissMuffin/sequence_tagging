@@ -2,7 +2,7 @@ import os
 import sys
 
 from model.conll_dataset import CoNLLDataset
-from .data_utils import get_trimmed_glove_vectors, load_vocab, processing_chars_word_id, \
+from .data_utils import get_trimmed_embeddings, load_vocab, processing_chars_word_id, \
     processing_word_id
 from .general_utils import get_logger
 
@@ -16,13 +16,17 @@ class Config:
 
     # embeddings
     dim_word = 300
-    dim_char = 100
+    dim_char = 300
 
     # glove files
-    filename_glove = "data/glove.6B/glove.6B.{}d.txt".format(dim_word)
-    # trimmed embeddings (created from glove_filename with build_data.py)
-    filename_trimmed = "data/glove.6B.{}d.trimmed.npz".format(dim_word)
-    use_pretrained = True
+    filename_word_embeddings = "data/glove.6B/glove.6B.{}d.txt".format(dim_word)
+    filename_word_embeddings_trimmed = "data/glove.6B.{}d.trimmed.npz".format(dim_word)
+    use_pretrained_words = True
+
+    # char embeddings files from http://minimaxir.com/2017/04/char-embeddings
+    filename_char_embeddings = "data/char-embeddings-300d.txt"
+    filename_char_embeddings_trimmed = "data/char-embeddings-300d-trimmed.npz"
+    use_pretrained_chars = True
 
     # dataset
     filename_dev = "data/germeval2014/NER-de-dev-CoNLL2003.txt"
@@ -37,7 +41,8 @@ class Config:
     filename_chars = "data/chars.txt"
 
     # training
-    train_embeddings = False
+    train_word_embeddings = False
+    train_char_embeddings = False
     nepochs          = 15
     dropout          = 0.5
     batch_size       = 20
@@ -93,7 +98,8 @@ class Config:
             self.processing_tag = processing_word_id(self.vocab_tags, lowercase=False, allow_unk=False)
 
             # 3. get pre-trained embeddings
-            self.embeddings = get_trimmed_glove_vectors(self.filename_trimmed) if self.use_pretrained else None
+            self.word_embeddings = get_trimmed_embeddings(self.filename_word_embeddings_trimmed) if self.use_pretrained_words else None
+            self.char_embeddings = get_trimmed_embeddings(self.filename_char_embeddings_trimmed) if self.use_pretrained_chars else None
 
             # 4. get datasets
             self.dataset_dev = CoNLLDataset(self.filename_dev, self.processing_word, self.processing_tag, self.max_iter)

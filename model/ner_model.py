@@ -33,13 +33,13 @@ class NERModel:
 
         """
         Defines self.word_embeddings
-        If self.config.embeddings is not None and is a np array initialized
+        If self.config.word_embeddings is not None and is a np array initialized
         with pre-trained word vectors, the word embeddings is just a look-up
         and we don't train the vectors. Otherwise, a random matrix with
         the correct shape is initialized.
         """
         with tf.variable_scope("words"):
-            if self.config.embeddings is None:
+            if self.config.word_embeddings is None:
                 self.logger.info("WARNING: randomly initializing word vectors")
                 _word_embeddings = tf.get_variable(
                     name="_word_embeddings",
@@ -47,8 +47,8 @@ class NERModel:
                     shape=[len(self.config.vocab_words), self.config.dim_word])
             else:
                 _word_embeddings = tf.Variable(
-                    initial_value=self.config.embeddings,
-                    trainable=self.config.train_embeddings,
+                    initial_value=self.config.word_embeddings,
+                    trainable=self.config.train_word_embeddings,
                     name="_word_embeddings",
                     dtype=tf.float32)
             word_embeddings = tf.nn.embedding_lookup(params=_word_embeddings, ids=self.word_ids,
@@ -56,11 +56,18 @@ class NERModel:
 
         with tf.variable_scope("chars"):
             if self.config.use_chars:
-                # get char embeddings matrix
-                _char_embeddings = tf.get_variable(
-                    name="_char_embeddings",
-                    dtype=tf.float32,
-                    shape=[len(self.config.vocab_chars), self.config.dim_char])
+                if self.config.char_embeddings is None:
+                    self.logger.info("WARNING: randomly initializing char vectors")
+                    _char_embeddings = tf.get_variable(
+                        name="_char_embeddings",
+                        dtype=tf.float32,
+                        shape=[len(self.config.vocab_chars), self.config.dim_char])
+                else:
+                    _char_embeddings = tf.Variable(
+                        initial_value=self.config.char_embeddings,
+                        trainable=self.config.train_char_embeddings,
+                        name="_char_embeddings",
+                        dtype=tf.float32)
                 char_embeddings = tf.nn.embedding_lookup(params=_char_embeddings, ids=self.char_ids,
                                                          name="char_embeddings")
 

@@ -6,7 +6,7 @@ import numpy as np
 NONE = "O"
 WORD_UNK = "$UNK$"
 WORD_NUM = "$NUM$"
-
+CHAR_UNK = "*"
 CHAR_NUM = "#"
 
 
@@ -24,22 +24,19 @@ trimm your word vectors.
         super(MyIOError, self).__init__(message)
 
 
-def get_glove_vocab(filename: str) -> Set[str]:
+def get_embeddings_vocab(filename: str, get_token: Callable[[str], str]) -> Set[str]:
     """Load vocab from file
 
     Args:
         filename: path to the glove vectors
+        get_token: function that takes a line and returns a token
 
     Returns:
         vocab: set() of strings
     """
-    print("Building glove vocab from {}...".format(filename))
-    vocab = set()
-    with open(filename) as f:
-        for line in f:
-            word = line.strip().split(' ')[0]
-            vocab.add(word)
-    print("- done. {} words".format(len(vocab)))
+    print("Building vocab from {}...".format(filename))
+    vocab = set(map(get_token, open(filename).readlines()))
+    print("- done. {} tokens".format(len(vocab)))
     return vocab
 
 
@@ -70,36 +67,36 @@ def load_vocab(filename: str) -> Dict[str, int]:
 
     """
     try:
-        with open(filename) as f:
-            return {word.strip(): idx for idx, word in enumerate(f)}
+        return {word.rstrip('\n'): idx for idx, word in enumerate(open(filename))}
     except IOError:
         raise MyIOError(filename)
 
 
-def export_trimmed_glove_vectors(vocab: Dict[str, int], glove_filename: str, trimmed_filename: str, dim: int) -> None:
+def export_trimmed_embeddings(vocab: Dict[str, int], get_token: Callable[[str], str],
+                              embeddings_filename: str, trimmed_filename: str, dim: int) -> None:
     """Saves glove vectors in numpy array
 
     Args:
         vocab: dictionary vocab[word] = index
-        glove_filename: a path to a glove file
+        get_token: function that takes a line and returns a token
+        embeddings_filename: a path to a glove file
         trimmed_filename: a path where to store a matrix in npy
         dim: (int) dimension of embeddings
 
     """
     embeddings = np.zeros([len(vocab), dim])
-    with open(glove_filename) as f:
+    with open(embeddings_filename) as f:
         for line in f:
-            line = line.strip().split(' ')
-            word = line[0]
-            embedding = [float(x) for x in line[1:]]
-            if word in vocab:
-                word_idx = vocab[word]
-                embeddings[word_idx] = np.asarray(embedding)
+            token = get_token(line)
+            embedding = [float(x) for x in line.rstrip('\n')[len(token)+1:].split(' ')]
+            if token in vocab:
+                token_idx = vocab[token]
+                embeddings[token_idx] = np.asarray(embedding)
 
     np.savez_compressed(trimmed_filename, embeddings=embeddings)
 
 
-def get_trimmed_glove_vectors(filename: str) -> np.ndarray:
+def get_trimmed_embeddings(filename: str) -> np.ndarray:
     """
     Args:
         filename: path to the npz file
@@ -131,7 +128,7 @@ def processing_chars_word_id(vocab_chars: Dict[str, int], vocab_words: Dict[str,
     """
     def f(word):
         chars = [CHAR_NUM if char.isdigit() else char for char in word]
-        char_ids = [vocab_chars[char] for char in chars if char in vocab_chars]
+        char_ids = [vocab_chars[char] if char in vocab_chars else vocab_chars[CHAR_UNK] for char in chars]
         word_id = processing_word_id(vocab_words, lowercase, allow_unk)(word)
         return char_ids, word_id
 

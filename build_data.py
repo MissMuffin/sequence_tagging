@@ -1,7 +1,7 @@
 from model.config import Config
 from model.conll_dataset import CoNLLDataset
 from model.data_utils import WORD_UNK, WORD_NUM, \
-    get_glove_vocab, write_vocab, load_vocab, export_trimmed_glove_vectors, processing_word, CHAR_NUM
+    write_vocab, load_vocab, export_trimmed_embeddings, processing_word, CHAR_NUM, CHAR_UNK, get_embeddings_vocab
 
 
 def main():
@@ -26,7 +26,8 @@ def main():
     vocab_words, vocab_tags = CoNLLDataset([config.filename_dev, config.filename_train, config.filename_test],
                                            processing_word(lowercase=True)).get_word_tag_vocabs()
 
-    vocab_glove = get_glove_vocab(config.filename_glove)
+    get_word = lambda line: line.strip().split(' ')[0]
+    vocab_glove = get_embeddings_vocab(config.filename_word_embeddings, get_word)
     vocab = vocab_words & vocab_glove | {WORD_UNK, WORD_NUM}
 
     # Save vocab
@@ -35,14 +36,23 @@ def main():
 
     # Trim GloVe Vectors
     vocab = load_vocab(config.filename_words)
-    export_trimmed_glove_vectors(vocab,
-                                 config.filename_glove,
-                                 config.filename_trimmed,
-                                 config.dim_word)
+    export_trimmed_embeddings(vocab,
+                              get_word,
+                              config.filename_word_embeddings,
+                              config.filename_word_embeddings_trimmed,
+                              config.dim_word)
 
     # Build and save char vocab
-    vocab_chars = CoNLLDataset(config.filename_train).get_char_vocab() | {CHAR_NUM}
+    get_char = lambda line: line[0]
+    vocab_chars = get_embeddings_vocab(config.filename_char_embeddings, get_char) | {CHAR_UNK, CHAR_NUM}
     write_vocab(vocab_chars, config.filename_chars)
+
+    vocab_chars = load_vocab(config.filename_chars)
+    export_trimmed_embeddings(vocab_chars,
+                              get_char,
+                              config.filename_char_embeddings,
+                              config.filename_char_embeddings_trimmed,
+                              config.dim_char)
 
 
 if __name__ == "__main__":
