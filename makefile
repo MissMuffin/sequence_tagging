@@ -3,6 +3,9 @@ glove:
 	unzip ./data/glove.6B.zip -d data/glove.6B/
 	rm ./data/glove.6B.zip
 
+fasttext:
+    wget -P ./data/ "https://s3-us-west-1.amazonaws.com/fasttext-vectors/wiki.de.vec"
+
 run:
 	python build_data.py
 	python train.py

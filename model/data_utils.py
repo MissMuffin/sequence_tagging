@@ -88,7 +88,7 @@ def export_trimmed_embeddings(vocab: Dict[str, int], get_token: Callable[[str], 
     with open(embeddings_filename) as f:
         for line in f:
             token = get_token(line)
-            embedding = [float(x) for x in line.rstrip('\n')[len(token)+1:].split(' ')]
+            embedding = [float(x) for x in line.rstrip()[line.find(token) + len(token) + 1:].split(' ')]
             if token in vocab:
                 token_idx = vocab[token]
                 embeddings[token_idx] = np.asarray(embedding)

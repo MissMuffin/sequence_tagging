@@ -34,7 +34,7 @@ def main():
     write_vocab(vocab,      config.filename_words)
     write_vocab(vocab_tags, config.filename_tags)
 
-    # Trim GloVe Vectors
+    # Trim fastText vectors
     vocab = load_vocab(config.filename_words)
     export_trimmed_embeddings(vocab,
                               get_word,

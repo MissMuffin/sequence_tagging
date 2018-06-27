@@ -18,9 +18,9 @@ class Config:
     dim_word = 300
     dim_char = 300
 
-    # glove files
-    filename_word_embeddings = "data/glove.6B/glove.6B.{}d.txt".format(dim_word)
-    filename_word_embeddings_trimmed = "data/glove.6B.{}d.trimmed.npz".format(dim_word)
+    # fastText files from https://github.com/facebookresearch/fastText
+    filename_word_embeddings = "data/wiki.de.vec"
+    filename_word_embeddings_trimmed = "data/wiki.de.vec.trimmed.npz"
     use_pretrained_words = True
 
     # char embeddings files from http://minimaxir.com/2017/04/char-embeddings
