@@ -42,7 +42,7 @@ class Config:
 
     # training
     train_word_embeddings = False
-    train_char_embeddings = False
+    train_char_embeddings = True
     nepochs          = 15
     dropout          = 0.5
     batch_size       = 20
