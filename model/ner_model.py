@@ -89,10 +89,8 @@ class NERModel:
                 # shape = (batch size, max sentence length, char hidden size)
                 output = tf.reshape(tensor=tf.concat([output_fw, output_bw], axis=-1),
                                     shape=[_shape[0], _shape[1], 2 * self.config.hidden_size_char])
-
+                output = tf.nn.dropout(output, self.dropout)
                 word_embeddings = tf.concat([word_embeddings, output], axis=-1)
-
-        word_embeddings = tf.nn.dropout(word_embeddings, self.dropout)
 
         """
         Defines self.logits
