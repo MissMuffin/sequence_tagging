@@ -1,6 +1,7 @@
 *sh
 *pyc
 /data
+!/data/conNLL
 !/data/.gitkeep
 /results
 *.DS_Store

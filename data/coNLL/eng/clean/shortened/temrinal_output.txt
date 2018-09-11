@@ -1,0 +1,97 @@
+(tf_env) fyyree@bulbasaur:~/Projects/tensorflow/NER_guillaume$ python build_data.py 
+Building vocab...
+- done. 26053 tokens
+Building vocab...
+- done. 400000 tokens
+Writing vocab...
+- done. 22217 tokens
+Writing vocab...
+- done. 8 tokens
+Writing vocab...
+- done. 84 tokens
+(tf_env) fyyree@bulbasaur:~/Projects/tensorflow/NER_guillaume$ python train.py 
+/home/fyyree/Projects/tensorflow/tf_env/lib/python3.5/site-packages/tensorflow/python/ops/gradients_impl.py:96: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+Initializing tf session
+2017-11-29 23:03:35.739962: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+Epoch 1 out of 15
+703/703 [==============================] - 549s - train loss: 2.8839      
+acc 97.77 - f1 86.70
+- new best score!
+Epoch 2 out of 15
+703/703 [==============================] - 544s - train loss: 1.2170     
+acc 98.39 - f1 90.38
+- new best score!
+Epoch 3 out of 15
+703/703 [==============================] - 530s - train loss: 0.8949     
+acc 98.61 - f1 91.96
+- new best score!
+Epoch 4 out of 15
+703/703 [==============================] - 558s - train loss: 0.7046     
+acc 98.75 - f1 92.93
+- new best score!
+Epoch 5 out of 15
+703/703 [==============================] - 524s - train loss: 0.5826     
+acc 98.82 - f1 93.35
+- new best score!
+Epoch 6 out of 15
+703/703 [==============================] - 631s - train loss: 0.4722     
+acc 98.86 - f1 93.47
+- new best score!
+Epoch 7 out of 15
+703/703 [==============================] - 681s - train loss: 0.3957      
+acc 98.90 - f1 93.77
+- new best score!
+Epoch 8 out of 15
+703/703 [==============================] - 625s - train loss: 0.3379      
+acc 98.89 - f1 93.77
+Epoch 9 out of 15
+703/703 [==============================] - 551s - train loss: 0.2881     
+acc 98.88 - f1 93.69
+Epoch 10 out of 15
+703/703 [==============================] - 549s - train loss: 0.2442     
+acc 98.92 - f1 93.93
+- new best score!
+Epoch 11 out of 15
+703/703 [==============================] - 549s - train loss: 0.2285     
+acc 98.96 - f1 94.14
+- new best score!
+Epoch 12 out of 15
+703/703 [==============================] - 544s - train loss: 0.1964     
+acc 98.96 - f1 94.07
+Epoch 13 out of 15
+703/703 [==============================] - 544s - train loss: 0.1782     
+acc 98.93 - f1 93.88
+Epoch 14 out of 15
+703/703 [==============================] - 545s - train loss: 0.1538     
+acc 98.97 - f1 94.08
+- early stopping 3 epochs without improvement
+(tf_env) fyyree@bulbasaur:~/Projects/tensorflow/NER_guillaume$ python evaluate.py 
+/home/fyyree/Projects/tensorflow/tf_env/lib/python3.5/site-packages/tensorflow/python/ops/gradients_impl.py:96: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+Initializing tf session
+2017-11-30 01:28:29.934564: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+Reloading the latest trained model...
+INFO:tensorflow:Restoring parameters from results/test/model.weights/
+Restoring parameters from results/test/model.weights/
+Testing model over test set
+f1 89.68 - acc 97.87
+
+This is an interactive mode.
+To exit, enter 'exit'.
+You can enter a sentence like
+input> I love Paris
+input> I love Paris
+I love Paris 
+O O    I-LOC 
+input> I live in Sweden
+I live in Sweden 
+O O    O  I-LOC  
+input> John lives in Sweden
+John  lives in Sweden 
+I-PER O     O  I-LOC  
+input> Obama was the president of the United States.
+Obama was the president of the United States. 
+I-PER O   O   O         O  O   I-ORG  I-ORG   
+input> 
+
