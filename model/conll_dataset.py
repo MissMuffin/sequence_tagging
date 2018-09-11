@@ -41,7 +41,7 @@ class CoNLLDataset(object):
         sentences = 0
         words, tags = [], []
         for filename in self.filenames:
-            with open(filename) as f:
+            with open(filename, encoding='utf-8') as f:
                 for line in f:
                     line = line.strip()
                     if line and not line.startswith("-DOCSTART-"):

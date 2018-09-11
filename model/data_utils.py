@@ -35,7 +35,7 @@ def get_embeddings_vocab(filename: str, get_token: Callable[[str], str]) -> Set[
         vocab: set() of strings
     """
     print("Building vocab from {}...".format(filename))
-    vocab = set(map(get_token, open(filename).readlines()))
+    vocab = set(map(get_token, open(filename, encoding='utf-8').readlines()))
     print("- done. {} tokens".format(len(vocab)))
     return vocab
 
@@ -51,7 +51,7 @@ def write_vocab(vocab, filename: str) -> None:
 
     """
     print("Writing vocab in {}...".format(filename))
-    with open(filename, "w") as f:
+    with open(filename, "w", encoding='utf-8') as f:
         f.write("\n".join(vocab))
     print("- done. {} tokens".format(len(vocab)))
 
@@ -67,7 +67,7 @@ def load_vocab(filename: str) -> Dict[str, int]:
 
     """
     try:
-        return {word.rstrip('\n'): idx for idx, word in enumerate(open(filename))}
+        return {word.rstrip('\n'): idx for idx, word in enumerate(open(filename, encoding='utf-8'))}
     except IOError:
         raise MyIOError(filename)
 
@@ -85,7 +85,7 @@ def export_trimmed_embeddings(vocab: Dict[str, int], get_token: Callable[[str], 
 
     """
     embeddings = np.zeros([len(vocab), dim])
-    with open(embeddings_filename) as f:
+    with open(embeddings_filename, encoding='utf-8') as f:
         for line in f:
             token = get_token(line)
             embedding = [float(x) for x in line.rstrip()[line.find(token) + len(token) + 1:].split(' ')]
