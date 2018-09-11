@@ -92,21 +92,20 @@ class NERModel:
                     # tf.nn.conv2d expects a tensor of shape [batch, in_height, in_width, in_channels]
                     batch, sentence, word, char = shapes(char_embeddings)
                     char_embeddings_conv = tf.reshape(char_embeddings, [batch * sentence, word, char, 1])
-                    filter_sizes = [(2, self.config.dim_char),
-                                    (3, self.config.dim_char),
-                                    (4, self.config.dim_char)]
-                    feature_maps = 100
+                    filter_heights_widths_features = [(2, self.config.dim_char, 50),
+                                                      (3, self.config.dim_char, 100),
+                                                      (4, self.config.dim_char, 150)]
                     pools = []
-                    for filter_size in filter_sizes:
-                        with tf.variable_scope('conv-maxpool-{}x{}'.format(*filter_size)):
-                            W = tf.get_variable(name='W', shape=[*filter_size, 1, feature_maps])
-                            b = tf.get_variable(name='b', shape=[feature_maps])
+                    for height, width, features in filter_heights_widths_features:
+                        with tf.variable_scope('conv-maxpool-{}x{}'.format(height, width)):
+                            W = tf.get_variable(name='W', shape=[height, width, 1, features])
+                            b = tf.get_variable(name='b', shape=[features])
                             conv = tf.nn.relu(tf.nn.bias_add(tf.nn.conv2d(
                                 char_embeddings_conv, W, strides=[1, 1, 1, 1], padding='VALID', name='conv'), b))
                             pool = tf.reduce_max(conv, axis=1, keep_dims=True)
                             pools.append(pool)
                     pool = tf.concat(pools, -1)
-                    pool = tf.reshape(pool, [batch, sentence, len(filter_sizes) * feature_maps])
+                    pool = tf.reshape(pool, [batch, sentence, sum(map(lambda x: x[-1], filter_heights_widths_features))])
                     drop = tf.nn.dropout(pool, self.dropout)
 
                 word_embeddings = tf.concat([word_embeddings, output, drop], axis=-1)
