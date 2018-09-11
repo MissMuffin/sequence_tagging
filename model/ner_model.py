@@ -112,8 +112,9 @@ class NERModel:
                             pools.append(pool)
                     pool = tf.concat(pools, -1)
                     pool = tf.reshape(pool, [_shape[0], _shape[1], len(filter_sizes) * feature_maps])
+                    drop = tf.nn.dropout(pool, self.dropout)
 
-                word_embeddings = tf.concat([word_embeddings, output, pool], axis=-1)
+                word_embeddings = tf.concat([word_embeddings, output, drop], axis=-1)
 
         """
         Defines self.logits
