@@ -17,16 +17,12 @@ class NERModel:
         self.logger = config.logger
 
         """Define placeholders = entries to computational graph"""
-        # shape = (batch size, max length of sentence in batch)
-        self.word_ids = tf.placeholder(tf.int32, shape=[None, None], name="word_ids")
-        # shape = (batch size)
-        self.sequence_lengths = tf.placeholder(tf.int32, shape=[None], name="sequence_lengths")
-        # shape = (batch size, max length of sentence, max length of word)
-        self.char_ids = tf.placeholder(tf.int32, shape=[None, None, None], name="char_ids")
-        # shape = (batch_size, max_length of sentence)
-        self.word_lengths = tf.placeholder(tf.int32, shape=[None, None], name="word_lengths")
-        # shape = (batch size, max length of sentence in batch)
-        self.labels = tf.placeholder(tf.int32, shape=[None, None], name="labels")
+        batch, sentence, word = None, None, None
+        self.word_ids = tf.placeholder(tf.int32, shape=[batch, sentence], name="word_ids")
+        self.sequence_lengths = tf.placeholder(tf.int32, shape=[batch], name="sequence_lengths")
+        self.char_ids = tf.placeholder(tf.int32, shape=[batch, sentence, word], name="char_ids")
+        self.word_lengths = tf.placeholder(tf.int32, shape=[batch, sentence], name="word_lengths")
+        self.labels = tf.placeholder(tf.int32, shape=[batch, sentence], name="labels")
         # hyper parameters
         self.dropout = tf.placeholder(dtype=tf.float32, shape=[], name="dropout")
         self.lr = tf.placeholder(dtype=tf.float32, shape=[], name="lr")
@@ -74,12 +70,12 @@ class NERModel:
                 with tf.variable_scope('char-rnn'):
                     # put the time dimension on axis=1
                     # bi lstm on chars
-                    _shape = tf.shape(char_embeddings)
+                    batch, sentence, word, char = shapes(char_embeddings)
                     _outputs, _output_states = tf.nn.bidirectional_dynamic_rnn(
                         cell_fw=tf.contrib.rnn.LSTMCell(num_units=self.config.hidden_size_char, state_is_tuple=True),
                         cell_bw=tf.contrib.rnn.LSTMCell(num_units=self.config.hidden_size_char, state_is_tuple=True),
-                        inputs=tf.reshape(char_embeddings, shape=[_shape[0] * _shape[1], _shape[2], self.config.dim_char]),
-                        sequence_length=tf.reshape(self.word_lengths, shape=[_shape[0] * _shape[1]]),
+                        inputs=tf.reshape(char_embeddings, shape=[batch * sentence, word, self.config.dim_char]),
+                        sequence_length=tf.reshape(self.word_lengths, shape=[batch * sentence]),
                         dtype=tf.float32)
 
                     # read and concat output
@@ -89,14 +85,13 @@ class NERModel:
 
                     # shape = (batch size, max sentence length, char hidden size)
                     output = tf.reshape(tensor=tf.concat([output_fw, output_bw], axis=-1),
-                                        shape=[_shape[0], _shape[1], 2 * self.config.hidden_size_char])
+                                        shape=[batch, sentence, 2 * self.config.hidden_size_char])
                     output = tf.nn.dropout(output, self.dropout)
 
                 with tf.variable_scope('char-cnn'):
                     # tf.nn.conv2d expects a tensor of shape [batch, in_height, in_width, in_channels]
-                    _shape = tf.shape(char_embeddings)
-                    char_embeddings_conv = tf.reshape(char_embeddings,
-                                                      [_shape[0] * _shape[1], _shape[2], self.config.dim_char, 1])
+                    batch, sentence, word, char = shapes(char_embeddings)
+                    char_embeddings_conv = tf.reshape(char_embeddings, [batch * sentence, word, char, 1])
                     filter_sizes = [(2, self.config.dim_char),
                                     (3, self.config.dim_char),
                                     (4, self.config.dim_char)]
@@ -111,7 +106,7 @@ class NERModel:
                             pool = tf.reduce_max(conv, axis=1, keep_dims=True)
                             pools.append(pool)
                     pool = tf.concat(pools, -1)
-                    pool = tf.reshape(pool, [_shape[0], _shape[1], len(filter_sizes) * feature_maps])
+                    pool = tf.reshape(pool, [batch, sentence, len(filter_sizes) * feature_maps])
                     drop = tf.nn.dropout(pool, self.dropout)
 
                 word_embeddings = tf.concat([word_embeddings, output, drop], axis=-1)
@@ -429,3 +424,9 @@ class NERModel:
         """
         self.merged = tf.summary.merge_all()
         self.file_writer = tf.summary.FileWriter(self.config.dir_output, self.sess.graph)
+
+
+def shapes(tensor):
+    shape = tf.shape(tensor)
+    return [shape[i] for i in range(shape.get_shape()[0])]
+
