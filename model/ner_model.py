@@ -71,26 +71,49 @@ class NERModel:
                 char_embeddings = tf.nn.embedding_lookup(params=_char_embeddings, ids=self.char_ids,
                                                          name="char_embeddings")
 
-                # put the time dimension on axis=1
-                # bi lstm on chars
-                _shape = tf.shape(char_embeddings)
-                _outputs, _output_states = tf.nn.bidirectional_dynamic_rnn(
-                    cell_fw=tf.contrib.rnn.LSTMCell(num_units=self.config.hidden_size_char, state_is_tuple=True),
-                    cell_bw=tf.contrib.rnn.LSTMCell(num_units=self.config.hidden_size_char, state_is_tuple=True),
-                    inputs=tf.reshape(char_embeddings, shape=[_shape[0] * _shape[1], _shape[-2], self.config.dim_char]),
-                    sequence_length=tf.reshape(self.word_lengths, shape=[_shape[0] * _shape[1]]),
-                    dtype=tf.float32)
+                with tf.variable_scope('char-rnn'):
+                    # put the time dimension on axis=1
+                    # bi lstm on chars
+                    _shape = tf.shape(char_embeddings)
+                    _outputs, _output_states = tf.nn.bidirectional_dynamic_rnn(
+                        cell_fw=tf.contrib.rnn.LSTMCell(num_units=self.config.hidden_size_char, state_is_tuple=True),
+                        cell_bw=tf.contrib.rnn.LSTMCell(num_units=self.config.hidden_size_char, state_is_tuple=True),
+                        inputs=tf.reshape(char_embeddings, shape=[_shape[0] * _shape[1], _shape[2], self.config.dim_char]),
+                        sequence_length=tf.reshape(self.word_lengths, shape=[_shape[0] * _shape[1]]),
+                        dtype=tf.float32)
 
-                # read and concat output
-                _output_state_fw, _output_state_bw = _output_states
-                _, output_fw = _output_state_fw
-                _, output_bw = _output_state_bw
+                    # read and concat output
+                    _output_state_fw, _output_state_bw = _output_states
+                    _, output_fw = _output_state_fw
+                    _, output_bw = _output_state_bw
 
-                # shape = (batch size, max sentence length, char hidden size)
-                output = tf.reshape(tensor=tf.concat([output_fw, output_bw], axis=-1),
-                                    shape=[_shape[0], _shape[1], 2 * self.config.hidden_size_char])
-                output = tf.nn.dropout(output, self.dropout)
-                word_embeddings = tf.concat([word_embeddings, output], axis=-1)
+                    # shape = (batch size, max sentence length, char hidden size)
+                    output = tf.reshape(tensor=tf.concat([output_fw, output_bw], axis=-1),
+                                        shape=[_shape[0], _shape[1], 2 * self.config.hidden_size_char])
+                    output = tf.nn.dropout(output, self.dropout)
+
+                with tf.variable_scope('char-cnn'):
+                    # tf.nn.conv2d expects a tensor of shape [batch, in_height, in_width, in_channels]
+                    _shape = tf.shape(char_embeddings)
+                    char_embeddings_conv = tf.reshape(char_embeddings,
+                                                      [_shape[0] * _shape[1], _shape[2], self.config.dim_char, 1])
+                    filter_sizes = [(2, self.config.dim_char),
+                                    (3, self.config.dim_char),
+                                    (4, self.config.dim_char)]
+                    feature_maps = 100
+                    pools = []
+                    for filter_size in filter_sizes:
+                        with tf.variable_scope('conv-maxpool-{}x{}'.format(*filter_size)):
+                            W = tf.get_variable(name='W', shape=[*filter_size, 1, feature_maps])
+                            b = tf.get_variable(name='b', shape=[feature_maps])
+                            conv = tf.nn.relu(tf.nn.bias_add(tf.nn.conv2d(
+                                char_embeddings_conv, W, strides=[1, 1, 1, 1], padding='VALID', name='conv'), b))
+                            pool = tf.reduce_max(conv, axis=1, keep_dims=True)
+                            pools.append(pool)
+                    pool = tf.concat(pools, -1)
+                    pool = tf.reshape(pool, [_shape[0], _shape[1], len(filter_sizes) * feature_maps])
+
+                word_embeddings = tf.concat([word_embeddings, output, pool], axis=-1)
 
         """
         Defines self.logits
