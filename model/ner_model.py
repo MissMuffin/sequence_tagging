@@ -83,10 +83,9 @@ class NERModel:
                     _, output_fw = _output_state_fw
                     _, output_bw = _output_state_bw
 
-                    # shape = (batch size, max sentence length, char hidden size)
-                    output = tf.reshape(tensor=tf.concat([output_fw, output_bw], axis=-1),
+                    char_rnn_output = tf.reshape(tensor=tf.concat([output_fw, output_bw], axis=-1),
                                         shape=[batch_size, sentence_length, 2 * self.config.hidden_size_char])
-                    output = tf.nn.dropout(output, self.dropout)
+                    char_rnn_output = tf.nn.dropout(char_rnn_output, self.dropout)
 
                 with tf.variable_scope('char-cnn'):
                     # tf.nn.conv2d expects a tensor of shape [batch, in_height, in_width, in_channels]
@@ -95,6 +94,7 @@ class NERModel:
                     filter_heights_widths_features = [(2, self.config.dim_char, 50),
                                                       (3, self.config.dim_char, 100),
                                                       (4, self.config.dim_char, 150)]
+                    sum_features = sum(map(lambda x: x[-1], filter_heights_widths_features))
                     pools = []
                     for height, width, features in filter_heights_widths_features:
                         with tf.variable_scope('conv-maxpool-{}x{}'.format(height, width)):
@@ -105,10 +105,27 @@ class NERModel:
                             pool = tf.reduce_max(conv, axis=1, keep_dims=True)
                             pools.append(pool)
                     pool = tf.concat(pools, -1)
-                    pool = tf.reshape(pool, [batch_size, sentence_length, sum(map(lambda x: x[-1], filter_heights_widths_features))])
+                    pool = tf.reshape(pool, [batch_size, sentence_length, sum_features])
                     drop = tf.nn.dropout(pool, self.dropout)
 
-                word_embeddings = tf.concat([word_embeddings, output, drop], axis=-1)
+                def dense(input, output_size, variable_scope=""):
+                    with tf.variable_scope(variable_scope):
+                        W = tf.get_variable("W", [input.get_shape()[1], output_size], dtype=input.dtype)
+                        b = tf.get_variable("b", [output_size], dtype=input.dtype)
+                    return tf.matmul(input, W) + b
+
+                with tf.variable_scope('char-highway'):
+                    _input = tf.reshape(drop, [batch_size * sentence_length, sum_features])
+                    num_layers = 2
+                    carry_bias = -1
+                    for layer in range(num_layers):
+                        with tf.variable_scope('char-highway-{}'.format(layer)):
+                            t = tf.sigmoid(dense(_input, _input.get_shape()[-1], 'transform-gate-{}'.format(layer)) + carry_bias)
+                            g = tf.nn.relu(dense(_input, _input.get_shape()[-1], 'activation-{}'.format(layer)))
+                        _input = t * g + (1 - t) * _input
+                    char_highway_output = tf.reshape(_input, [batch_size, sentence_length, sum_features])
+
+                word_embeddings = tf.concat([word_embeddings, char_rnn_output, char_highway_output], axis=-1)
 
         """
         Defines self.logits
