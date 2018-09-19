@@ -18,11 +18,14 @@ class NERModel:
 
         """Define placeholders = entries to computational graph"""
         batch_size, sentence_length, word_length = None, None, None
-        self.word_ids = tf.placeholder(tf.int32, shape=[batch_size, sentence_length], name="word_ids")
         self.sequence_lengths = tf.placeholder(tf.int32, shape=[batch_size], name="sequence_lengths")
-        self.char_ids = tf.placeholder(tf.int32, shape=[batch_size, sentence_length, word_length], name="char_ids")
         self.word_lengths = tf.placeholder(tf.int32, shape=[batch_size, sentence_length], name="word_lengths")
         self.labels = tf.placeholder(tf.int32, shape=[batch_size, sentence_length], name="labels")
+
+        self.char_ids = tf.placeholder(tf.int32, shape=[batch_size, sentence_length, word_length], name="char_ids")
+        self.word_ids_glove = tf.placeholder(tf.int32, shape=[batch_size, sentence_length], name="word_ids_glove")
+        self.word_ids_lm = tf.placeholder(tf.int32, shape=[batch_size, sentence_length], name="word_ids_lm")
+
         # hyper parameters
         self.dropout = tf.placeholder(dtype=tf.float32, shape=[], name="dropout")
         self.lr = tf.placeholder(dtype=tf.float32, shape=[], name="lr")
@@ -35,20 +38,38 @@ class NERModel:
         the correct shape is initialized.
         """
         with tf.variable_scope("words"):
-            if self.config.embeddings is None:
+            if self.config.embeddings_glove is None:
                 self.logger.info("WARNING: randomly initializing word vectors")
-                _word_embeddings = tf.get_variable(
-                    name="_word_embeddings",
+                _word_embeddings_glove = tf.get_variable(
+                    name="_word_embeddings_glove",
                     dtype=tf.float32,
                     shape=[len(self.config.vocab_words), self.config.dim_word])
             else:
-                _word_embeddings = tf.Variable(
-                    initial_value=self.config.embeddings,
+                _word_embeddings_glove = tf.Variable(
+                    initial_value=self.config.embeddings_glove,
                     trainable=self.config.train_embeddings,
-                    name="_word_embeddings",
+                    name="_word_embeddings_glove",
                     dtype=tf.float32)
-            word_embeddings = tf.nn.embedding_lookup(params=_word_embeddings, ids=self.word_ids,
+            word_embeddings = tf.nn.embedding_lookup(params=_word_embeddings_glove, ids=self.word_ids_glove,
                                                      name="word_embeddings")
+
+        with tf.variable_scope("words_lm"):
+            if self.config.embeddings_lm is None:
+                # self.logger.info("WARNING: randomly initializing word vectors")
+                # _word_embeddings = tf.get_variable(
+                #     name="_word_embeddings",
+                #     dtype=tf.float32,
+                #     shape=[len(self.config.vocab_words), self.config.dim_word])
+                pass
+                # TODO random init? 
+            else:
+                _word_embeddings_lm = tf.Variable(
+                    initial_value=self.config.embeddings_lm,
+                    trainable=self.config.train_embeddings_lm,
+                    name="_word_embeddings_lm",
+                    dtype=tf.float32)
+            word_embeddings_lm = tf.nn.embedding_lookup(params=_word_embeddings_lm, ids=self.word_ids_lm, name="word_embeddings_lm")
+            word_embeddings = tf.concat([word_embeddings, word_embeddings_lm], axis=-1)
 
         with tf.variable_scope("chars"):
             if self.config.use_chars:
@@ -341,7 +362,8 @@ class NERModel:
 
         # build feed dictionary
         feed = {}
-        feed[self.word_ids] = word_ids
+        feed[self.word_ids_glove] = word_ids
+        feed[self.word_ids_lm] = word_ids
         feed[self.sequence_lengths] = sequence_lengths
 
         if self.config.use_chars:

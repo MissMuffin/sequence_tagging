@@ -3,7 +3,7 @@ import sys
 
 from model.conll_dataset import CoNLLDataset
 from .data_utils import get_trimmed_glove_vectors, load_vocab, processing_chars_word_id, \
-    processing_word_id
+    processing_word_id, processing_word_id_lm, get_trimmed_lm_vectors
 from .general_utils import get_logger
 
 
@@ -15,14 +15,23 @@ class Config:
     path_log = dir_output + "log.txt"
 
     # embeddings
+    dim_word_lm = 300
     dim_word = 300
     dim_char = 100
 
     # glove files
     filename_glove = "data/glove.6B/glove.6B.{}d.txt".format(dim_word)
     # trimmed embeddings (created from glove_filename with build_data.py)
-    filename_trimmed = "data/glove.6B.{}d.trimmed.npz".format(dim_word)
-    use_pretrained = True
+    filename_trimmed_glove = "data/glove.6B.{}d.trimmed.npz".format(dim_word)
+
+    # 1 billion words language model embeddings
+    # already trimmed to conll vocab length and content
+    filename_trimmed_lm = "data/lm1b_emb_trimmed_d{}.npz".format(dim_word_lm)
+
+    # use pretrained glove embeddings
+    use_pretrained_glove = True
+    # use pretrained embeddings from 1 billion words language model 
+    use_pretrained_lm = True
 
     # dataset
     filename_dev = "data/coNLL/eng/clean/eng.testa.clean.iob"
@@ -36,8 +45,12 @@ class Config:
     filename_tags = "data/tags.txt"
     filename_chars = "data/chars.txt"
 
+    # vocab from 1 billion words language model embeddings
+    # filename_lm_words = "data/language_model/filtered_vocab.txt"
+
     # training
     train_embeddings = False
+    train_embeddings_lm = False
     nepochs          = 15
     dropout          = 0.5
     batch_size       = 20
@@ -83,17 +96,19 @@ class Config:
             self.vocab_chars = load_vocab(self.filename_chars)
             self.vocab_words = load_vocab(self.filename_words)
             self.vocab_tags  = load_vocab(self.filename_tags)
+            # self.vocab_words_lm = load_vocab(self.filename_lm_words)
 
             # 2. get processing functions that map str -> id
             if self.use_chars:
                 self.processing_word = processing_chars_word_id(self.vocab_chars, self.vocab_words, lowercase=True, allow_unk=True)
             else:
                 self.processing_word = processing_word_id(self.vocab_words, lowercase=True, allow_unk=True)
-
+            # self.processing_word_lm = processing_word_id_lm(self.vocab_words_lm, lowercase=False, allow_unk=True)
             self.processing_tag = processing_word_id(self.vocab_tags, lowercase=False, allow_unk=False)
 
             # 3. get pre-trained embeddings
-            self.embeddings = get_trimmed_glove_vectors(self.filename_trimmed) if self.use_pretrained else None
+            self.embeddings_glove = get_trimmed_glove_vectors(self.filename_trimmed_glove) if self.use_pretrained_glove else None
+            self.embeddings_lm = get_trimmed_lm_vectors(self.filename_trimmed_lm if self.use_pretrained_lm else None)
 
             # 4. get datasets
             self.dataset_dev = CoNLLDataset(self.filename_dev, self.processing_word, self.processing_tag, self.max_iter)

@@ -37,8 +37,15 @@ def main():
     vocab = load_vocab(config.filename_words)
     export_trimmed_glove_vectors(vocab,
                                  config.filename_glove,
-                                 config.filename_trimmed,
+                                 config.filename_trimmed_glove,
                                  config.dim_word)
+
+    # # Trim language model embeddings
+    # vocab = load_vocab(config.filename_lm_words)
+    # export_trimmed_glove_vectors(vocab,
+    #                              config.filename_embeddings_lm,
+    #                              config.filename_trimmed_lm,
+    #                              config.dim_word_lm)
 
     # Build and save char vocab
     vocab_chars = CoNLLDataset(config.filename_train).get_char_vocab()

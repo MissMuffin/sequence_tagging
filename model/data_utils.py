@@ -96,8 +96,23 @@ def export_trimmed_glove_vectors(vocab: Dict[str, int], glove_filename: str, tri
 
     np.savez_compressed(trimmed_filename, embeddings=embeddings)
 
-
 def get_trimmed_glove_vectors(filename: str) -> np.ndarray:
+    """
+    Args:
+        filename: path to the npz file
+
+    Returns:
+        matrix of embeddings (np array)
+
+    """
+    try:
+        with np.load(filename) as data:
+            return data["embeddings"]
+
+    except IOError:
+        raise MyIOError(filename)
+
+def get_trimmed_lm_vectors(filename: str) -> np.ndarray:
     """
     Args:
         filename: path to the npz file
@@ -151,6 +166,28 @@ def processing_word_id(vocab_words: Dict[str, int], lowercase=False, allow_unk=T
             return vocab_words[word]
         if allow_unk:
             return vocab_words[UNK]
+        raise Exception("Unknown key is not allowed. Check that your vocab (tags?) is correct")
+
+    return f
+
+def processing_word_id_lm(vocab_words_lm: Dict[str, int], lowercase=False, allow_unk=True) -> Callable[[str], int]:
+    """
+    Return a lambda function that transform a word (string) into 
+    its corresponding id in the language model embeddings.
+
+    Args:
+        vocab: dict[word] = idx
+
+    Returns:
+        f("cat") = 12345
+                 = word id
+    """
+    def f(word):
+        word = processing_word(lowercase)(word)
+        if word in vocab_words_lm:
+            return vocab_words_lm[word]
+        if allow_unk:
+            return vocab_words_lm["<UNK>"]
         raise Exception("Unknown key is not allowed. Check that your vocab (tags?) is correct")
 
     return f
