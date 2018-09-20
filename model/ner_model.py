@@ -53,23 +53,24 @@ class NERModel:
             word_embeddings = tf.nn.embedding_lookup(params=_word_embeddings_glove, ids=self.word_ids_glove,
                                                      name="word_embeddings")
 
-        with tf.variable_scope("words_lm"):
-            if self.config.embeddings_lm is None:
-                # self.logger.info("WARNING: randomly initializing word vectors")
-                # _word_embeddings = tf.get_variable(
-                #     name="_word_embeddings",
-                #     dtype=tf.float32,
-                #     shape=[len(self.config.vocab_words), self.config.dim_word])
-                pass
-                # TODO random init? 
-            else:
-                _word_embeddings_lm = tf.Variable(
-                    initial_value=self.config.embeddings_lm,
-                    trainable=self.config.train_embeddings_lm,
-                    name="_word_embeddings_lm",
-                    dtype=tf.float32)
-            word_embeddings_lm = tf.nn.embedding_lookup(params=_word_embeddings_lm, ids=self.word_ids_lm, name="word_embeddings_lm")
-            word_embeddings = tf.concat([word_embeddings, word_embeddings_lm], axis=-1)
+        if self.config.enable_lm_embeddings: 
+            with tf.variable_scope("words_lm"):
+                if self.config.embeddings_lm is None:
+                    # self.logger.info("WARNING: randomly initializing word vectors")
+                    # _word_embeddings = tf.get_variable(
+                    #     name="_word_embeddings",
+                    #     dtype=tf.float32,
+                    #     shape=[len(self.config.vocab_words), self.config.dim_word])
+                    pass
+                    # TODO random init? 
+                else:
+                    _word_embeddings_lm = tf.Variable(
+                        initial_value=self.config.embeddings_lm,
+                        trainable=self.config.train_embeddings_lm,
+                        name="_word_embeddings_lm",
+                        dtype=tf.float32)
+                word_embeddings_lm = tf.nn.embedding_lookup(params=_word_embeddings_lm, ids=self.word_ids_lm, name="word_embeddings_lm")
+                word_embeddings = tf.concat([word_embeddings, word_embeddings_lm], axis=-1)
 
         with tf.variable_scope("chars"):
             if self.config.use_chars:
@@ -99,7 +100,6 @@ class NERModel:
                 # shape = (batch size, max sentence length, char hidden size)
                 output = tf.reshape(tensor=tf.concat([output_fw, output_bw], axis=-1),
                                     shape=[batch_size, sentence_length, 2 * self.config.hidden_size_char])
-
                 word_embeddings = tf.concat([word_embeddings, output], axis=-1)
 
         word_embeddings = tf.nn.dropout(word_embeddings, self.dropout)

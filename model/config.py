@@ -28,6 +28,9 @@ class Config:
     # already trimmed to conll vocab length and content
     filename_trimmed_lm = "data/lm1b_emb_trimmed_d{}.npz".format(dim_word_lm)
 
+    # only use glove embeddings
+    enable_lm_embeddings = False
+
     # use pretrained glove embeddings
     use_pretrained_glove = True
     # use pretrained embeddings from 1 billion words language model 
@@ -88,8 +91,11 @@ class Config:
         self.logger.info(">> d{}\t\tpretrained = {}\ttrainable = {}".format(self.dim_word, self.use_pretrained_glove, self.train_embeddings))
         
         self.logger.info("language model word embeddings")
-        self.logger.info(">> d{}\t\tpretrained = {}\ttrainable = {}".format(self.dim_word_lm, self.use_pretrained_lm, self.train_embeddings_lm))
-        
+        if self.enable_lm_embeddings:
+            self.logger.info(">> d{}\t\tpretrained = {}\ttrainable = {}".format(self.dim_word_lm, self.use_pretrained_lm, self.train_embeddings_lm))
+        else:
+            self.logger.info("None")
+
         self.logger.info("init chars d{}:\t{}".format(self.dim_char, self.use_chars))
         self.logger.info("using CRF:\t{}".format(self.use_crf))
         self.logger.info("\n\n")
