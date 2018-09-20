@@ -26,9 +26,9 @@ def main():
     vocab_words, vocab_tags = CoNLLDataset([config.filename_dev, config.filename_train, config.filename_test],
                                            processing_word(lowercase=True)).get_word_tag_vocabs()
 
-    get_word = lambda line: line.strip().split(' ')[0]
-    vocab_glove = get_embeddings_vocab(config.filename_word_embeddings, get_word)
-    vocab = vocab_words & vocab_glove | {WORD_UNK, WORD_NUM}
+    def get_word(line): return line.strip().split(' ')[0]
+    vocab_embeddings = get_embeddings_vocab(config.filename_word_embeddings, get_word)
+    vocab = vocab_words & vocab_embeddings | {WORD_UNK, WORD_NUM}
 
     # Save vocab
     write_vocab(vocab,      config.filename_words)
@@ -43,7 +43,7 @@ def main():
                               config.dim_word)
 
     # Build and save char vocab
-    get_char = lambda line: line[0]
+    def get_char(line): return line[0]
     vocab_chars = get_embeddings_vocab(config.filename_char_embeddings, get_char) | {CHAR_UNK, CHAR_NUM}
     write_vocab(vocab_chars, config.filename_chars)
 
