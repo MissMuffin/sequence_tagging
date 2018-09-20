@@ -56,13 +56,11 @@ class NERModel:
         if self.config.enable_lm_embeddings: 
             with tf.variable_scope("words_lm"):
                 if self.config.embeddings_lm is None:
-                    # self.logger.info("WARNING: randomly initializing word vectors")
-                    # _word_embeddings = tf.get_variable(
-                    #     name="_word_embeddings",
-                    #     dtype=tf.float32,
-                    #     shape=[len(self.config.vocab_words), self.config.dim_word])
-                    pass
-                    # TODO random init? 
+                    self.logger.info("WARNING: randomly initializing language model word vectors")
+                    _word_embeddings_lm = tf.get_variable(
+                        name="_word_embeddings_lm",
+                        dtype=tf.float32,
+                        shape=[len(self.config.vocab_words), self.config.dim_word_lm])
                 else:
                     _word_embeddings_lm = tf.Variable(
                         initial_value=self.config.embeddings_lm,
