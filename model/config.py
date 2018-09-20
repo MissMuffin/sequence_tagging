@@ -83,6 +83,17 @@ class Config:
         # create instance of logger
         self.logger = get_logger(self.path_log)
 
+        # log config for run
+        self.logger.info("glove word embeddings")
+        self.logger.info(">> d{}\t\tpretrained = {}\ttrainable = {}".format(self.dim_word, self.use_pretrained_glove, self.train_embeddings))
+        
+        self.logger.info("language model word embeddings")
+        self.logger.info(">> d{}\t\tpretrained = {}\ttrainable = {}".format(self.dim_word_lm, self.use_pretrained_lm, self.train_embeddings_lm))
+        
+        self.logger.info("init chars d{}:\t{}".format(self.dim_char, self.use_chars))
+        self.logger.info("using CRF:\t{}".format(self.use_crf))
+        self.logger.info("\n\n")
+
         # load if requested (default)
         if load:
             """Loads vocabulary, processing functions, embeddings and datasets

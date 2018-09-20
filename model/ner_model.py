@@ -284,7 +284,7 @@ class NERModel:
         f1 = 2 * p * r / (p + r) if correct_preds > 0 else 0
         acc = np.mean(accs)
 
-        return {"acc": 100 * acc, "f1": 100 * f1}
+        return {"acc": 100 * acc, "f1": 100 * f1, "precision": p, "recall": r}
 
     def predict(self, words_raw: List[str]) -> List[str]:
         """Returns list of tags
