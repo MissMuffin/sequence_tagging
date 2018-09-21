@@ -15,7 +15,8 @@ class Config:
     path_log = dir_output + "log.txt"
 
     # embeddings
-    dim_word_lm = 300
+    ## if dim word lm is set to None only glove embeddings are used and no lm embeddings are initialized
+    dim_word_lm = 50
     dim_word = 300
     dim_char = 100
 
@@ -28,8 +29,6 @@ class Config:
     # already trimmed to conll vocab length and content
     filename_trimmed_lm = "data/lm1b_emb_trimmed_d{}.npz".format(dim_word_lm)
 
-    # only use glove embeddings
-    enable_lm_embeddings = False
 
     # use pretrained glove embeddings
     use_pretrained_glove = True
@@ -91,8 +90,9 @@ class Config:
         self.logger.info(">> d{}\t\tpretrained = {}\ttrainable = {}".format(self.dim_word, self.use_pretrained_glove, self.train_embeddings))
         
         self.logger.info("language model word embeddings")
-        if self.enable_lm_embeddings:
-            self.logger.info(">> d{}\t\tpretrained = {}\ttrainable = {}".format(self.dim_word_lm, self.use_pretrained_lm, self.train_embeddings_lm))
+        if self.dim_word_lm:
+            self.logger.info(">> d{}\t\tpretrained = {}\ttrainable = {}".format(
+                self.dim_word_lm, self.use_pretrained_lm, self.train_embeddings_lm))
         else:
             self.logger.info("None")
 
@@ -126,6 +126,9 @@ class Config:
             # 3. get pre-trained embeddings
             self.embeddings_glove = get_trimmed_glove_vectors(self.filename_trimmed_glove) if self.use_pretrained_glove else None
             self.embeddings_lm = get_trimmed_lm_vectors(self.filename_trimmed_lm if self.use_pretrained_lm else None)
+            if self.dim_word_lm:
+                self.embeddings_lm = get_trimmed_lm_vectors(
+                    self.filename_trimmed_lm if self.use_pretrained_lm else None)
 
             # 4. get datasets
             self.dataset_dev = CoNLLDataset(self.filename_dev, self.processing_word, self.processing_tag, self.max_iter)

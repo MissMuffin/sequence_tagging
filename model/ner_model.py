@@ -53,7 +53,7 @@ class NERModel:
             word_embeddings = tf.nn.embedding_lookup(params=_word_embeddings_glove, ids=self.word_ids_glove,
                                                      name="word_embeddings")
 
-        if self.config.enable_lm_embeddings: 
+        if self.config.dim_word_lm: 
             with tf.variable_scope("words_lm"):
                 if self.config.embeddings_lm is None:
                     self.logger.info("WARNING: randomly initializing language model word vectors")
