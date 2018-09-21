@@ -2,9 +2,12 @@ from model.config import Config
 from model.ner_model import NERModel
 
 
-def main():
+def main(char_dim=100, glove_dim=300, lm_dim=50, glove_pretrained=True,
+         lm_pretrained=True, glove_trainable=False, lm_trainable=False, run_number=1):
+
     # create instance of config
-    config = Config()
+    config = Config(char_dim=char_dim, glove_dim=glove_dim, lm_dim=lm_dim, glove_pretrained=glove_pretrained,
+                    lm_pretrained=lm_pretrained, glove_trainable=glove_trainable, lm_trainable=lm_trainable, run_number=run_number)
 
     # build model
     model = NERModel(config)
