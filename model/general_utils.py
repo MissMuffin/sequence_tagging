@@ -18,6 +18,7 @@ def get_logger(filename):
 
     # remove all old handlers
     for hdlr in logger.handlers[:]:
+        hdlr.close()
         logger.removeHandler(hdlr)
 
     logger.setLevel(logging.DEBUG)
