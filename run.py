@@ -13,7 +13,7 @@ def do_run(runs=4, char_dim=100, glove_dim=300, lm_dim=None,
                         lm_pretrained=lm_pretrained,
                         glove_trainable=glove_trainable,
                         lm_trainable=lm_trainable,
-                        run_number=run,
+                        run_number=run+1,
                         log_suffix=log_suffix,
                         lm_embeddings_file=lm_embeddings_filename)
 
