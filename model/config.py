@@ -71,8 +71,8 @@ class Config:
     use_crf = True      # if crf, training is 1.7x slower on CPU
     use_chars = True    # if char embedding, training is 3.5x slower on CPU
 
-    def __init__(self, load=True, char_dim=100, glove_dim=300, lm_dim=50, glove_pretrained=True, 
-                lm_pretrained=True, glove_trainable=False, lm_trainable=False, run_number=1):
+    def __init__(self, load=True, char_dim=100, glove_dim=300, lm_dim=None, glove_pretrained=True, 
+                lm_pretrained=True, glove_trainable=False, lm_trainable=False, run_number=None, log_suffix=None, lm_embeddings_file=None):
         """Initialize hyperparameters and load vocabs
 
         Args:
@@ -88,13 +88,22 @@ class Config:
         self.use_pretrained_lm = lm_pretrained
         self.train_embeddings = glove_trainable
         self.train_embeddings_lm = lm_trainable
+        if lm_embeddings_file:
+            self.filename_trimmed_lm = lm_embeddings_file
 
         # directory for training outputs
         if not os.path.exists(self.dir_output):
             os.makedirs(self.dir_output)
 
         # create instance of logger
-        log_path = "logs/" + datetime.datetime.today().strftime('%Y%m%d') + "_d{}".format(self.dim_word_lm) + "_{}.txt".format(run_number)
+        log_path = "logs/" + datetime.datetime.today().strftime('%Y%m%d')
+        if self.dim_word_lm:
+            log_path = log_path + "_d{}".format(self.dim_word_lm)
+        if run_number:
+            log_path = log_path + "_{}".format(run_number)
+        if log_suffix:
+            log_path = log_path + "_" + log_suffix
+        log_path = log_path + ".txt" 
         self.logger = get_logger(log_path)
 
         # log config for run

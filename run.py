@@ -1,40 +1,59 @@
-import argparse
-import train
-import evaluate
+from model.config import Config
+from model.ner_model import NERModel
 
-# run.py --char_dim 100 --lm_dim 100 --glove_pretrained --lm_pretrained --runs 2
+def do_run(runs=4, char_dim=100, glove_dim=300, lm_dim=None,
+           glove_pretrained=True, lm_pretrained=True, glove_trainable=False,
+           lm_trainable=False, log_suffix=None, lm_embeddings_filename=None):
+    for run in range(runs):
 
-parser = argparse.ArgumentParser()
+        config = Config(char_dim=char_dim,
+                        glove_dim=glove_dim,
+                        lm_dim=lm_dim,
+                        glove_pretrained=glove_pretrained,
+                        lm_pretrained=lm_pretrained,
+                        glove_trainable=glove_trainable,
+                        lm_trainable=lm_trainable,
+                        run_number=run,
+                        log_suffix=log_suffix,
+                        lm_embeddings_file=lm_embeddings_filename)
 
-parser.add_argument("--char_dim", type=int,
-                    help="Dimension for the character embedding")
-# parser.add_argument("dim_glove", type=int, help="")
-parser.add_argument("--lm_dim", type=int, choices=[
-                    50, 100, 200, 300, 1024], help="Dimension for the langauge model word embedding")
-parser.add_argument("--glove_pretrained", action="store_true",
-                    help="If true, uses pretrained word embeddings from glove. Otherwise init in specified dimension as zero vector")
-parser.add_argument("--lm_pretrained", action="store_true",
-                    help="If true, uses pretrained word embeddings from 1 billion word langauge model. Otherwise init in specified dimension as zero vector")
-parser.add_argument("--glove_trainable", action="store_true",
-                    help="If false, freezes glove embeddings. Otherwise train simultaneously with NER tagging")
-parser.add_argument("--lm_trainable", action="store_true",
-                    help="If false, freezes language model embeddings. Otherwise train simultaneously with NER tagging")
-parser.add_argument("--runs", type=int,
-                    help="Number of times train and evaluate should be run")
+        model = NERModel(config)
 
-args = parser.parse_args()
+        model.train(train=config.dataset_train, dev=config.dataset_dev)
 
-char_dim = args.char_dim
-glove_dim = 300
-lm_dim = args.lm_dim
-glove_pretrained = args.glove_pretrained
-lm_pretrained = args.lm_pretrained
-glove_trainable = args.glove_trainable
-lm_trainable = args.lm_trainable
-number_of_runs = args.runs
+        model.restore_session(config.dir_model)
+        model.evaluate(config.dataset_test)
+        model.close_session()
 
-for run in range(args.runs):
-    train.main(char_dim=char_dim, glove_dim=glove_dim, lm_dim=lm_dim, glove_pretrained=glove_pretrained,
-               lm_pretrained=lm_pretrained, glove_trainable=glove_trainable, lm_trainable=lm_trainable, run_number=run)
-    evaluate.main(char_dim=char_dim, glove_dim=glove_dim, lm_dim=lm_dim, glove_pretrained=glove_pretrained,
-                  lm_pretrained=lm_pretrained, glove_trainable=glove_trainable, lm_trainable=lm_trainable, run_number=run)
+# BASELINE: glove d300, init chars d100, crf
+do_run(log_suffix="baseline")
+
+# baseline + train glove
+do_run(glove_trainable=True, log_suffix="train_glove")
+
+# baseline + lm d50, no train
+do_run(lm_dim=50)
+
+# baseline + lm d100, no train
+do_run(lm_dim=100)
+
+# baseline + lm d200, no train
+do_run(lm_dim=200)
+
+# baseline + lm d300, no train
+do_run(lm_dim=300)
+
+# baseline + lm d1024, no train
+do_run(lm_dim=1024)
+
+# baseline + lm d1024 (NO PCA), no train
+do_run(lm_dim=1024, log_suffix="no_pca", lm_embeddings_filename="data/lm1b_embeddings_d1024.npz")
+
+# -> take best dimension and run:
+# with training enabled
+# with training enabled and no pretrained lm embeddings
+# with different hyperparameters:
+# hidden lstm size
+# 50, 100, 300, 500
+# dropout
+# learning rate
