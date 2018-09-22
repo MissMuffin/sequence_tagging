@@ -48,7 +48,7 @@ do_run(lm_dim=300)
 do_run(lm_dim=1024)
 
 # baseline + lm d1024 (NO PCA), no train
-do_run(lm_dim=1024, log_suffix="no_pca", lm_embeddings_filename="data/lm1b_embeddings_d1024.npz")
+# do_run(lm_dim=1024, log_suffix="no_pca", lm_embeddings_filename="data/lm1b_embeddings_d1024.npz")
 
 # -> take best dimension and run:
 # with training enabled
