@@ -99,10 +99,10 @@ class Config:
         log_path = "logs/" + datetime.datetime.today().strftime('%Y%m%d')
         if self.dim_word_lm:
             log_path = log_path + "_d{}".format(self.dim_word_lm)
-        if run_number:
-            log_path = log_path + "_{}".format(run_number)
         if log_suffix:
             log_path = log_path + "_" + log_suffix
+        if run_number:
+            log_path = log_path + "_{}".format(run_number)
         log_path = log_path + ".txt" 
         self.logger = get_logger(log_path)
 
