@@ -15,6 +15,11 @@ def get_logger(filename):
 
     """
     logger = logging.getLogger('logger')
+
+    # remove all old handlers
+    for hdlr in logger.handlers[:]:
+        logger.removeHandler(hdlr)
+
     logger.setLevel(logging.DEBUG)
     logging.basicConfig(format='%(message)s', level=logging.DEBUG)
     handler = logging.FileHandler(filename)
