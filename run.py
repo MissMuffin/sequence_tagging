@@ -23,7 +23,8 @@ def do_run(runs=4, char_dim=100, glove_dim=300, lm_dim=None,
 
         model.restore_session(config.dir_model)
         model.evaluate(config.dataset_test)
-        model.close_session()
+
+        model.reset_session_graph()
 
 # BASELINE: glove d300, init chars d100, crf
 do_run(log_suffix="baseline")

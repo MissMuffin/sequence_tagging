@@ -407,6 +407,9 @@ class NERModel:
         """Closes the session"""
         self.sess.close()
 
+    def reset_session_graph(self):
+        tf.reset_default_graph()
+
     def add_summary(self):
         """Defines variables for Tensorboard
 
