@@ -1,7 +1,7 @@
 from model.config import Config
 from model.ner_model import NERModel
 
-def do_run(runs=4, char_dim=100, glove_dim=300, lm_dim=None,
+def do_run(runs=6, char_dim=100, glove_dim=300, lm_dim=None,
            glove_pretrained=True, lm_pretrained=True, glove_trainable=False,
            lm_trainable=False, log_suffix=None, lm_embeddings_filename=None):
     for run in range(runs):
@@ -48,7 +48,7 @@ do_run(lm_dim=300)
 do_run(lm_dim=1024)
 
 # baseline + lm d1024 (NO PCA), no train
-# do_run(lm_dim=1024, log_suffix="no_pca", lm_embeddings_filename="data/lm1b_embeddings_d1024.npz")
+do_run(runs=10, lm_dim=1024, log_suffix="no_pca", lm_embeddings_filename="data/lm1b_embeddings_d1024.npz")
 
 # -> take best dimension and run:
 # with training enabled
