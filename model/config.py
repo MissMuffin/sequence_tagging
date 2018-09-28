@@ -54,7 +54,7 @@ class Config:
     # training
     train_embeddings = False
     train_embeddings_lm = False
-    nepochs = 20
+    nepochs = 15
     dropout = 0.5
     batch_size = 20
     lr_method = "adam"
@@ -71,7 +71,7 @@ class Config:
     use_crf = True      # if crf, training is 1.7x slower on CPU
     use_chars = True    # if char embedding, training is 3.5x slower on CPU
 
-    def __init__(self, load=True, char_dim=100, glove_dim=300, lm_dim=None, glove_pretrained=True, 
+    def __init__(self, load=True, epochs=15, char_dim=100, glove_dim=300, lm_dim=None, glove_pretrained=True, 
                 lm_pretrained=True, glove_trainable=False, lm_trainable=False, run_number=None, log_suffix=None, lm_embeddings_file=None):
         """Initialize hyperparameters and load vocabs
 
@@ -80,7 +80,7 @@ class Config:
                 np array, else None
 
         """
-
+        self.nepochs = epochs
         self.dim_char = char_dim
         self.dim_word = glove_dim
         self.dim_word_lm = lm_dim
