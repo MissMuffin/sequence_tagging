@@ -153,7 +153,7 @@ class Config:
 
             if self.dim_word_lm:
                 self.embeddings_lm = get_trimmed_lm_vectors(
-                    self.filename_trimmed_lm if self.use_pretrained_lm else None)
+                    self.filename_trimmed_lm) if self.use_pretrained_lm else None
 
             # 4. get datasets
             self.dataset_dev = CoNLLDataset(
