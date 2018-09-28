@@ -190,6 +190,14 @@ class NERModel:
             self.logger.info("Epoch {:} out of {:}".format(epoch + 1, self.config.nepochs))
 
             score = self.run_epoch(train, dev, epoch)
+
+            # time save: evaluate on test set to not have to run 15 and 20 epochs in separate runs
+            if (epoch+1) == 15:
+                metrics = self.run_evaluate(self.config.dataset_test)
+                msg = " - ".join(["{} {:04.2f}".format(k, v) for k, v in metrics.items()])
+                msg = "/n" + msg + "/n"
+                self.logger.info(msg)
+
             self.config.lr *= self.config.lr_decay  # decay learning rate
 
             # early stopping and saving best parameters
