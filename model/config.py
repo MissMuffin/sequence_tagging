@@ -72,7 +72,8 @@ class Config:
     use_chars = True    # if char embedding, training is 3.5x slower on CPU
 
     def __init__(self, load=True, epochs=15, char_dim=100, glove_dim=300, lm_dim=None, glove_pretrained=True, 
-                lm_pretrained=True, glove_trainable=False, lm_trainable=False, run_number=None, log_suffix=None, lm_embeddings_file=None):
+                lm_pretrained=True, glove_trainable=False, lm_trainable=False, run_number=None, log_suffix=None, lm_embeddings_file=None,
+                size_hidden_lstm=300):
         """Initialize hyperparameters and load vocabs
 
         Args:
@@ -90,6 +91,7 @@ class Config:
         self.train_embeddings_lm = lm_trainable
         if lm_embeddings_file:
             self.filename_trimmed_lm = lm_embeddings_file
+        self.hidden_size_lstm = size_hidden_lstm
 
         # directory for training outputs
         if not os.path.exists(self.dir_output):
@@ -120,6 +122,7 @@ class Config:
 
         self.logger.info("init chars d{}:\t{}".format(self.dim_char, self.use_chars))
         self.logger.info("using CRF:\t{}".format(self.use_crf))
+        self.logger.info("Size of hidden lstm layer:\t{}".format(self.hidden_size_lstm))
         self.logger.info("\n\n")
 
         # load if requested (default)
