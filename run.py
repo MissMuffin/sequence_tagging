@@ -78,22 +78,50 @@ def do_run(runs=10, epochs=15, char_dim=100, glove_dim=300, lm_dim=None,
 # with different hyperparameters:
 
 # hidden lstm size
-# 250
+# lm dim 100
+lmd = 100
 shl = 250
-do_run(epochs=20, lm_dim=100, size_hidden_lstm=shl)
-do_run(epochs=20, lm_dim=100, lm_trainable=True, size_hidden_lstm=shl)
-# 200
+do_run(epochs=20, lm_dim=lmd, size_hidden_lstm=shl)
+do_run(epochs=20, lm_dim=lmd, lm_trainable=True, size_hidden_lstm=shl)
+
 shl = 200
-do_run(epochs=20, lm_dim=100, size_hidden_lstm=shl)
-do_run(epochs=20, lm_dim=100, lm_trainable=True, size_hidden_lstm=shl)
-# 130
+do_run(epochs=20, lm_dim=lmd, size_hidden_lstm=shl)
+do_run(epochs=20, lm_dim=lmd, lm_trainable=True, size_hidden_lstm=shl)
+
+shl = 170
+do_run(epochs=20, lm_dim=lmd, size_hidden_lstm=shl)
+do_run(epochs=20, lm_dim=lmd, lm_trainable=True, size_hidden_lstm=shl)
+
 shl = 130
-do_run(epochs=20, lm_dim=100, size_hidden_lstm=shl)
-do_run(epochs=20, lm_dim=100, lm_trainable=True, size_hidden_lstm=shl)
-# 100
+do_run(epochs=20, lm_dim=lmd, size_hidden_lstm=shl)
+do_run(epochs=20, lm_dim=lmd, lm_trainable=True, size_hidden_lstm=shl)
+
 shl = 100
-do_run(epochs=20, lm_dim=100, size_hidden_lstm=shl)
-do_run(epochs=20, lm_dim=100, lm_trainable=True, size_hidden_lstm=shl)
+do_run(epochs=20, lm_dim=lmd, size_hidden_lstm=shl)
+do_run(epochs=20, lm_dim=lmd, lm_trainable=True, size_hidden_lstm=shl)
+
+# lm dim 200
+lmd = 200
+shl = 250
+do_run(epochs=20, lm_dim=lmd, size_hidden_lstm=shl)
+do_run(epochs=20, lm_dim=lmd, lm_trainable=True, size_hidden_lstm=shl)
+
+shl = 200
+do_run(epochs=20, lm_dim=lmd, size_hidden_lstm=shl)
+do_run(epochs=20, lm_dim=lmd, lm_trainable=True, size_hidden_lstm=shl)
+
+shl = 170
+do_run(epochs=20, lm_dim=lmd, size_hidden_lstm=shl)
+do_run(epochs=20, lm_dim=lmd, lm_trainable=True, size_hidden_lstm=shl)
+
+shl = 130
+do_run(epochs=20, lm_dim=lmd, size_hidden_lstm=shl)
+do_run(epochs=20, lm_dim=lmd, lm_trainable=True, size_hidden_lstm=shl)
+
+shl = 100
+do_run(epochs=20, lm_dim=lmd, size_hidden_lstm=shl)
+do_run(epochs=20, lm_dim=lmd, lm_trainable=True, size_hidden_lstm=shl)
+
 
 # dropout
 # learning rate
