@@ -23,7 +23,6 @@ class Config:
     filename_word_embeddings_trimmed = "data/wiki.de.vec.trimmed.npz"
     use_pretrained_words = True
 
-    # char embeddings files from http://minimaxir.com/2017/04/char-embeddings
     filename_char_embeddings = "data/char-embeddings-300d.txt"
     filename_char_embeddings_trimmed = "data/char-embeddings-300d-trimmed.npz"
     use_pretrained_chars = True
@@ -42,7 +41,7 @@ class Config:
 
     # training
     train_word_embeddings = False
-    train_char_embeddings = True
+    train_char_embeddings = False
     nepochs          = 15
     dropout          = 0.5
     batch_size       = 20
