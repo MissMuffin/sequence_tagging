@@ -15,9 +15,9 @@ class Config:
     path_log = dir_output + "log.txt"
 
     dim_word = 300
-    dim_char = 100
+    dim_char = 300
     use_pretrained_words = True
-    use_pretrained_chars = False
+    use_pretrained_chars = True
 
     # training
     train_word_embeddings = False
