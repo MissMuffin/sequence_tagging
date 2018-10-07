@@ -3,8 +3,9 @@ from collections import Counter
 import numpy as np
 
 glove_dim = 300
-glove_path = "glove.840B.300d/glove.840B.300d.txt"
-char_path = "char-embeddings-300d.txt"
+glove_token = '840B'
+glove_path = 'glove.{0}/glove.{0}.{1}d.txt'.format(glove_token, glove_dim)
+char_path = 'char-embeddings-{}d.txt'.format(glove_dim)
 
 char_counter = Counter()
 char_vectors = {}

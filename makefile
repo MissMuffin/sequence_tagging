@@ -8,7 +8,7 @@ glove:
 
 glove840B:
 	wget -P ./data/ "https://nlp.stanford.edu/data/glove.840B.300d.zip"
-	unzip ./data/glove.840B.300d.zip -d data/glove.840B.300d/
+	unzip ./data/glove.840B.300d.zip -d data/glove.840B/
 	rm ./data/glove.840B.300d.zip
 
 fasttext:
