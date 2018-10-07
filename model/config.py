@@ -64,8 +64,8 @@ class Config:
         if not os.path.exists(self.dir_output):
             os.makedirs(self.dir_output)
 
-        self.filename_word_embeddings = "data/glove.6B/glove.6B.{}d.txt".format(dim_word)
-        self.filename_word_embeddings_trimmed = "data/glove.6B.{}d.trimmed.npz".format(dim_word)
+        self.filename_word_embeddings = "data/wiki.de.vec"
+        self.filename_word_embeddings_trimmed = "data/wiki.de.vec.trimmed.npz"
 
         self.filename_char_embeddings = "data/char-embeddings-{}d.txt".format(dim_char)
         self.filename_char_embeddings_trimmed = "data/char-embeddings-{}d-trimmed.npz".format(dim_char)
