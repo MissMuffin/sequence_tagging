@@ -14,34 +14,14 @@ class Config:
     dir_model = dir_output + "model.weights/"
     path_log = dir_output + "log.txt"
 
-    # embeddings
     dim_word = 300
     dim_char = 300
-
-    # fastText files from https://github.com/facebookresearch/fastText
-    filename_word_embeddings = "data/wiki.de.vec"
-    filename_word_embeddings_trimmed = "data/wiki.de.vec.trimmed.npz"
     use_pretrained_words = True
-
-    filename_char_embeddings = "data/char-embeddings-300d.txt"
-    filename_char_embeddings_trimmed = "data/char-embeddings-300d-trimmed.npz"
     use_pretrained_chars = True
-
-    # dataset
-    filename_dev = "data/germeval2014/NER-de-dev-CoNLL2003.txt"
-    filename_test = "data/germeval2014/NER-de-test-CoNLL2003.txt"
-    filename_train = "data/germeval2014/NER-de-train-CoNLL2003.txt"
-
-    max_iter = sys.maxsize  # max number of examples in a dataset
-
-    # vocab (created from dataset with build_data.py)
-    filename_words = "data/words.txt"
-    filename_tags = "data/tags.txt"
-    filename_chars = "data/chars.txt"
 
     # training
     train_word_embeddings = False
-    train_char_embeddings = False
+    train_char_embeddings = True
     nepochs          = 15
     dropout          = 0.5
     batch_size       = 20
@@ -52,14 +32,21 @@ class Config:
     nepoch_no_imprv  = 3
 
     # model hyperparameters
-    hidden_size_char = 150  # lstm on chars
-    hidden_size_lstm = 300  # lstm on word embeddings
+    hidden_size_lstm    = 300   # lstm on words
+    hidden_size_char    = 100   # lstm on chars
+    features_per_ngram  = 25    # cnn on char embeddings
+    max_size_ngram      = 6     # cnn on char embeddings
+    highway_layers      = 2     # highway network
 
     # NOTE: if both chars and crf, only 1.6x slower on GPU
     use_crf = True      # if crf, training is 1.7x slower on CPU
     use_chars = True    # if char embedding, training is 3.5x slower on CPU
 
-    def __init__(self, load=True):
+    def __init__(self, load=True,
+                 dim_word=dim_word,
+                 dim_char=dim_char,
+                 use_pretrained_words=use_pretrained_words,
+                 use_pretrained_chars=use_pretrained_chars):
         """Initialize hyperparameters and load vocabs
 
         Args:
@@ -67,14 +54,33 @@ class Config:
                 np array, else None
 
         """
+        self.dim_word = dim_word
+        self.dim_char = dim_char
+        self.use_pretrained_words = use_pretrained_words
+        self.use_pretrained_chars = use_pretrained_chars
+        self.logger = get_logger(self.path_log)
+
         # directory for training outputs
         if not os.path.exists(self.dir_output):
             os.makedirs(self.dir_output)
 
-        # create instance of logger
-        self.logger = get_logger(self.path_log)
+        self.filename_word_embeddings = "data/wiki.de.vec"
+        self.filename_word_embeddings_trimmed = "data/wiki.de.vec.trimmed.npz"
 
-        # load if requested (default)
+        self.filename_char_embeddings = "data/char-embeddings-{}d.txt".format(dim_char)
+        self.filename_char_embeddings_trimmed = "data/char-embeddings-{}d-trimmed.npz".format(dim_char)
+
+        self.filename_dev = "data/germeval2014/NER-de-dev-CoNLL2003.txt"
+        self.filename_test = "data/germeval2014/NER-de-test-CoNLL2003.txt"
+        self.filename_train = "data/germeval2014/NER-de-train-CoNLL2003.txt"
+
+        self.max_iter = sys.maxsize  # max number of examples in a dataset
+
+        # vocabs (created from dataset with build_data.py)
+        self.filename_words = "data/words.txt"
+        self.filename_tags = "data/tags.txt"
+        self.filename_chars = "data/chars-{}d.txt".format(dim_char)
+
         if load:
             """Loads vocabulary, processing functions, embeddings and datasets
 

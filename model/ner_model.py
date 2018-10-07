@@ -91,9 +91,9 @@ class NERModel:
                     # tf.nn.conv2d expects a tensor of shape [batch, in_height, in_width, in_channels]
                     batch_size, sentence_length, word_length, char_dim = shapes(char_embeddings)
                     char_embeddings_conv = tf.reshape(char_embeddings, [batch_size * sentence_length, word_length, char_dim, 1])
-                    filter_heights_widths_features = [(2, self.config.dim_char, 50),
-                                                      (3, self.config.dim_char, 100),
-                                                      (4, self.config.dim_char, 150)]
+
+                    filter_heights_widths_features = [(ngram, self.config.dim_char, ngram * self.config.features_per_ngram)
+                                                      for ngram in range(2, self.config.max_size_ngram + 1)]
                     sum_features = sum(map(lambda x: x[-1], filter_heights_widths_features))
                     pools = []
                     for height, width, features in filter_heights_widths_features:
@@ -116,7 +116,7 @@ class NERModel:
 
                 with tf.variable_scope('char-highway'):
                     _input = tf.reshape(drop, [batch_size * sentence_length, sum_features])
-                    num_layers = 2
+                    num_layers = self.config.highway_layers
                     carry_bias = -1
                     for layer in range(num_layers):
                         with tf.variable_scope('char-highway-{}'.format(layer)):
@@ -199,7 +199,7 @@ class NERModel:
         self.sess.run(tf.global_variables_initializer())
         self.saver = tf.train.Saver()
 
-    def train(self, train: CoNLLDataset, dev: CoNLLDataset) -> None:
+    def train(self, train: CoNLLDataset, dev: CoNLLDataset) -> float:
         """Performs training with early stopping and lr exponential decay
 
         Args:
@@ -228,6 +228,8 @@ class NERModel:
                 if nepoch_no_imprv >= self.config.nepoch_no_imprv:
                     self.logger.info("- early stopping {} epochs without improvement".format(nepoch_no_imprv))
                     break
+
+        return best_score
 
     def run_epoch(self, train: CoNLLDataset, dev: CoNLLDataset, epoch: int) -> int:
         """Performs one complete pass over the train set and evaluate on dev
