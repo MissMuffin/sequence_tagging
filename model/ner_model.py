@@ -125,7 +125,7 @@ class NERModel:
                         _input = t * g + (1 - t) * _input
                     char_highway_output = tf.reshape(_input, [batch_size, sentence_length, sum_features])
 
-                word_embeddings = tf.concat([word_embeddings, char_rnn_output], axis=-1)
+                word_embeddings = tf.concat([word_embeddings, char_rnn_output, char_highway_output], axis=-1)
 
         """
         Defines self.logits
