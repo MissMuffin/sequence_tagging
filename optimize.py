@@ -18,8 +18,8 @@ def main():
                   Categorical([300], name='hidden_size_lstm'),
                   Integer(100, 300, name='hidden_size_char'),
                   Integer(10, 50, name='features_per_ngram'),
-                  Integer(2, 6, name='max_size_ngram'),
-                  Integer(1, 2, name='highway_layers')]
+                  Integer(1, 6, name='max_size_ngram'),
+                  Integer(1, 3, name='highway_layers')]
 
     def func(hyperparameters: List[Any]) -> float:
         print('hyperparameters={}'.format(hyperparameters_to_dict(hyperparameters)))
