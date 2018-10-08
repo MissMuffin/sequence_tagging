@@ -1,3 +1,4 @@
+from collections import OrderedDict
 from typing import List, Any, Dict
 
 import tensorflow as tf
@@ -9,6 +10,8 @@ from skopt.plots import plot_convergence
 
 
 def main():
+
+    conf = Config()
 
     dimensions = [Categorical([50, 100, 200, 300], name='dim_char'),
                   Categorical([True], name='use_pretrained_words'),
@@ -22,7 +25,7 @@ def main():
                   Integer(1, 3, name='highway_layers')]
 
     def func(hyperparameters: List[Any]) -> float:
-        print('hyperparameters={}'.format(hyperparameters_to_dict(hyperparameters)))
+        conf.logger.info('hyperparameters={}'.format(hyperparameters_to_dict(hyperparameters)))
         config = Config(dim_char=hyperparameters[0])
         config.use_pretrained_words = hyperparameters[1]
         config.use_pretrained_chars = hyperparameters[2]
@@ -37,11 +40,11 @@ def main():
         return -NERModel(config).train(train=config.dataset_train, dev=config.dataset_dev)
 
     def hyperparameters_to_dict(hyperparameters: List[Any]) -> Dict[str, Any]:
-        return {dimension.name: hyperparameter for (dimension, hyperparameter) in zip(dimensions, hyperparameters)}
+        return OrderedDict({dimension.name: hyperparameter for (dimension, hyperparameter) in zip(dimensions, hyperparameters)})
 
     def print_results(result) -> None:
         for x_iter, func_val in zip(result.x_iters, result.func_vals):
-            print('hyperparameters={} -> f1-Score={}'.format(hyperparameters_to_dict(x_iter), -func_val))
+            conf.logger.info('hyperparameters={} -> f1-Score={}'.format(hyperparameters_to_dict(x_iter), -func_val))
 
     def callback(result) -> None:
         print_results(result)
@@ -49,7 +52,7 @@ def main():
 
     res = gp_minimize(func=func, dimensions=dimensions, callback=callback)
     plot_convergence(res)
-    print('Best result with hyperparameters={} and f1-score={}'.format(hyperparameters_to_dict(res.x), res.fun))
+    conf.logger.info('Best result with hyperparameters={} and f1-score={}'.format(hyperparameters_to_dict(res.x), res.fun))
 
 
 if __name__ == "__main__":
