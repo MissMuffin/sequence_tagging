@@ -1,5 +1,6 @@
 germeval:
 	sh ./data/germeval2014/germeval-to-conll.sh
+	sh ./data/germeval2014/germeval-to-conll-reduced.sh
 
 glove:
 	wget -P ./data/ "http://nlp.stanford.edu/data/glove.6B.zip"
