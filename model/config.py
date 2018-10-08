@@ -12,7 +12,7 @@ class Config:
     # general config
     dir_output = "results/test/"
     dir_model = dir_output + "model.weights/"
-    path_log = dir_output + "log.txt"
+    logger = get_logger(dir_output + "log.txt")
 
     dim_word = 300
     dim_char = 300
@@ -58,7 +58,6 @@ class Config:
         self.dim_char = dim_char
         self.use_pretrained_words = use_pretrained_words
         self.use_pretrained_chars = use_pretrained_chars
-        self.logger = get_logger(self.path_log)
 
         # directory for training outputs
         if not os.path.exists(self.dir_output):
