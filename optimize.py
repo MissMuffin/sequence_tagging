@@ -13,7 +13,7 @@ def main():
 
     conf = Config()
 
-    dimensions = [Categorical([50, 100, 200, 300], name='dim_char'),
+    dimensions = [Categorical([100, 200, 300], name='dim_char'),
                   Categorical([True], name='use_pretrained_words'),
                   Categorical([True], name='use_pretrained_chars'),
                   Categorical([False], name="train_word_embeddings"),
@@ -21,7 +21,7 @@ def main():
                   Categorical([300], name='hidden_size_lstm'),
                   Integer(100, 300, name='hidden_size_char'),
                   Integer(10, 50, name='features_per_ngram'),
-                  Integer(1, 6, name='max_size_ngram'),
+                  Integer(2, 6, name='max_size_ngram'),
                   Integer(1, 3, name='highway_layers')]
 
     def func(hyperparameters: List[Any]) -> float:
