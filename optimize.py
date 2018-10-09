@@ -2,11 +2,11 @@ from collections import OrderedDict
 from typing import List, Any, Dict
 
 import tensorflow as tf
-from model.config import Config
-from model.ner_model import NERModel
 from skopt import gp_minimize
 from skopt.space import Integer, Categorical
-from skopt.plots import plot_convergence
+
+from model.config import Config
+from model.ner_model import NERModel
 
 
 def main():
@@ -51,7 +51,6 @@ def main():
         tf.reset_default_graph()
 
     res = gp_minimize(func=func, dimensions=dimensions, callback=callback)
-    plot_convergence(res)
     conf.logger.info('Best result with hyperparameters={} and f1-score={}'.format(hyperparameters_to_dict(res.x), res.fun))
 
 
