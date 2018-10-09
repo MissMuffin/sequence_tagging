@@ -1,5 +1,6 @@
 import os
 import sys
+import tensorflow as tf
 
 from model.conll_dataset import CoNLLDataset
 from .data_utils import get_trimmed_embeddings, load_vocab, processing_chars_word_id, \
@@ -41,6 +42,8 @@ class Config:
     # NOTE: if both chars and crf, only 1.6x slower on GPU
     use_crf = True      # if crf, training is 1.7x slower on CPU
     use_chars = True    # if char embedding, training is 3.5x slower on CPU
+
+    tf_config = tf.ConfigProto(gpu_options=tf.GPUOptions(per_process_gpu_memory_fraction=2/12))
 
     def __init__(self, load=True,
                  dim_word=dim_word,
