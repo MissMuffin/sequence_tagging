@@ -1,0 +1,2565 @@
+2018-09-27 19:06:14,113:INFO: glove word embeddings
+2018-09-27 19:06:14,114:INFO: >> d300		pretrained = True	trainable = False
+2018-09-27 19:06:14,114:INFO: language model word embeddings
+2018-09-27 19:06:14,114:INFO: None
+2018-09-27 19:06:14,114:INFO: init chars d100:	True
+2018-09-27 19:06:14,114:INFO: using CRF:	True
+2018-09-27 19:06:14,115:INFO: 
+
+
+2018-09-27 19:06:16,008:INFO: Initializing tf session
+2018-09-27 19:06:17,127:INFO: Epoch 1 out of 20
+2018-09-27 19:07:58,141:INFO: acc 97.71 - precision 0.85 - f1 85.87 - recall 0.87
+2018-09-27 19:07:58,606:INFO: - new best score!
+2018-09-27 19:07:58,613:INFO: Epoch 2 out of 20
+2018-09-27 19:09:38,269:INFO: acc 98.38 - precision 0.90 - f1 90.43 - recall 0.91
+2018-09-27 19:09:38,601:INFO: - new best score!
+2018-09-27 19:09:38,608:INFO: Epoch 3 out of 20
+2018-09-27 19:11:18,307:INFO: acc 98.54 - precision 0.91 - f1 91.55 - recall 0.92
+2018-09-27 19:11:18,669:INFO: - new best score!
+2018-09-27 19:11:18,677:INFO: Epoch 4 out of 20
+2018-09-27 19:12:58,771:INFO: acc 98.65 - precision 0.92 - f1 92.19 - recall 0.92
+2018-09-27 19:12:59,202:INFO: - new best score!
+2018-09-27 19:12:59,209:INFO: Epoch 5 out of 20
+2018-09-27 19:14:38,991:INFO: acc 98.80 - precision 0.93 - f1 93.15 - recall 0.93
+2018-09-27 19:14:39,346:INFO: - new best score!
+2018-09-27 19:14:39,353:INFO: Epoch 6 out of 20
+2018-09-27 19:16:19,255:INFO: acc 98.81 - precision 0.93 - f1 93.26 - recall 0.93
+2018-09-27 19:16:19,659:INFO: - new best score!
+2018-09-27 19:16:19,666:INFO: Epoch 7 out of 20
+2018-09-27 19:17:59,316:INFO: acc 98.81 - precision 0.93 - f1 93.32 - recall 0.93
+2018-09-27 19:17:59,674:INFO: - new best score!
+2018-09-27 19:17:59,681:INFO: Epoch 8 out of 20
+2018-09-27 19:19:39,723:INFO: acc 98.88 - precision 0.94 - f1 93.72 - recall 0.94
+2018-09-27 19:19:40,077:INFO: - new best score!
+2018-09-27 19:19:40,085:INFO: Epoch 9 out of 20
+2018-09-27 19:21:19,988:INFO: acc 98.89 - precision 0.94 - f1 93.71 - recall 0.94
+2018-09-27 19:21:19,989:INFO: Epoch 10 out of 20
+2018-09-27 19:22:59,896:INFO: acc 98.87 - precision 0.94 - f1 93.73 - recall 0.94
+2018-09-27 19:23:00,258:INFO: - new best score!
+2018-09-27 19:23:00,265:INFO: Epoch 11 out of 20
+2018-09-27 19:24:40,220:INFO: acc 98.93 - precision 0.94 - f1 94.01 - recall 0.94
+2018-09-27 19:24:40,644:INFO: - new best score!
+2018-09-27 19:24:40,652:INFO: Epoch 12 out of 20
+2018-09-27 19:26:20,896:INFO: acc 98.93 - precision 0.94 - f1 93.82 - recall 0.94
+2018-09-27 19:26:20,897:INFO: Epoch 13 out of 20
+2018-09-27 19:28:00,741:INFO: acc 98.94 - precision 0.94 - f1 93.93 - recall 0.94
+2018-09-27 19:28:00,741:INFO: Epoch 14 out of 20
+2018-09-27 19:29:40,721:INFO: acc 98.92 - precision 0.94 - f1 93.76 - recall 0.94
+2018-09-27 19:29:40,722:INFO: - early stopping 3 epochs without improvement
+2018-09-27 19:29:40,722:INFO: Reloading the latest trained model...
+2018-09-27 19:29:40,722:INFO: Restoring parameters from results/model.weights/
+2018-09-27 19:29:40,788:INFO: Testing model over test set
+2018-09-27 19:29:47,642:INFO: acc 97.82 - precision 0.89 - f1 89.34 - recall 0.90
+2018-09-27 19:29:47,685:INFO: glove word embeddings
+2018-09-27 19:29:47,686:INFO: >> d300		pretrained = True	trainable = True
+2018-09-27 19:29:47,686:INFO: language model word embeddings
+2018-09-27 19:29:47,686:INFO: None
+2018-09-27 19:29:47,686:INFO: init chars d100:	True
+2018-09-27 19:29:47,686:INFO: using CRF:	True
+2018-09-27 19:29:47,686:INFO: 
+
+
+2018-09-27 19:29:49,565:INFO: Initializing tf session
+2018-09-27 19:29:50,463:INFO: Epoch 1 out of 20
+2018-09-27 19:31:31,630:INFO: acc 98.00 - precision 0.86 - f1 86.90 - recall 0.88
+2018-09-27 19:31:32,139:INFO: - new best score!
+2018-09-27 19:31:32,140:INFO: Epoch 2 out of 20
+2018-09-27 19:33:14,453:INFO: acc 98.56 - precision 0.91 - f1 91.10 - recall 0.91
+2018-09-27 19:33:14,944:INFO: - new best score!
+2018-09-27 19:33:14,945:INFO: Epoch 3 out of 20
+2018-09-27 19:34:55,400:INFO: acc 98.75 - precision 0.92 - f1 92.29 - recall 0.93
+2018-09-27 19:34:55,978:INFO: - new best score!
+2018-09-27 19:34:55,979:INFO: Epoch 4 out of 20
+2018-09-27 19:36:38,550:INFO: acc 98.79 - precision 0.93 - f1 92.81 - recall 0.93
+2018-09-27 19:36:38,984:INFO: - new best score!
+2018-09-27 19:36:38,984:INFO: Epoch 5 out of 20
+2018-09-27 19:38:17,970:INFO: acc 98.88 - precision 0.93 - f1 93.34 - recall 0.94
+2018-09-27 19:38:18,442:INFO: - new best score!
+2018-09-27 19:38:18,442:INFO: Epoch 6 out of 20
+2018-09-27 19:39:56,737:INFO: acc 98.86 - precision 0.93 - f1 93.14 - recall 0.93
+2018-09-27 19:39:56,738:INFO: Epoch 7 out of 20
+2018-09-27 19:41:35,787:INFO: acc 98.88 - precision 0.93 - f1 93.28 - recall 0.94
+2018-09-27 19:41:35,787:INFO: Epoch 8 out of 20
+2018-09-27 19:43:14,757:INFO: acc 98.89 - precision 0.93 - f1 93.36 - recall 0.94
+2018-09-27 19:43:15,201:INFO: - new best score!
+2018-09-27 19:43:15,201:INFO: Epoch 9 out of 20
+2018-09-27 19:44:53,849:INFO: acc 98.86 - precision 0.93 - f1 93.13 - recall 0.93
+2018-09-27 19:44:53,850:INFO: Epoch 10 out of 20
+2018-09-27 19:46:33,007:INFO: acc 98.90 - precision 0.93 - f1 93.45 - recall 0.94
+2018-09-27 19:46:33,464:INFO: - new best score!
+2018-09-27 19:46:33,465:INFO: Epoch 11 out of 20
+2018-09-27 19:48:11,963:INFO: acc 98.89 - precision 0.93 - f1 93.25 - recall 0.93
+2018-09-27 19:48:11,963:INFO: Epoch 12 out of 20
+2018-09-27 19:49:50,557:INFO: acc 98.95 - precision 0.93 - f1 93.53 - recall 0.94
+2018-09-27 19:49:51,019:INFO: - new best score!
+2018-09-27 19:49:51,019:INFO: Epoch 13 out of 20
+2018-09-27 19:51:29,684:INFO: acc 98.90 - precision 0.93 - f1 93.48 - recall 0.94
+2018-09-27 19:51:29,684:INFO: Epoch 14 out of 20
+2018-09-27 19:53:08,261:INFO: acc 98.95 - precision 0.93 - f1 93.63 - recall 0.94
+2018-09-27 19:53:08,720:INFO: - new best score!
+2018-09-27 19:53:08,720:INFO: Epoch 15 out of 20
+2018-09-27 19:54:47,925:INFO: acc 98.95 - precision 0.93 - f1 93.63 - recall 0.94
+2018-09-27 19:54:48,474:INFO: - new best score!
+2018-09-27 19:54:48,475:INFO: Epoch 16 out of 20
+2018-09-27 19:56:26,764:INFO: acc 98.91 - precision 0.93 - f1 93.42 - recall 0.94
+2018-09-27 19:56:26,764:INFO: Epoch 17 out of 20
+2018-09-27 19:58:05,457:INFO: acc 98.95 - precision 0.94 - f1 93.73 - recall 0.94
+2018-09-27 19:58:06,007:INFO: - new best score!
+2018-09-27 19:58:06,008:INFO: Epoch 18 out of 20
+2018-09-27 19:59:44,784:INFO: acc 98.99 - precision 0.93 - f1 93.65 - recall 0.94
+2018-09-27 19:59:44,785:INFO: Epoch 19 out of 20
+2018-09-27 20:01:23,177:INFO: acc 98.94 - precision 0.93 - f1 93.66 - recall 0.94
+2018-09-27 20:01:23,178:INFO: Epoch 20 out of 20
+2018-09-27 20:03:00,884:INFO: acc 98.94 - precision 0.93 - f1 93.56 - recall 0.94
+2018-09-27 20:03:00,885:INFO: - early stopping 3 epochs without improvement
+2018-09-27 20:03:00,885:INFO: Reloading the latest trained model...
+2018-09-27 20:03:00,885:INFO: Restoring parameters from results/model.weights/
+2018-09-27 20:03:00,956:INFO: Testing model over test set
+2018-09-27 20:03:08,580:INFO: acc 97.90 - precision 0.89 - f1 89.35 - recall 0.90
+2018-09-27 20:03:08,581:INFO: glove word embeddings
+2018-09-27 20:03:08,581:INFO: >> d300		pretrained = True	trainable = True
+2018-09-27 20:03:08,581:INFO: language model word embeddings
+2018-09-27 20:03:08,582:INFO: None
+2018-09-27 20:03:08,582:INFO: init chars d100:	True
+2018-09-27 20:03:08,582:INFO: using CRF:	True
+2018-09-27 20:03:08,582:INFO: 
+
+
+2018-09-27 20:03:10,523:INFO: Initializing tf session
+2018-09-27 20:03:11,683:INFO: Epoch 1 out of 20
+2018-09-27 20:04:51,726:INFO: acc 98.06 - precision 0.87 - f1 87.86 - recall 0.89
+2018-09-27 20:04:52,187:INFO: - new best score!
+2018-09-27 20:04:52,194:INFO: Epoch 2 out of 20
+2018-09-27 20:06:31,131:INFO: acc 98.56 - precision 0.91 - f1 91.42 - recall 0.92
+2018-09-27 20:06:31,651:INFO: - new best score!
+2018-09-27 20:06:31,651:INFO: Epoch 3 out of 20
+2018-09-27 20:08:08,735:INFO: acc 98.74 - precision 0.92 - f1 92.37 - recall 0.93
+2018-09-27 20:08:09,166:INFO: - new best score!
+2018-09-27 20:08:09,166:INFO: Epoch 4 out of 20
+2018-09-27 20:09:48,265:INFO: acc 98.79 - precision 0.93 - f1 92.83 - recall 0.93
+2018-09-27 20:09:48,720:INFO: - new best score!
+2018-09-27 20:09:48,720:INFO: Epoch 5 out of 20
+2018-09-27 20:11:27,359:INFO: acc 98.82 - precision 0.93 - f1 92.89 - recall 0.93
+2018-09-27 20:11:27,761:INFO: - new best score!
+2018-09-27 20:11:27,762:INFO: Epoch 6 out of 20
+2018-09-27 20:13:06,459:INFO: acc 98.87 - precision 0.93 - f1 93.14 - recall 0.93
+2018-09-27 20:13:07,061:INFO: - new best score!
+2018-09-27 20:13:07,069:INFO: Epoch 7 out of 20
+2018-09-27 20:14:45,839:INFO: acc 98.82 - precision 0.93 - f1 92.94 - recall 0.93
+2018-09-27 20:14:45,839:INFO: Epoch 8 out of 20
+2018-09-27 20:16:24,802:INFO: acc 98.90 - precision 0.93 - f1 93.52 - recall 0.94
+2018-09-27 20:16:25,312:INFO: - new best score!
+2018-09-27 20:16:25,313:INFO: Epoch 9 out of 20
+2018-09-27 20:18:02,690:INFO: acc 98.86 - precision 0.93 - f1 93.24 - recall 0.94
+2018-09-27 20:18:02,690:INFO: Epoch 10 out of 20
+2018-09-27 20:19:41,581:INFO: acc 98.85 - precision 0.93 - f1 93.22 - recall 0.94
+2018-09-27 20:19:41,582:INFO: Epoch 11 out of 20
+2018-09-27 20:21:20,332:INFO: acc 98.85 - precision 0.93 - f1 93.15 - recall 0.93
+2018-09-27 20:21:20,333:INFO: - early stopping 3 epochs without improvement
+2018-09-27 20:21:20,333:INFO: Reloading the latest trained model...
+2018-09-27 20:21:20,333:INFO: Restoring parameters from results/model.weights/
+2018-09-27 20:21:20,401:INFO: Testing model over test set
+2018-09-27 20:21:28,089:INFO: acc 97.74 - precision 0.88 - f1 88.33 - recall 0.89
+2018-09-27 20:21:28,089:INFO: glove word embeddings
+2018-09-27 20:21:28,090:INFO: >> d300		pretrained = True	trainable = True
+2018-09-27 20:21:28,090:INFO: language model word embeddings
+2018-09-27 20:21:28,090:INFO: None
+2018-09-27 20:21:28,090:INFO: init chars d100:	True
+2018-09-27 20:21:28,090:INFO: using CRF:	True
+2018-09-27 20:21:28,091:INFO: 
+
+
+2018-09-27 20:21:29,974:INFO: Initializing tf session
+2018-09-27 20:21:31,028:INFO: Epoch 1 out of 20
+2018-09-27 20:23:08,812:INFO: acc 98.13 - precision 0.88 - f1 88.60 - recall 0.89
+2018-09-27 20:23:09,354:INFO: - new best score!
+2018-09-27 20:23:09,354:INFO: Epoch 2 out of 20
+2018-09-27 20:24:47,694:INFO: acc 98.58 - precision 0.91 - f1 91.27 - recall 0.92
+2018-09-27 20:24:48,109:INFO: - new best score!
+2018-09-27 20:24:48,109:INFO: Epoch 3 out of 20
+2018-09-27 20:26:27,333:INFO: acc 98.74 - precision 0.92 - f1 92.58 - recall 0.93
+2018-09-27 20:26:27,674:INFO: - new best score!
+2018-09-27 20:26:27,675:INFO: Epoch 4 out of 20
+2018-09-27 20:28:06,005:INFO: acc 98.78 - precision 0.93 - f1 92.79 - recall 0.93
+2018-09-27 20:28:06,413:INFO: - new best score!
+2018-09-27 20:28:06,413:INFO: Epoch 5 out of 20
+2018-09-27 20:29:43,730:INFO: acc 98.87 - precision 0.93 - f1 93.28 - recall 0.94
+2018-09-27 20:29:44,157:INFO: - new best score!
+2018-09-27 20:29:44,158:INFO: Epoch 6 out of 20
+2018-09-27 20:31:22,243:INFO: acc 98.91 - precision 0.93 - f1 93.42 - recall 0.94
+2018-09-27 20:31:22,715:INFO: - new best score!
+2018-09-27 20:31:22,716:INFO: Epoch 7 out of 20
+2018-09-27 20:33:01,280:INFO: acc 98.93 - precision 0.94 - f1 93.70 - recall 0.94
+2018-09-27 20:33:01,728:INFO: - new best score!
+2018-09-27 20:33:01,728:INFO: Epoch 8 out of 20
+2018-09-27 20:34:39,905:INFO: acc 98.92 - precision 0.93 - f1 93.38 - recall 0.94
+2018-09-27 20:34:39,905:INFO: Epoch 9 out of 20
+2018-09-27 20:36:16,975:INFO: acc 98.93 - precision 0.93 - f1 93.62 - recall 0.94
+2018-09-27 20:36:16,976:INFO: Epoch 10 out of 20
+2018-09-27 20:37:52,897:INFO: acc 98.92 - precision 0.93 - f1 93.52 - recall 0.94
+2018-09-27 20:37:52,897:INFO: - early stopping 3 epochs without improvement
+2018-09-27 20:37:52,897:INFO: Reloading the latest trained model...
+2018-09-27 20:37:52,898:INFO: Restoring parameters from results/model.weights/
+2018-09-27 20:37:52,955:INFO: Testing model over test set
+2018-09-27 20:37:59,866:INFO: acc 97.86 - precision 0.89 - f1 89.15 - recall 0.89
+2018-09-27 20:37:59,867:INFO: glove word embeddings
+2018-09-27 20:37:59,867:INFO: >> d300		pretrained = True	trainable = True
+2018-09-27 20:37:59,867:INFO: language model word embeddings
+2018-09-27 20:37:59,868:INFO: None
+2018-09-27 20:37:59,868:INFO: init chars d100:	True
+2018-09-27 20:37:59,868:INFO: using CRF:	True
+2018-09-27 20:37:59,869:INFO: 
+
+
+2018-09-27 20:38:01,920:INFO: Initializing tf session
+2018-09-27 20:38:02,877:INFO: Epoch 1 out of 20
+2018-09-27 20:39:42,592:INFO: acc 98.09 - precision 0.86 - f1 87.70 - recall 0.89
+2018-09-27 20:39:43,024:INFO: - new best score!
+2018-09-27 20:39:43,033:INFO: Epoch 2 out of 20
+2018-09-27 20:41:22,124:INFO: acc 98.54 - precision 0.90 - f1 90.73 - recall 0.91
+2018-09-27 20:41:22,582:INFO: - new best score!
+2018-09-27 20:41:22,591:INFO: Epoch 3 out of 20
+2018-09-27 20:43:01,235:INFO: acc 98.74 - precision 0.92 - f1 92.19 - recall 0.93
+2018-09-27 20:43:01,680:INFO: - new best score!
+2018-09-27 20:43:01,689:INFO: Epoch 4 out of 20
+2018-09-27 20:44:39,665:INFO: acc 98.78 - precision 0.93 - f1 92.76 - recall 0.93
+2018-09-27 20:44:40,192:INFO: - new best score!
+2018-09-27 20:44:40,201:INFO: Epoch 5 out of 20
+2018-09-27 20:46:17,943:INFO: acc 98.83 - precision 0.93 - f1 92.98 - recall 0.93
+2018-09-27 20:46:18,400:INFO: - new best score!
+2018-09-27 20:46:18,408:INFO: Epoch 6 out of 20
+2018-09-27 20:47:58,248:INFO: acc 98.86 - precision 0.93 - f1 93.11 - recall 0.93
+2018-09-27 20:47:58,789:INFO: - new best score!
+2018-09-27 20:47:58,797:INFO: Epoch 7 out of 20
+2018-09-27 20:49:36,503:INFO: acc 98.85 - precision 0.93 - f1 93.13 - recall 0.94
+2018-09-27 20:49:37,050:INFO: - new best score!
+2018-09-27 20:49:37,058:INFO: Epoch 8 out of 20
+2018-09-27 20:51:12,946:INFO: acc 98.86 - precision 0.93 - f1 93.19 - recall 0.93
+2018-09-27 20:51:13,367:INFO: - new best score!
+2018-09-27 20:51:13,375:INFO: Epoch 9 out of 20
+2018-09-27 20:52:51,696:INFO: acc 98.92 - precision 0.93 - f1 93.56 - recall 0.94
+2018-09-27 20:52:52,213:INFO: - new best score!
+2018-09-27 20:52:52,221:INFO: Epoch 10 out of 20
+2018-09-27 20:54:29,682:INFO: acc 98.87 - precision 0.93 - f1 93.37 - recall 0.94
+2018-09-27 20:54:29,683:INFO: Epoch 11 out of 20
+2018-09-27 20:56:06,781:INFO: acc 98.91 - precision 0.93 - f1 93.41 - recall 0.94
+2018-09-27 20:56:06,781:INFO: Epoch 12 out of 20
+2018-09-27 20:57:45,881:INFO: acc 98.84 - precision 0.93 - f1 93.26 - recall 0.93
+2018-09-27 20:57:45,882:INFO: - early stopping 3 epochs without improvement
+2018-09-27 20:57:45,882:INFO: Reloading the latest trained model...
+2018-09-27 20:57:45,882:INFO: Restoring parameters from results/model.weights/
+2018-09-27 20:57:45,962:INFO: Testing model over test set
+2018-09-27 20:57:53,362:INFO: acc 97.82 - precision 0.88 - f1 88.83 - recall 0.89
+2018-09-27 20:57:53,363:INFO: glove word embeddings
+2018-09-27 20:57:53,363:INFO: >> d300		pretrained = True	trainable = True
+2018-09-27 20:57:53,363:INFO: language model word embeddings
+2018-09-27 20:57:53,364:INFO: None
+2018-09-27 20:57:53,364:INFO: init chars d100:	True
+2018-09-27 20:57:53,364:INFO: using CRF:	True
+2018-09-27 20:57:53,365:INFO: 
+
+
+2018-09-27 20:57:55,251:INFO: Initializing tf session
+2018-09-27 20:57:56,290:INFO: Epoch 1 out of 20
+2018-09-27 20:59:34,672:INFO: acc 98.05 - precision 0.87 - f1 87.77 - recall 0.89
+2018-09-27 20:59:35,211:INFO: - new best score!
+2018-09-27 20:59:35,218:INFO: Epoch 2 out of 20
+2018-09-27 21:01:12,739:INFO: acc 98.57 - precision 0.91 - f1 91.31 - recall 0.92
+2018-09-27 21:01:13,126:INFO: - new best score!
+2018-09-27 21:01:13,133:INFO: Epoch 3 out of 20
+2018-09-27 21:02:51,997:INFO: acc 98.80 - precision 0.93 - f1 92.72 - recall 0.93
+2018-09-27 21:02:52,421:INFO: - new best score!
+2018-09-27 21:02:52,429:INFO: Epoch 4 out of 20
+2018-09-27 21:04:31,257:INFO: acc 98.87 - precision 0.93 - f1 93.26 - recall 0.94
+2018-09-27 21:04:31,795:INFO: - new best score!
+2018-09-27 21:04:31,802:INFO: Epoch 5 out of 20
+2018-09-27 21:06:09,129:INFO: acc 98.88 - precision 0.93 - f1 93.06 - recall 0.93
+2018-09-27 21:06:09,130:INFO: Epoch 6 out of 20
+2018-09-27 21:07:47,664:INFO: acc 98.89 - precision 0.93 - f1 93.34 - recall 0.94
+2018-09-27 21:07:48,100:INFO: - new best score!
+2018-09-27 21:07:48,107:INFO: Epoch 7 out of 20
+2018-09-27 21:09:26,646:INFO: acc 98.91 - precision 0.93 - f1 93.41 - recall 0.94
+2018-09-27 21:09:27,044:INFO: - new best score!
+2018-09-27 21:09:27,051:INFO: Epoch 8 out of 20
+2018-09-27 21:11:05,424:INFO: acc 98.88 - precision 0.93 - f1 93.43 - recall 0.94
+2018-09-27 21:11:05,903:INFO: - new best score!
+2018-09-27 21:11:05,911:INFO: Epoch 9 out of 20
+2018-09-27 21:12:44,352:INFO: acc 98.92 - precision 0.93 - f1 93.54 - recall 0.94
+2018-09-27 21:12:44,713:INFO: - new best score!
+2018-09-27 21:12:44,720:INFO: Epoch 10 out of 20
+2018-09-27 21:14:23,775:INFO: acc 98.92 - precision 0.93 - f1 93.48 - recall 0.94
+2018-09-27 21:14:23,776:INFO: Epoch 11 out of 20
+2018-09-27 21:16:02,467:INFO: acc 98.93 - precision 0.93 - f1 93.52 - recall 0.94
+2018-09-27 21:16:02,468:INFO: Epoch 12 out of 20
+2018-09-27 21:17:41,082:INFO: acc 98.91 - precision 0.93 - f1 93.56 - recall 0.94
+2018-09-27 21:17:41,448:INFO: - new best score!
+2018-09-27 21:17:41,454:INFO: Epoch 13 out of 20
+2018-09-27 21:19:19,953:INFO: acc 98.90 - precision 0.93 - f1 93.52 - recall 0.94
+2018-09-27 21:19:19,953:INFO: Epoch 14 out of 20
+2018-09-27 21:20:58,751:INFO: acc 98.90 - precision 0.93 - f1 93.51 - recall 0.94
+2018-09-27 21:20:58,751:INFO: Epoch 15 out of 20
+2018-09-27 21:22:37,305:INFO: acc 98.93 - precision 0.93 - f1 93.61 - recall 0.94
+2018-09-27 21:22:37,739:INFO: - new best score!
+2018-09-27 21:22:37,746:INFO: Epoch 16 out of 20
+2018-09-27 21:24:16,601:INFO: acc 98.91 - precision 0.93 - f1 93.61 - recall 0.94
+2018-09-27 21:24:17,084:INFO: - new best score!
+2018-09-27 21:24:17,091:INFO: Epoch 17 out of 20
+2018-09-27 21:25:55,661:INFO: acc 98.90 - precision 0.93 - f1 93.42 - recall 0.94
+2018-09-27 21:25:55,661:INFO: Epoch 18 out of 20
+2018-09-27 21:27:34,634:INFO: acc 98.92 - precision 0.93 - f1 93.48 - recall 0.94
+2018-09-27 21:27:34,634:INFO: Epoch 19 out of 20
+2018-09-27 21:29:13,076:INFO: acc 98.93 - precision 0.93 - f1 93.51 - recall 0.94
+2018-09-27 21:29:13,076:INFO: - early stopping 3 epochs without improvement
+2018-09-27 21:29:13,077:INFO: Reloading the latest trained model...
+2018-09-27 21:29:13,077:INFO: Restoring parameters from results/model.weights/
+2018-09-27 21:29:13,148:INFO: Testing model over test set
+2018-09-27 21:29:20,610:INFO: acc 97.86 - precision 0.89 - f1 89.09 - recall 0.90
+2018-09-27 21:29:20,611:INFO: glove word embeddings
+2018-09-27 21:29:20,611:INFO: >> d300		pretrained = True	trainable = True
+2018-09-27 21:29:20,612:INFO: language model word embeddings
+2018-09-27 21:29:20,612:INFO: None
+2018-09-27 21:29:20,612:INFO: init chars d100:	True
+2018-09-27 21:29:20,613:INFO: using CRF:	True
+2018-09-27 21:29:20,613:INFO: 
+
+
+2018-09-27 21:29:22,510:INFO: Initializing tf session
+2018-09-27 21:29:23,611:INFO: Epoch 1 out of 20
+2018-09-27 21:31:02,950:INFO: acc 98.03 - precision 0.87 - f1 87.40 - recall 0.88
+2018-09-27 21:31:03,381:INFO: - new best score!
+2018-09-27 21:31:03,382:INFO: Epoch 2 out of 20
+2018-09-27 21:32:42,060:INFO: acc 98.56 - precision 0.91 - f1 91.29 - recall 0.92
+2018-09-27 21:32:42,462:INFO: - new best score!
+2018-09-27 21:32:42,462:INFO: Epoch 3 out of 20
+2018-09-27 21:34:21,621:INFO: acc 98.74 - precision 0.92 - f1 92.45 - recall 0.93
+2018-09-27 21:34:22,141:INFO: - new best score!
+2018-09-27 21:34:22,142:INFO: Epoch 4 out of 20
+2018-09-27 21:36:00,846:INFO: acc 98.86 - precision 0.93 - f1 93.23 - recall 0.94
+2018-09-27 21:36:01,222:INFO: - new best score!
+2018-09-27 21:36:01,223:INFO: Epoch 5 out of 20
+2018-09-27 21:37:39,945:INFO: acc 98.88 - precision 0.93 - f1 93.29 - recall 0.94
+2018-09-27 21:37:40,383:INFO: - new best score!
+2018-09-27 21:37:40,384:INFO: Epoch 6 out of 20
+2018-09-27 21:39:18,700:INFO: acc 98.88 - precision 0.93 - f1 93.30 - recall 0.94
+2018-09-27 21:39:19,223:INFO: - new best score!
+2018-09-27 21:39:19,223:INFO: Epoch 7 out of 20
+2018-09-27 21:40:57,492:INFO: acc 98.86 - precision 0.93 - f1 93.34 - recall 0.94
+2018-09-27 21:40:57,880:INFO: - new best score!
+2018-09-27 21:40:57,881:INFO: Epoch 8 out of 20
+2018-09-27 21:42:35,836:INFO: acc 98.91 - precision 0.93 - f1 93.51 - recall 0.94
+2018-09-27 21:42:36,235:INFO: - new best score!
+2018-09-27 21:42:36,236:INFO: Epoch 9 out of 20
+2018-09-27 21:44:14,480:INFO: acc 98.86 - precision 0.93 - f1 93.17 - recall 0.94
+2018-09-27 21:44:14,480:INFO: Epoch 10 out of 20
+2018-09-27 21:45:52,567:INFO: acc 98.90 - precision 0.93 - f1 93.52 - recall 0.94
+2018-09-27 21:45:53,073:INFO: - new best score!
+2018-09-27 21:45:53,074:INFO: Epoch 11 out of 20
+2018-09-27 21:47:31,237:INFO: acc 98.89 - precision 0.93 - f1 93.42 - recall 0.94
+2018-09-27 21:47:31,237:INFO: Epoch 12 out of 20
+2018-09-27 21:49:10,484:INFO: acc 98.88 - precision 0.93 - f1 93.35 - recall 0.94
+2018-09-27 21:49:10,485:INFO: Epoch 13 out of 20
+2018-09-27 21:50:49,820:INFO: acc 98.92 - precision 0.93 - f1 93.60 - recall 0.94
+2018-09-27 21:50:50,278:INFO: - new best score!
+2018-09-27 21:50:50,278:INFO: Epoch 14 out of 20
+2018-09-27 21:52:27,002:INFO: acc 98.90 - precision 0.93 - f1 93.64 - recall 0.94
+2018-09-27 21:52:27,523:INFO: - new best score!
+2018-09-27 21:52:27,524:INFO: Epoch 15 out of 20
+2018-09-27 21:54:07,106:INFO: acc 98.91 - precision 0.93 - f1 93.52 - recall 0.94
+2018-09-27 21:54:07,107:INFO: Epoch 16 out of 20
+2018-09-27 21:55:46,142:INFO: acc 98.94 - precision 0.94 - f1 93.84 - recall 0.94
+2018-09-27 21:55:46,499:INFO: - new best score!
+2018-09-27 21:55:46,499:INFO: Epoch 17 out of 20
+2018-09-27 21:57:24,920:INFO: acc 98.94 - precision 0.94 - f1 93.79 - recall 0.94
+2018-09-27 21:57:24,921:INFO: Epoch 18 out of 20
+2018-09-27 21:59:01,196:INFO: acc 98.96 - precision 0.94 - f1 93.95 - recall 0.94
+2018-09-27 21:59:01,692:INFO: - new best score!
+2018-09-27 21:59:01,693:INFO: Epoch 19 out of 20
+2018-09-27 22:00:38,685:INFO: acc 98.96 - precision 0.94 - f1 93.84 - recall 0.94
+2018-09-27 22:00:38,686:INFO: Epoch 20 out of 20
+2018-09-27 22:02:17,919:INFO: acc 98.98 - precision 0.94 - f1 93.97 - recall 0.94
+2018-09-27 22:02:18,380:INFO: - new best score!
+2018-09-27 22:02:18,381:INFO: Reloading the latest trained model...
+2018-09-27 22:02:18,381:INFO: Restoring parameters from results/model.weights/
+2018-09-27 22:02:18,439:INFO: Testing model over test set
+2018-09-27 22:02:25,639:INFO: acc 97.88 - precision 0.89 - f1 89.10 - recall 0.89
+2018-09-27 22:02:25,680:INFO: glove word embeddings
+2018-09-27 22:02:25,680:INFO: >> d300		pretrained = True	trainable = False
+2018-09-27 22:02:25,680:INFO: language model word embeddings
+2018-09-27 22:02:25,681:INFO: >> d50		pretrained = True	trainable = False
+2018-09-27 22:02:25,681:INFO: init chars d100:	True
+2018-09-27 22:02:25,681:INFO: using CRF:	True
+2018-09-27 22:02:25,681:INFO: 
+
+
+2018-09-27 22:02:27,634:INFO: Initializing tf session
+2018-09-27 22:02:28,587:INFO: Epoch 1 out of 20
+2018-09-27 22:04:07,933:INFO: acc 97.84 - precision 0.85 - f1 86.46 - recall 0.87
+2018-09-27 22:04:08,324:INFO: - new best score!
+2018-09-27 22:04:08,325:INFO: Epoch 2 out of 20
+2018-09-27 22:05:46,268:INFO: acc 98.31 - precision 0.89 - f1 89.70 - recall 0.90
+2018-09-27 22:05:46,653:INFO: - new best score!
+2018-09-27 22:05:46,653:INFO: Epoch 3 out of 20
+2018-09-27 22:07:24,777:INFO: acc 98.61 - precision 0.92 - f1 91.77 - recall 0.92
+2018-09-27 22:07:25,232:INFO: - new best score!
+2018-09-27 22:07:25,232:INFO: Epoch 4 out of 20
+2018-09-27 22:09:03,111:INFO: acc 98.75 - precision 0.93 - f1 92.63 - recall 0.93
+2018-09-27 22:09:03,490:INFO: - new best score!
+2018-09-27 22:09:03,491:INFO: Epoch 5 out of 20
+2018-09-27 22:10:41,559:INFO: acc 98.81 - precision 0.93 - f1 93.23 - recall 0.93
+2018-09-27 22:10:41,922:INFO: - new best score!
+2018-09-27 22:10:41,922:INFO: Epoch 6 out of 20
+2018-09-27 22:12:19,247:INFO: acc 98.83 - precision 0.93 - f1 93.42 - recall 0.93
+2018-09-27 22:12:19,791:INFO: - new best score!
+2018-09-27 22:12:19,792:INFO: Epoch 7 out of 20
+2018-09-27 22:13:58,052:INFO: acc 98.81 - precision 0.93 - f1 93.19 - recall 0.93
+2018-09-27 22:13:58,053:INFO: Epoch 8 out of 20
+2018-09-27 22:15:35,756:INFO: acc 98.86 - precision 0.93 - f1 93.34 - recall 0.93
+2018-09-27 22:15:35,757:INFO: Epoch 9 out of 20
+2018-09-27 22:17:14,238:INFO: acc 98.89 - precision 0.94 - f1 93.56 - recall 0.93
+2018-09-27 22:17:14,725:INFO: - new best score!
+2018-09-27 22:17:14,725:INFO: Epoch 10 out of 20
+2018-09-27 22:18:52,878:INFO: acc 98.94 - precision 0.94 - f1 93.72 - recall 0.94
+2018-09-27 22:18:53,281:INFO: - new best score!
+2018-09-27 22:18:53,282:INFO: Epoch 11 out of 20
+2018-09-27 22:20:31,259:INFO: acc 98.93 - precision 0.94 - f1 93.69 - recall 0.94
+2018-09-27 22:20:31,259:INFO: Epoch 12 out of 20
+2018-09-27 22:22:09,206:INFO: acc 98.94 - precision 0.94 - f1 93.83 - recall 0.94
+2018-09-27 22:22:09,620:INFO: - new best score!
+2018-09-27 22:22:09,621:INFO: Epoch 13 out of 20
+2018-09-27 22:23:47,701:INFO: acc 98.94 - precision 0.94 - f1 93.73 - recall 0.94
+2018-09-27 22:23:47,702:INFO: Epoch 14 out of 20
+2018-09-27 22:25:26,670:INFO: acc 98.96 - precision 0.94 - f1 93.95 - recall 0.94
+2018-09-27 22:25:27,062:INFO: - new best score!
+2018-09-27 22:25:27,062:INFO: Epoch 15 out of 20
+2018-09-27 22:27:05,822:INFO: acc 98.94 - precision 0.94 - f1 93.81 - recall 0.94
+2018-09-27 22:27:05,822:INFO: Epoch 16 out of 20
+2018-09-27 22:28:44,073:INFO: acc 98.95 - precision 0.94 - f1 93.78 - recall 0.94
+2018-09-27 22:28:44,073:INFO: Epoch 17 out of 20
+2018-09-27 22:30:22,237:INFO: acc 98.94 - precision 0.94 - f1 93.78 - recall 0.94
+2018-09-27 22:30:22,237:INFO: - early stopping 3 epochs without improvement
+2018-09-27 22:30:22,238:INFO: Reloading the latest trained model...
+2018-09-27 22:30:22,238:INFO: Restoring parameters from results/model.weights/
+2018-09-27 22:30:22,301:INFO: Testing model over test set
+2018-09-27 22:30:29,957:INFO: acc 97.93 - precision 0.89 - f1 89.73 - recall 0.90
+2018-09-27 22:30:29,958:INFO: glove word embeddings
+2018-09-27 22:30:29,958:INFO: >> d300		pretrained = True	trainable = False
+2018-09-27 22:30:29,958:INFO: language model word embeddings
+2018-09-27 22:30:29,959:INFO: >> d50		pretrained = True	trainable = False
+2018-09-27 22:30:29,959:INFO: init chars d100:	True
+2018-09-27 22:30:29,959:INFO: using CRF:	True
+2018-09-27 22:30:29,960:INFO: 
+
+
+2018-09-27 22:30:32,029:INFO: Initializing tf session
+2018-09-27 22:30:32,962:INFO: Epoch 1 out of 20
+2018-09-27 22:32:12,439:INFO: acc 97.70 - precision 0.86 - f1 86.00 - recall 0.86
+2018-09-27 22:32:12,929:INFO: - new best score!
+2018-09-27 22:32:12,938:INFO: Epoch 2 out of 20
+2018-09-27 22:33:50,726:INFO: acc 98.39 - precision 0.90 - f1 90.39 - recall 0.90
+2018-09-27 22:33:51,058:INFO: - new best score!
+2018-09-27 22:33:51,066:INFO: Epoch 3 out of 20
+2018-09-27 22:35:29,337:INFO: acc 98.58 - precision 0.92 - f1 91.66 - recall 0.92
+2018-09-27 22:35:29,702:INFO: - new best score!
+2018-09-27 22:35:29,711:INFO: Epoch 4 out of 20
+2018-09-27 22:37:06,961:INFO: acc 98.68 - precision 0.92 - f1 92.23 - recall 0.92
+2018-09-27 22:37:07,431:INFO: - new best score!
+2018-09-27 22:37:07,439:INFO: Epoch 5 out of 20
+2018-09-27 22:38:44,635:INFO: acc 98.76 - precision 0.93 - f1 92.74 - recall 0.93
+2018-09-27 22:38:45,022:INFO: - new best score!
+2018-09-27 22:38:45,030:INFO: Epoch 6 out of 20
+2018-09-27 22:40:22,933:INFO: acc 98.81 - precision 0.93 - f1 93.12 - recall 0.93
+2018-09-27 22:40:23,299:INFO: - new best score!
+2018-09-27 22:40:23,307:INFO: Epoch 7 out of 20
+2018-09-27 22:42:01,505:INFO: acc 98.78 - precision 0.93 - f1 92.98 - recall 0.93
+2018-09-27 22:42:01,506:INFO: Epoch 8 out of 20
+2018-09-27 22:43:39,684:INFO: acc 98.89 - precision 0.94 - f1 93.75 - recall 0.94
+2018-09-27 22:43:40,078:INFO: - new best score!
+2018-09-27 22:43:40,086:INFO: Epoch 9 out of 20
+2018-09-27 22:45:17,388:INFO: acc 98.90 - precision 0.94 - f1 93.56 - recall 0.94
+2018-09-27 22:45:17,389:INFO: Epoch 10 out of 20
+2018-09-27 22:46:55,589:INFO: acc 98.92 - precision 0.94 - f1 93.60 - recall 0.94
+2018-09-27 22:46:55,589:INFO: Epoch 11 out of 20
+2018-09-27 22:48:33,190:INFO: acc 98.93 - precision 0.94 - f1 93.97 - recall 0.94
+2018-09-27 22:48:33,542:INFO: - new best score!
+2018-09-27 22:48:33,550:INFO: Epoch 12 out of 20
+2018-09-27 22:50:10,907:INFO: acc 98.90 - precision 0.94 - f1 93.72 - recall 0.94
+2018-09-27 22:50:10,908:INFO: Epoch 13 out of 20
+2018-09-27 22:51:48,620:INFO: acc 98.97 - precision 0.94 - f1 94.02 - recall 0.94
+2018-09-27 22:51:48,966:INFO: - new best score!
+2018-09-27 22:51:48,974:INFO: Epoch 14 out of 20
+2018-09-27 22:53:26,916:INFO: acc 98.99 - precision 0.94 - f1 94.20 - recall 0.94
+2018-09-27 22:53:27,406:INFO: - new best score!
+2018-09-27 22:53:27,414:INFO: Epoch 15 out of 20
+2018-09-27 22:55:05,107:INFO: acc 98.98 - precision 0.94 - f1 93.96 - recall 0.94
+2018-09-27 22:55:05,108:INFO: Epoch 16 out of 20
+2018-09-27 22:56:42,781:INFO: acc 98.98 - precision 0.94 - f1 94.10 - recall 0.94
+2018-09-27 22:56:42,781:INFO: Epoch 17 out of 20
+2018-09-27 22:58:20,293:INFO: acc 98.96 - precision 0.94 - f1 93.92 - recall 0.94
+2018-09-27 22:58:20,294:INFO: - early stopping 3 epochs without improvement
+2018-09-27 22:58:20,294:INFO: Reloading the latest trained model...
+2018-09-27 22:58:20,295:INFO: Restoring parameters from results/model.weights/
+2018-09-27 22:58:20,363:INFO: Testing model over test set
+2018-09-27 22:58:27,711:INFO: acc 97.85 - precision 0.89 - f1 89.32 - recall 0.90
+2018-09-27 22:58:27,712:INFO: glove word embeddings
+2018-09-27 22:58:27,712:INFO: >> d300		pretrained = True	trainable = False
+2018-09-27 22:58:27,713:INFO: language model word embeddings
+2018-09-27 22:58:27,713:INFO: >> d50		pretrained = True	trainable = False
+2018-09-27 22:58:27,713:INFO: init chars d100:	True
+2018-09-27 22:58:27,713:INFO: using CRF:	True
+2018-09-27 22:58:27,714:INFO: 
+
+
+2018-09-27 22:58:29,636:INFO: Initializing tf session
+2018-09-27 22:58:30,693:INFO: Epoch 1 out of 20
+2018-09-27 23:00:09,767:INFO: acc 97.82 - precision 0.86 - f1 86.67 - recall 0.88
+2018-09-27 23:00:10,285:INFO: - new best score!
+2018-09-27 23:00:10,293:INFO: Epoch 2 out of 20
+2018-09-27 23:01:48,078:INFO: acc 98.31 - precision 0.89 - f1 89.80 - recall 0.90
+2018-09-27 23:01:48,471:INFO: - new best score!
+2018-09-27 23:01:48,478:INFO: Epoch 3 out of 20
+2018-09-27 23:03:26,210:INFO: acc 98.57 - precision 0.91 - f1 91.50 - recall 0.92
+2018-09-27 23:03:26,501:INFO: - new best score!
+2018-09-27 23:03:26,509:INFO: Epoch 4 out of 20
+2018-09-27 23:05:03,991:INFO: acc 98.76 - precision 0.92 - f1 92.58 - recall 0.93
+2018-09-27 23:05:04,466:INFO: - new best score!
+2018-09-27 23:05:04,474:INFO: Epoch 5 out of 20
+2018-09-27 23:06:42,527:INFO: acc 98.79 - precision 0.93 - f1 92.98 - recall 0.93
+2018-09-27 23:06:42,964:INFO: - new best score!
+2018-09-27 23:06:42,971:INFO: Epoch 6 out of 20
+2018-09-27 23:08:20,646:INFO: acc 98.84 - precision 0.93 - f1 93.04 - recall 0.93
+2018-09-27 23:08:21,111:INFO: - new best score!
+2018-09-27 23:08:21,117:INFO: Epoch 7 out of 20
+2018-09-27 23:09:59,084:INFO: acc 98.92 - precision 0.93 - f1 93.47 - recall 0.94
+2018-09-27 23:09:59,462:INFO: - new best score!
+2018-09-27 23:09:59,469:INFO: Epoch 8 out of 20
+2018-09-27 23:11:37,514:INFO: acc 98.93 - precision 0.94 - f1 93.63 - recall 0.94
+2018-09-27 23:11:37,907:INFO: - new best score!
+2018-09-27 23:11:37,914:INFO: Epoch 9 out of 20
+2018-09-27 23:13:15,101:INFO: acc 98.91 - precision 0.94 - f1 93.54 - recall 0.94
+2018-09-27 23:13:15,102:INFO: Epoch 10 out of 20
+2018-09-27 23:14:53,197:INFO: acc 98.91 - precision 0.94 - f1 93.63 - recall 0.94
+2018-09-27 23:14:53,198:INFO: Epoch 11 out of 20
+2018-09-27 23:16:30,961:INFO: acc 98.90 - precision 0.94 - f1 93.60 - recall 0.94
+2018-09-27 23:16:30,962:INFO: - early stopping 3 epochs without improvement
+2018-09-27 23:16:30,962:INFO: Reloading the latest trained model...
+2018-09-27 23:16:30,963:INFO: Restoring parameters from results/model.weights/
+2018-09-27 23:16:31,029:INFO: Testing model over test set
+2018-09-27 23:16:38,826:INFO: acc 97.82 - precision 0.89 - f1 89.09 - recall 0.89
+2018-09-27 23:16:38,828:INFO: glove word embeddings
+2018-09-27 23:16:38,828:INFO: >> d300		pretrained = True	trainable = False
+2018-09-27 23:16:38,829:INFO: language model word embeddings
+2018-09-27 23:16:38,829:INFO: >> d50		pretrained = True	trainable = False
+2018-09-27 23:16:38,830:INFO: init chars d100:	True
+2018-09-27 23:16:38,830:INFO: using CRF:	True
+2018-09-27 23:16:38,831:INFO: 
+
+
+2018-09-27 23:16:40,805:INFO: Initializing tf session
+2018-09-27 23:16:41,865:INFO: Epoch 1 out of 20
+2018-09-27 23:18:20,582:INFO: acc 97.85 - precision 0.86 - f1 86.72 - recall 0.88
+2018-09-27 23:18:20,932:INFO: - new best score!
+2018-09-27 23:18:20,943:INFO: Epoch 2 out of 20
+2018-09-27 23:19:59,251:INFO: acc 98.39 - precision 0.90 - f1 90.45 - recall 0.91
+2018-09-27 23:19:59,595:INFO: - new best score!
+2018-09-27 23:19:59,603:INFO: Epoch 3 out of 20
+2018-09-27 23:21:37,853:INFO: acc 98.59 - precision 0.92 - f1 91.78 - recall 0.92
+2018-09-27 23:21:38,333:INFO: - new best score!
+2018-09-27 23:21:38,341:INFO: Epoch 4 out of 20
+2018-09-27 23:23:16,518:INFO: acc 98.74 - precision 0.92 - f1 92.59 - recall 0.93
+2018-09-27 23:23:16,884:INFO: - new best score!
+2018-09-27 23:23:16,892:INFO: Epoch 5 out of 20
+2018-09-27 23:24:55,261:INFO: acc 98.76 - precision 0.93 - f1 92.88 - recall 0.93
+2018-09-27 23:24:55,643:INFO: - new best score!
+2018-09-27 23:24:55,651:INFO: Epoch 6 out of 20
+2018-09-27 23:26:33,953:INFO: acc 98.86 - precision 0.93 - f1 93.50 - recall 0.94
+2018-09-27 23:26:34,421:INFO: - new best score!
+2018-09-27 23:26:34,429:INFO: Epoch 7 out of 20
+2018-09-27 23:28:12,687:INFO: acc 98.84 - precision 0.93 - f1 93.32 - recall 0.94
+2018-09-27 23:28:12,688:INFO: Epoch 8 out of 20
+2018-09-27 23:29:50,591:INFO: acc 98.91 - precision 0.94 - f1 93.69 - recall 0.94
+2018-09-27 23:29:50,975:INFO: - new best score!
+2018-09-27 23:29:50,984:INFO: Epoch 9 out of 20
+2018-09-27 23:31:29,426:INFO: acc 98.92 - precision 0.94 - f1 93.80 - recall 0.94
+2018-09-27 23:31:29,778:INFO: - new best score!
+2018-09-27 23:31:29,787:INFO: Epoch 10 out of 20
+2018-09-27 23:33:08,087:INFO: acc 98.91 - precision 0.94 - f1 93.90 - recall 0.94
+2018-09-27 23:33:08,544:INFO: - new best score!
+2018-09-27 23:33:08,553:INFO: Epoch 11 out of 20
+2018-09-27 23:34:46,458:INFO: acc 98.90 - precision 0.94 - f1 93.87 - recall 0.94
+2018-09-27 23:34:46,459:INFO: Epoch 12 out of 20
+2018-09-27 23:36:24,973:INFO: acc 98.94 - precision 0.94 - f1 93.80 - recall 0.94
+2018-09-27 23:36:24,974:INFO: Epoch 13 out of 20
+2018-09-27 23:38:01,714:INFO: acc 98.98 - precision 0.94 - f1 94.15 - recall 0.94
+2018-09-27 23:38:02,051:INFO: - new best score!
+2018-09-27 23:38:02,060:INFO: Epoch 14 out of 20
+2018-09-27 23:39:39,824:INFO: acc 98.96 - precision 0.94 - f1 94.14 - recall 0.94
+2018-09-27 23:39:39,825:INFO: Epoch 15 out of 20
+2018-09-27 23:41:17,706:INFO: acc 98.97 - precision 0.94 - f1 94.18 - recall 0.94
+2018-09-27 23:41:18,022:INFO: - new best score!
+2018-09-27 23:41:18,031:INFO: Epoch 16 out of 20
+2018-09-27 23:42:55,817:INFO: acc 98.99 - precision 0.94 - f1 94.14 - recall 0.94
+2018-09-27 23:42:55,818:INFO: Epoch 17 out of 20
+2018-09-27 23:44:33,543:INFO: acc 98.99 - precision 0.94 - f1 94.15 - recall 0.94
+2018-09-27 23:44:33,543:INFO: Epoch 18 out of 20
+2018-09-27 23:46:10,959:INFO: acc 98.97 - precision 0.94 - f1 94.12 - recall 0.94
+2018-09-27 23:46:10,960:INFO: - early stopping 3 epochs without improvement
+2018-09-27 23:46:10,960:INFO: Reloading the latest trained model...
+2018-09-27 23:46:10,961:INFO: Restoring parameters from results/model.weights/
+2018-09-27 23:46:11,025:INFO: Testing model over test set
+2018-09-27 23:46:18,694:INFO: acc 97.89 - precision 0.89 - f1 89.42 - recall 0.90
+2018-09-27 23:46:18,696:INFO: glove word embeddings
+2018-09-27 23:46:18,696:INFO: >> d300		pretrained = True	trainable = False
+2018-09-27 23:46:18,697:INFO: language model word embeddings
+2018-09-27 23:46:18,697:INFO: >> d50		pretrained = True	trainable = False
+2018-09-27 23:46:18,698:INFO: init chars d100:	True
+2018-09-27 23:46:18,698:INFO: using CRF:	True
+2018-09-27 23:46:18,699:INFO: 
+
+
+2018-09-27 23:46:20,668:INFO: Initializing tf session
+2018-09-27 23:46:21,746:INFO: Epoch 1 out of 20
+2018-09-27 23:47:59,151:INFO: acc 97.84 - precision 0.86 - f1 86.79 - recall 0.88
+2018-09-27 23:47:59,515:INFO: - new best score!
+2018-09-27 23:47:59,524:INFO: Epoch 2 out of 20
+2018-09-27 23:49:36,497:INFO: acc 98.42 - precision 0.90 - f1 90.62 - recall 0.91
+2018-09-27 23:49:36,800:INFO: - new best score!
+2018-09-27 23:49:36,808:INFO: Epoch 3 out of 20
+2018-09-27 23:51:14,853:INFO: acc 98.55 - precision 0.91 - f1 91.51 - recall 0.92
+2018-09-27 23:51:15,331:INFO: - new best score!
+2018-09-27 23:51:15,339:INFO: Epoch 4 out of 20
+2018-09-27 23:52:51,724:INFO: acc 98.71 - precision 0.92 - f1 92.48 - recall 0.93
+2018-09-27 23:52:52,030:INFO: - new best score!
+2018-09-27 23:52:52,039:INFO: Epoch 5 out of 20
+2018-09-27 23:54:29,999:INFO: acc 98.79 - precision 0.93 - f1 92.93 - recall 0.93
+2018-09-27 23:54:30,399:INFO: - new best score!
+2018-09-27 23:54:30,407:INFO: Epoch 6 out of 20
+2018-09-27 23:56:03,110:INFO: acc 98.88 - precision 0.93 - f1 93.45 - recall 0.93
+2018-09-27 23:56:03,694:INFO: - new best score!
+2018-09-27 23:56:03,722:INFO: Epoch 7 out of 20
+2018-09-27 23:57:29,747:INFO: acc 98.89 - precision 0.93 - f1 93.42 - recall 0.93
+2018-09-27 23:57:29,748:INFO: Epoch 8 out of 20
+2018-09-27 23:58:55,469:INFO: acc 98.90 - precision 0.93 - f1 93.54 - recall 0.94
+2018-09-27 23:58:56,014:INFO: - new best score!
+2018-09-27 23:58:56,042:INFO: Epoch 9 out of 20
+2018-09-28 00:00:22,155:INFO: acc 98.96 - precision 0.94 - f1 93.81 - recall 0.94
+2018-09-28 00:00:22,602:INFO: - new best score!
+2018-09-28 00:00:22,636:INFO: Epoch 10 out of 20
+2018-09-28 00:01:49,717:INFO: acc 98.94 - precision 0.94 - f1 93.81 - recall 0.94
+2018-09-28 00:01:50,349:INFO: - new best score!
+2018-09-28 00:01:50,384:INFO: Epoch 11 out of 20
+2018-09-28 00:03:14,953:INFO: acc 98.99 - precision 0.94 - f1 93.96 - recall 0.94
+2018-09-28 00:03:15,421:INFO: - new best score!
+2018-09-28 00:03:15,460:INFO: Epoch 12 out of 20
+2018-09-28 00:04:43,518:INFO: acc 99.00 - precision 0.94 - f1 94.13 - recall 0.94
+2018-09-28 00:04:43,891:INFO: - new best score!
+2018-09-28 00:04:43,900:INFO: Epoch 13 out of 20
+2018-09-28 00:06:20,874:INFO: acc 98.97 - precision 0.94 - f1 93.95 - recall 0.94
+2018-09-28 00:06:20,875:INFO: Epoch 14 out of 20
+2018-09-28 00:07:54,576:INFO: acc 98.98 - precision 0.94 - f1 93.89 - recall 0.94
+2018-09-28 00:07:54,577:INFO: Epoch 15 out of 20
+2018-09-28 00:09:28,324:INFO: acc 98.97 - precision 0.94 - f1 93.98 - recall 0.94
+2018-09-28 00:09:28,325:INFO: - early stopping 3 epochs without improvement
+2018-09-28 00:09:28,325:INFO: Reloading the latest trained model...
+2018-09-28 00:09:28,326:INFO: Restoring parameters from results/model.weights/
+2018-09-28 00:09:28,404:INFO: Testing model over test set
+2018-09-28 00:09:35,074:INFO: acc 97.92 - precision 0.89 - f1 89.61 - recall 0.90
+2018-09-28 00:09:35,075:INFO: glove word embeddings
+2018-09-28 00:09:35,076:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 00:09:35,076:INFO: language model word embeddings
+2018-09-28 00:09:35,077:INFO: >> d50		pretrained = True	trainable = False
+2018-09-28 00:09:35,077:INFO: init chars d100:	True
+2018-09-28 00:09:35,078:INFO: using CRF:	True
+2018-09-28 00:09:35,078:INFO: 
+
+
+2018-09-28 00:09:38,040:INFO: Initializing tf session
+2018-09-28 00:09:39,462:INFO: Epoch 1 out of 20
+2018-09-28 00:11:15,328:INFO: acc 97.88 - precision 0.87 - f1 87.28 - recall 0.88
+2018-09-28 00:11:16,041:INFO: - new best score!
+2018-09-28 00:11:16,083:INFO: Epoch 2 out of 20
+2018-09-28 00:12:45,810:INFO: acc 98.40 - precision 0.90 - f1 90.43 - recall 0.91
+2018-09-28 00:12:46,289:INFO: - new best score!
+2018-09-28 00:12:46,315:INFO: Epoch 3 out of 20
+2018-09-28 00:14:18,016:INFO: acc 98.63 - precision 0.92 - f1 91.80 - recall 0.92
+2018-09-28 00:14:18,521:INFO: - new best score!
+2018-09-28 00:14:18,560:INFO: Epoch 4 out of 20
+2018-09-28 00:15:52,389:INFO: acc 98.77 - precision 0.93 - f1 92.78 - recall 0.93
+2018-09-28 00:15:52,731:INFO: - new best score!
+2018-09-28 00:15:52,741:INFO: Epoch 5 out of 20
+2018-09-28 00:17:30,744:INFO: acc 98.83 - precision 0.93 - f1 93.32 - recall 0.93
+2018-09-28 00:17:31,268:INFO: - new best score!
+2018-09-28 00:17:31,306:INFO: Epoch 6 out of 20
+2018-09-28 00:19:07,555:INFO: acc 98.92 - precision 0.94 - f1 93.57 - recall 0.94
+2018-09-28 00:19:08,242:INFO: - new best score!
+2018-09-28 00:19:08,286:INFO: Epoch 7 out of 20
+2018-09-28 00:20:43,502:INFO: acc 98.98 - precision 0.94 - f1 94.13 - recall 0.94
+2018-09-28 00:20:44,029:INFO: - new best score!
+2018-09-28 00:20:44,069:INFO: Epoch 8 out of 20
+2018-09-28 00:22:20,204:INFO: acc 98.94 - precision 0.94 - f1 93.90 - recall 0.94
+2018-09-28 00:22:20,205:INFO: Epoch 9 out of 20
+2018-09-28 00:23:56,238:INFO: acc 98.97 - precision 0.94 - f1 94.08 - recall 0.94
+2018-09-28 00:23:56,238:INFO: Epoch 10 out of 20
+2018-09-28 00:25:31,779:INFO: acc 98.95 - precision 0.94 - f1 94.13 - recall 0.94
+2018-09-28 00:25:32,431:INFO: - new best score!
+2018-09-28 00:25:32,471:INFO: Epoch 11 out of 20
+2018-09-28 00:27:08,592:INFO: acc 99.00 - precision 0.94 - f1 94.14 - recall 0.94
+2018-09-28 00:27:09,096:INFO: - new best score!
+2018-09-28 00:27:09,131:INFO: Epoch 12 out of 20
+2018-09-28 00:28:42,740:INFO: acc 98.96 - precision 0.94 - f1 94.08 - recall 0.94
+2018-09-28 00:28:42,741:INFO: Epoch 13 out of 20
+2018-09-28 00:30:15,620:INFO: acc 98.97 - precision 0.94 - f1 93.86 - recall 0.94
+2018-09-28 00:30:15,621:INFO: Epoch 14 out of 20
+2018-09-28 00:31:50,167:INFO: acc 98.99 - precision 0.94 - f1 94.03 - recall 0.94
+2018-09-28 00:31:50,168:INFO: - early stopping 3 epochs without improvement
+2018-09-28 00:31:50,169:INFO: Reloading the latest trained model...
+2018-09-28 00:31:50,169:INFO: Restoring parameters from results/model.weights/
+2018-09-28 00:31:50,263:INFO: Testing model over test set
+2018-09-28 00:31:57,274:INFO: acc 97.86 - precision 0.89 - f1 89.58 - recall 0.90
+2018-09-28 00:31:57,354:INFO: glove word embeddings
+2018-09-28 00:31:57,356:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 00:31:57,357:INFO: language model word embeddings
+2018-09-28 00:31:57,357:INFO: >> d100		pretrained = True	trainable = False
+2018-09-28 00:31:57,358:INFO: init chars d100:	True
+2018-09-28 00:31:57,358:INFO: using CRF:	True
+2018-09-28 00:31:57,359:INFO: 
+
+
+2018-09-28 00:32:00,416:INFO: Initializing tf session
+2018-09-28 00:32:01,723:INFO: Epoch 1 out of 20
+2018-09-28 00:33:39,364:INFO: acc 97.79 - precision 0.86 - f1 86.90 - recall 0.87
+2018-09-28 00:33:39,946:INFO: - new best score!
+2018-09-28 00:33:39,947:INFO: Epoch 2 out of 20
+2018-09-28 00:35:14,995:INFO: acc 98.29 - precision 0.89 - f1 89.84 - recall 0.90
+2018-09-28 00:35:15,714:INFO: - new best score!
+2018-09-28 00:35:15,715:INFO: Epoch 3 out of 20
+2018-09-28 00:36:51,469:INFO: acc 98.65 - precision 0.92 - f1 92.15 - recall 0.92
+2018-09-28 00:36:52,005:INFO: - new best score!
+2018-09-28 00:36:52,006:INFO: Epoch 4 out of 20
+2018-09-28 00:38:27,029:INFO: acc 98.79 - precision 0.93 - f1 92.81 - recall 0.93
+2018-09-28 00:38:27,724:INFO: - new best score!
+2018-09-28 00:38:27,725:INFO: Epoch 5 out of 20
+2018-09-28 00:40:03,394:INFO: acc 98.81 - precision 0.93 - f1 93.07 - recall 0.93
+2018-09-28 00:40:03,927:INFO: - new best score!
+2018-09-28 00:40:03,928:INFO: Epoch 6 out of 20
+2018-09-28 00:41:39,024:INFO: acc 98.84 - precision 0.93 - f1 93.26 - recall 0.93
+2018-09-28 00:41:39,550:INFO: - new best score!
+2018-09-28 00:41:39,551:INFO: Epoch 7 out of 20
+2018-09-28 00:43:12,329:INFO: acc 98.91 - precision 0.93 - f1 93.51 - recall 0.94
+2018-09-28 00:43:13,009:INFO: - new best score!
+2018-09-28 00:43:13,010:INFO: Epoch 8 out of 20
+2018-09-28 00:44:45,624:INFO: acc 98.94 - precision 0.94 - f1 93.83 - recall 0.94
+2018-09-28 00:44:46,130:INFO: - new best score!
+2018-09-28 00:44:46,131:INFO: Epoch 9 out of 20
+2018-09-28 00:46:19,154:INFO: acc 98.93 - precision 0.94 - f1 93.75 - recall 0.94
+2018-09-28 00:46:19,156:INFO: Epoch 10 out of 20
+2018-09-28 00:47:50,056:INFO: acc 99.01 - precision 0.94 - f1 94.06 - recall 0.94
+2018-09-28 00:47:50,541:INFO: - new best score!
+2018-09-28 00:47:50,542:INFO: Epoch 11 out of 20
+2018-09-28 00:49:21,850:INFO: acc 98.96 - precision 0.94 - f1 93.82 - recall 0.94
+2018-09-28 00:49:21,851:INFO: Epoch 12 out of 20
+2018-09-28 00:50:54,317:INFO: acc 98.97 - precision 0.94 - f1 93.87 - recall 0.94
+2018-09-28 00:50:54,318:INFO: Epoch 13 out of 20
+2018-09-28 00:52:26,441:INFO: acc 99.01 - precision 0.94 - f1 94.05 - recall 0.94
+2018-09-28 00:52:26,442:INFO: - early stopping 3 epochs without improvement
+2018-09-28 00:52:26,442:INFO: Reloading the latest trained model...
+2018-09-28 00:52:26,443:INFO: Restoring parameters from results/model.weights/
+2018-09-28 00:52:26,516:INFO: Testing model over test set
+2018-09-28 00:52:33,375:INFO: acc 97.87 - precision 0.89 - f1 89.55 - recall 0.90
+2018-09-28 00:52:33,377:INFO: glove word embeddings
+2018-09-28 00:52:33,377:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 00:52:33,378:INFO: language model word embeddings
+2018-09-28 00:52:33,378:INFO: >> d100		pretrained = True	trainable = False
+2018-09-28 00:52:33,379:INFO: init chars d100:	True
+2018-09-28 00:52:33,380:INFO: using CRF:	True
+2018-09-28 00:52:33,380:INFO: 
+
+
+2018-09-28 00:52:36,225:INFO: Initializing tf session
+2018-09-28 00:52:37,578:INFO: Epoch 1 out of 20
+2018-09-28 00:54:11,743:INFO: acc 97.49 - precision 0.84 - f1 85.14 - recall 0.87
+2018-09-28 00:54:12,260:INFO: - new best score!
+2018-09-28 00:54:12,293:INFO: Epoch 2 out of 20
+2018-09-28 00:55:43,825:INFO: acc 98.40 - precision 0.90 - f1 90.57 - recall 0.91
+2018-09-28 00:55:44,284:INFO: - new best score!
+2018-09-28 00:55:44,314:INFO: Epoch 3 out of 20
+2018-09-28 00:57:14,391:INFO: acc 98.56 - precision 0.92 - f1 91.67 - recall 0.92
+2018-09-28 00:57:14,958:INFO: - new best score!
+2018-09-28 00:57:14,989:INFO: Epoch 4 out of 20
+2018-09-28 00:58:47,118:INFO: acc 98.73 - precision 0.93 - f1 92.60 - recall 0.92
+2018-09-28 00:58:47,613:INFO: - new best score!
+2018-09-28 00:58:47,648:INFO: Epoch 5 out of 20
+2018-09-28 01:00:19,452:INFO: acc 98.81 - precision 0.93 - f1 93.16 - recall 0.93
+2018-09-28 01:00:19,921:INFO: - new best score!
+2018-09-28 01:00:19,960:INFO: Epoch 6 out of 20
+2018-09-28 01:01:56,603:INFO: acc 98.83 - precision 0.93 - f1 93.28 - recall 0.93
+2018-09-28 01:01:57,219:INFO: - new best score!
+2018-09-28 01:01:57,230:INFO: Epoch 7 out of 20
+2018-09-28 01:03:34,102:INFO: acc 98.88 - precision 0.94 - f1 93.66 - recall 0.94
+2018-09-28 01:03:34,419:INFO: - new best score!
+2018-09-28 01:03:34,429:INFO: Epoch 8 out of 20
+2018-09-28 01:05:11,442:INFO: acc 98.89 - precision 0.94 - f1 93.62 - recall 0.94
+2018-09-28 01:05:11,443:INFO: Epoch 9 out of 20
+2018-09-28 01:06:47,171:INFO: acc 98.91 - precision 0.94 - f1 93.90 - recall 0.94
+2018-09-28 01:06:47,557:INFO: - new best score!
+2018-09-28 01:06:47,565:INFO: Epoch 10 out of 20
+2018-09-28 01:08:22,742:INFO: acc 98.92 - precision 0.94 - f1 93.79 - recall 0.94
+2018-09-28 01:08:22,743:INFO: Epoch 11 out of 20
+2018-09-28 01:09:59,676:INFO: acc 98.94 - precision 0.94 - f1 94.00 - recall 0.94
+2018-09-28 01:10:00,053:INFO: - new best score!
+2018-09-28 01:10:00,062:INFO: Epoch 12 out of 20
+2018-09-28 01:11:35,820:INFO: acc 98.92 - precision 0.94 - f1 93.79 - recall 0.94
+2018-09-28 01:11:35,821:INFO: Epoch 13 out of 20
+2018-09-28 01:13:12,289:INFO: acc 98.94 - precision 0.94 - f1 93.85 - recall 0.94
+2018-09-28 01:13:12,290:INFO: Epoch 14 out of 20
+2018-09-28 01:14:49,460:INFO: acc 98.95 - precision 0.94 - f1 93.96 - recall 0.94
+2018-09-28 01:14:49,461:INFO: - early stopping 3 epochs without improvement
+2018-09-28 01:14:49,462:INFO: Reloading the latest trained model...
+2018-09-28 01:14:49,462:INFO: Restoring parameters from results/model.weights/
+2018-09-28 01:14:49,532:INFO: Testing model over test set
+2018-09-28 01:14:57,345:INFO: acc 97.98 - precision 0.89 - f1 89.63 - recall 0.90
+2018-09-28 01:14:57,345:INFO: glove word embeddings
+2018-09-28 01:14:57,346:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 01:14:57,346:INFO: language model word embeddings
+2018-09-28 01:14:57,346:INFO: >> d100		pretrained = True	trainable = False
+2018-09-28 01:14:57,347:INFO: init chars d100:	True
+2018-09-28 01:14:57,347:INFO: using CRF:	True
+2018-09-28 01:14:57,347:INFO: 
+
+
+2018-09-28 01:14:59,380:INFO: Initializing tf session
+2018-09-28 01:15:00,243:INFO: Epoch 1 out of 20
+2018-09-28 01:16:38,925:INFO: acc 97.88 - precision 0.86 - f1 87.07 - recall 0.88
+2018-09-28 01:16:39,457:INFO: - new best score!
+2018-09-28 01:16:39,465:INFO: Epoch 2 out of 20
+2018-09-28 01:18:17,271:INFO: acc 98.40 - precision 0.90 - f1 90.35 - recall 0.91
+2018-09-28 01:18:17,667:INFO: - new best score!
+2018-09-28 01:18:17,676:INFO: Epoch 3 out of 20
+2018-09-28 01:19:55,234:INFO: acc 98.54 - precision 0.91 - f1 91.51 - recall 0.92
+2018-09-28 01:19:55,897:INFO: - new best score!
+2018-09-28 01:19:55,932:INFO: Epoch 4 out of 20
+2018-09-28 01:21:33,431:INFO: acc 98.73 - precision 0.93 - f1 92.56 - recall 0.93
+2018-09-28 01:21:33,958:INFO: - new best score!
+2018-09-28 01:21:33,985:INFO: Epoch 5 out of 20
+2018-09-28 01:23:10,884:INFO: acc 98.78 - precision 0.93 - f1 92.98 - recall 0.93
+2018-09-28 01:23:11,309:INFO: - new best score!
+2018-09-28 01:23:11,318:INFO: Epoch 6 out of 20
+2018-09-28 01:24:48,601:INFO: acc 98.85 - precision 0.93 - f1 93.20 - recall 0.93
+2018-09-28 01:24:49,058:INFO: - new best score!
+2018-09-28 01:24:49,066:INFO: Epoch 7 out of 20
+2018-09-28 01:26:22,288:INFO: acc 98.85 - precision 0.94 - f1 93.51 - recall 0.93
+2018-09-28 01:26:22,789:INFO: - new best score!
+2018-09-28 01:26:22,821:INFO: Epoch 8 out of 20
+2018-09-28 01:27:53,539:INFO: acc 98.93 - precision 0.94 - f1 93.89 - recall 0.94
+2018-09-28 01:27:54,040:INFO: - new best score!
+2018-09-28 01:27:54,072:INFO: Epoch 9 out of 20
+2018-09-28 01:29:24,245:INFO: acc 98.93 - precision 0.94 - f1 93.94 - recall 0.94
+2018-09-28 01:29:24,917:INFO: - new best score!
+2018-09-28 01:29:24,954:INFO: Epoch 10 out of 20
+2018-09-28 01:30:55,496:INFO: acc 98.90 - precision 0.94 - f1 93.92 - recall 0.94
+2018-09-28 01:30:55,497:INFO: Epoch 11 out of 20
+2018-09-28 01:32:23,997:INFO: acc 98.99 - precision 0.94 - f1 94.02 - recall 0.94
+2018-09-28 01:32:24,471:INFO: - new best score!
+2018-09-28 01:32:24,497:INFO: Epoch 12 out of 20
+2018-09-28 01:33:49,609:INFO: acc 98.97 - precision 0.94 - f1 94.09 - recall 0.94
+2018-09-28 01:33:50,081:INFO: - new best score!
+2018-09-28 01:33:50,106:INFO: Epoch 13 out of 20
+2018-09-28 01:35:19,960:INFO: acc 98.96 - precision 0.94 - f1 93.91 - recall 0.94
+2018-09-28 01:35:19,961:INFO: Epoch 14 out of 20
+2018-09-28 01:36:50,692:INFO: acc 98.96 - precision 0.94 - f1 93.94 - recall 0.94
+2018-09-28 01:36:50,693:INFO: Epoch 15 out of 20
+2018-09-28 01:38:22,107:INFO: acc 98.98 - precision 0.94 - f1 94.15 - recall 0.94
+2018-09-28 01:38:22,467:INFO: - new best score!
+2018-09-28 01:38:22,476:INFO: Epoch 16 out of 20
+2018-09-28 01:39:59,263:INFO: acc 98.98 - precision 0.94 - f1 94.12 - recall 0.94
+2018-09-28 01:39:59,264:INFO: Epoch 17 out of 20
+2018-09-28 01:41:31,411:INFO: acc 99.00 - precision 0.94 - f1 94.20 - recall 0.94
+2018-09-28 01:41:31,921:INFO: - new best score!
+2018-09-28 01:41:31,948:INFO: Epoch 18 out of 20
+2018-09-28 01:43:04,040:INFO: acc 99.01 - precision 0.94 - f1 94.34 - recall 0.94
+2018-09-28 01:43:04,570:INFO: - new best score!
+2018-09-28 01:43:04,604:INFO: Epoch 19 out of 20
+2018-09-28 01:44:37,685:INFO: acc 98.99 - precision 0.94 - f1 94.17 - recall 0.94
+2018-09-28 01:44:37,686:INFO: Epoch 20 out of 20
+2018-09-28 01:46:08,639:INFO: acc 99.02 - precision 0.94 - f1 94.36 - recall 0.94
+2018-09-28 01:46:09,153:INFO: - new best score!
+2018-09-28 01:46:09,181:INFO: Reloading the latest trained model...
+2018-09-28 01:46:09,181:INFO: Restoring parameters from results/model.weights/
+2018-09-28 01:46:09,269:INFO: Testing model over test set
+2018-09-28 01:46:15,893:INFO: acc 97.89 - precision 0.89 - f1 89.49 - recall 0.90
+2018-09-28 01:46:15,894:INFO: glove word embeddings
+2018-09-28 01:46:15,895:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 01:46:15,895:INFO: language model word embeddings
+2018-09-28 01:46:15,896:INFO: >> d100		pretrained = True	trainable = False
+2018-09-28 01:46:15,896:INFO: init chars d100:	True
+2018-09-28 01:46:15,896:INFO: using CRF:	True
+2018-09-28 01:46:15,897:INFO: 
+
+
+2018-09-28 01:46:18,810:INFO: Initializing tf session
+2018-09-28 01:46:20,191:INFO: Epoch 1 out of 20
+2018-09-28 01:47:54,305:INFO: acc 97.84 - precision 0.87 - f1 87.22 - recall 0.88
+2018-09-28 01:47:54,843:INFO: - new best score!
+2018-09-28 01:47:54,879:INFO: Epoch 2 out of 20
+2018-09-28 01:49:26,108:INFO: acc 98.35 - precision 0.90 - f1 90.25 - recall 0.91
+2018-09-28 01:49:26,693:INFO: - new best score!
+2018-09-28 01:49:26,725:INFO: Epoch 3 out of 20
+2018-09-28 01:50:57,999:INFO: acc 98.61 - precision 0.92 - f1 92.05 - recall 0.92
+2018-09-28 01:50:58,617:INFO: - new best score!
+2018-09-28 01:50:58,655:INFO: Epoch 4 out of 20
+2018-09-28 01:52:30,996:INFO: acc 98.71 - precision 0.92 - f1 92.40 - recall 0.92
+2018-09-28 01:52:31,458:INFO: - new best score!
+2018-09-28 01:52:31,500:INFO: Epoch 5 out of 20
+2018-09-28 01:54:03,038:INFO: acc 98.79 - precision 0.93 - f1 93.20 - recall 0.93
+2018-09-28 01:54:03,567:INFO: - new best score!
+2018-09-28 01:54:03,607:INFO: Epoch 6 out of 20
+2018-09-28 01:55:35,838:INFO: acc 98.83 - precision 0.93 - f1 93.12 - recall 0.93
+2018-09-28 01:55:35,839:INFO: Epoch 7 out of 20
+2018-09-28 01:57:07,549:INFO: acc 98.89 - precision 0.93 - f1 93.38 - recall 0.93
+2018-09-28 01:57:08,052:INFO: - new best score!
+2018-09-28 01:57:08,088:INFO: Epoch 8 out of 20
+2018-09-28 01:58:39,045:INFO: acc 98.89 - precision 0.94 - f1 93.56 - recall 0.93
+2018-09-28 01:58:39,702:INFO: - new best score!
+2018-09-28 01:58:39,731:INFO: Epoch 9 out of 20
+2018-09-28 02:00:11,723:INFO: acc 98.89 - precision 0.94 - f1 93.50 - recall 0.94
+2018-09-28 02:00:11,724:INFO: Epoch 10 out of 20
+2018-09-28 02:01:43,975:INFO: acc 98.93 - precision 0.94 - f1 93.79 - recall 0.94
+2018-09-28 02:01:44,488:INFO: - new best score!
+2018-09-28 02:01:44,525:INFO: Epoch 11 out of 20
+2018-09-28 02:03:17,475:INFO: acc 98.97 - precision 0.94 - f1 93.93 - recall 0.94
+2018-09-28 02:03:17,966:INFO: - new best score!
+2018-09-28 02:03:18,006:INFO: Epoch 12 out of 20
+2018-09-28 02:04:55,321:INFO: acc 98.94 - precision 0.94 - f1 93.86 - recall 0.94
+2018-09-28 02:04:55,322:INFO: Epoch 13 out of 20
+2018-09-28 02:06:30,944:INFO: acc 98.96 - precision 0.94 - f1 93.96 - recall 0.94
+2018-09-28 02:06:31,578:INFO: - new best score!
+2018-09-28 02:06:31,613:INFO: Epoch 14 out of 20
+2018-09-28 02:08:07,990:INFO: acc 98.96 - precision 0.94 - f1 93.89 - recall 0.94
+2018-09-28 02:08:07,991:INFO: Epoch 15 out of 20
+2018-09-28 02:09:43,290:INFO: acc 98.96 - precision 0.94 - f1 93.84 - recall 0.94
+2018-09-28 02:09:43,291:INFO: Epoch 16 out of 20
+2018-09-28 02:11:18,314:INFO: acc 98.94 - precision 0.94 - f1 93.76 - recall 0.94
+2018-09-28 02:11:18,314:INFO: - early stopping 3 epochs without improvement
+2018-09-28 02:11:18,315:INFO: Reloading the latest trained model...
+2018-09-28 02:11:18,315:INFO: Restoring parameters from results/model.weights/
+2018-09-28 02:11:18,421:INFO: Testing model over test set
+2018-09-28 02:11:25,315:INFO: acc 97.88 - precision 0.89 - f1 89.55 - recall 0.90
+2018-09-28 02:11:25,316:INFO: glove word embeddings
+2018-09-28 02:11:25,317:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 02:11:25,318:INFO: language model word embeddings
+2018-09-28 02:11:25,319:INFO: >> d100		pretrained = True	trainable = False
+2018-09-28 02:11:25,319:INFO: init chars d100:	True
+2018-09-28 02:11:25,320:INFO: using CRF:	True
+2018-09-28 02:11:25,320:INFO: 
+
+
+2018-09-28 02:11:28,229:INFO: Initializing tf session
+2018-09-28 02:11:29,915:INFO: Epoch 1 out of 20
+2018-09-28 02:13:08,957:INFO: acc 97.74 - precision 0.85 - f1 86.47 - recall 0.88
+2018-09-28 02:13:09,544:INFO: - new best score!
+2018-09-28 02:13:09,583:INFO: Epoch 2 out of 20
+2018-09-28 02:14:45,655:INFO: acc 98.35 - precision 0.90 - f1 90.21 - recall 0.91
+2018-09-28 02:14:46,192:INFO: - new best score!
+2018-09-28 02:14:46,222:INFO: Epoch 3 out of 20
+2018-09-28 02:16:22,455:INFO: acc 98.60 - precision 0.91 - f1 91.59 - recall 0.92
+2018-09-28 02:16:22,987:INFO: - new best score!
+2018-09-28 02:16:23,025:INFO: Epoch 4 out of 20
+2018-09-28 02:17:59,622:INFO: acc 98.76 - precision 0.92 - f1 92.68 - recall 0.93
+2018-09-28 02:18:00,181:INFO: - new best score!
+2018-09-28 02:18:00,221:INFO: Epoch 5 out of 20
+2018-09-28 02:19:35,990:INFO: acc 98.83 - precision 0.93 - f1 92.95 - recall 0.93
+2018-09-28 02:19:36,663:INFO: - new best score!
+2018-09-28 02:19:36,699:INFO: Epoch 6 out of 20
+2018-09-28 02:21:11,248:INFO: acc 98.93 - precision 0.94 - f1 93.69 - recall 0.94
+2018-09-28 02:21:11,777:INFO: - new best score!
+2018-09-28 02:21:11,810:INFO: Epoch 7 out of 20
+2018-09-28 02:22:47,499:INFO: acc 98.96 - precision 0.94 - f1 93.81 - recall 0.94
+2018-09-28 02:22:48,026:INFO: - new best score!
+2018-09-28 02:22:48,059:INFO: Epoch 8 out of 20
+2018-09-28 02:24:22,611:INFO: acc 98.93 - precision 0.94 - f1 93.68 - recall 0.94
+2018-09-28 02:24:22,611:INFO: Epoch 9 out of 20
+2018-09-28 02:25:58,774:INFO: acc 98.95 - precision 0.94 - f1 93.79 - recall 0.94
+2018-09-28 02:25:58,775:INFO: Epoch 10 out of 20
+2018-09-28 02:27:34,849:INFO: acc 98.94 - precision 0.94 - f1 93.78 - recall 0.94
+2018-09-28 02:27:34,850:INFO: - early stopping 3 epochs without improvement
+2018-09-28 02:27:34,851:INFO: Reloading the latest trained model...
+2018-09-28 02:27:34,851:INFO: Restoring parameters from results/model.weights/
+2018-09-28 02:27:34,951:INFO: Testing model over test set
+2018-09-28 02:27:41,887:INFO: acc 97.75 - precision 0.88 - f1 88.89 - recall 0.89
+2018-09-28 02:27:41,888:INFO: glove word embeddings
+2018-09-28 02:27:41,889:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 02:27:41,889:INFO: language model word embeddings
+2018-09-28 02:27:41,890:INFO: >> d100		pretrained = True	trainable = False
+2018-09-28 02:27:41,891:INFO: init chars d100:	True
+2018-09-28 02:27:41,891:INFO: using CRF:	True
+2018-09-28 02:27:41,892:INFO: 
+
+
+2018-09-28 02:27:44,848:INFO: Initializing tf session
+2018-09-28 02:27:46,297:INFO: Epoch 1 out of 20
+2018-09-28 02:29:24,217:INFO: acc 97.88 - precision 0.86 - f1 87.11 - recall 0.88
+2018-09-28 02:29:24,775:INFO: - new best score!
+2018-09-28 02:29:24,816:INFO: Epoch 2 out of 20
+2018-09-28 02:31:00,718:INFO: acc 98.36 - precision 0.90 - f1 90.27 - recall 0.90
+2018-09-28 02:31:01,233:INFO: - new best score!
+2018-09-28 02:31:01,274:INFO: Epoch 3 out of 20
+2018-09-28 02:32:37,855:INFO: acc 98.60 - precision 0.92 - f1 91.76 - recall 0.92
+2018-09-28 02:32:38,520:INFO: - new best score!
+2018-09-28 02:32:38,555:INFO: Epoch 4 out of 20
+2018-09-28 02:34:15,202:INFO: acc 98.77 - precision 0.93 - f1 92.89 - recall 0.93
+2018-09-28 02:34:15,710:INFO: - new best score!
+2018-09-28 02:34:15,754:INFO: Epoch 5 out of 20
+2018-09-28 02:35:52,122:INFO: acc 98.84 - precision 0.93 - f1 93.17 - recall 0.93
+2018-09-28 02:35:52,580:INFO: - new best score!
+2018-09-28 02:35:52,620:INFO: Epoch 6 out of 20
+2018-09-28 02:37:29,526:INFO: acc 98.88 - precision 0.93 - f1 93.47 - recall 0.94
+2018-09-28 02:37:30,246:INFO: - new best score!
+2018-09-28 02:37:30,292:INFO: Epoch 7 out of 20
+2018-09-28 02:39:05,765:INFO: acc 98.88 - precision 0.93 - f1 93.44 - recall 0.93
+2018-09-28 02:39:05,766:INFO: Epoch 8 out of 20
+2018-09-28 02:40:40,697:INFO: acc 98.90 - precision 0.94 - f1 93.59 - recall 0.94
+2018-09-28 02:40:41,343:INFO: - new best score!
+2018-09-28 02:40:41,385:INFO: Epoch 9 out of 20
+2018-09-28 02:42:16,371:INFO: acc 98.95 - precision 0.94 - f1 93.77 - recall 0.94
+2018-09-28 02:42:16,819:INFO: - new best score!
+2018-09-28 02:42:16,854:INFO: Epoch 10 out of 20
+2018-09-28 02:43:51,384:INFO: acc 98.96 - precision 0.94 - f1 93.95 - recall 0.94
+2018-09-28 02:43:52,074:INFO: - new best score!
+2018-09-28 02:43:52,120:INFO: Epoch 11 out of 20
+2018-09-28 02:45:28,246:INFO: acc 98.94 - precision 0.94 - f1 93.99 - recall 0.94
+2018-09-28 02:45:28,776:INFO: - new best score!
+2018-09-28 02:45:28,817:INFO: Epoch 12 out of 20
+2018-09-28 02:47:05,206:INFO: acc 98.93 - precision 0.94 - f1 93.84 - recall 0.94
+2018-09-28 02:47:05,207:INFO: Epoch 13 out of 20
+2018-09-28 02:48:41,341:INFO: acc 98.96 - precision 0.94 - f1 94.02 - recall 0.94
+2018-09-28 02:48:41,780:INFO: - new best score!
+2018-09-28 02:48:41,820:INFO: Epoch 14 out of 20
+2018-09-28 02:50:17,725:INFO: acc 98.99 - precision 0.94 - f1 94.09 - recall 0.94
+2018-09-28 02:50:18,225:INFO: - new best score!
+2018-09-28 02:50:18,265:INFO: Epoch 15 out of 20
+2018-09-28 02:51:54,177:INFO: acc 98.98 - precision 0.94 - f1 94.25 - recall 0.94
+2018-09-28 02:51:54,877:INFO: - new best score!
+2018-09-28 02:51:54,924:INFO: Epoch 16 out of 20
+2018-09-28 02:53:30,700:INFO: acc 98.98 - precision 0.94 - f1 94.18 - recall 0.94
+2018-09-28 02:53:30,701:INFO: Epoch 17 out of 20
+2018-09-28 02:55:06,941:INFO: acc 98.99 - precision 0.94 - f1 94.23 - recall 0.94
+2018-09-28 02:55:06,942:INFO: Epoch 18 out of 20
+2018-09-28 02:56:43,308:INFO: acc 98.98 - precision 0.94 - f1 94.07 - recall 0.94
+2018-09-28 02:56:43,309:INFO: - early stopping 3 epochs without improvement
+2018-09-28 02:56:43,310:INFO: Reloading the latest trained model...
+2018-09-28 02:56:43,310:INFO: Restoring parameters from results/model.weights/
+2018-09-28 02:56:43,419:INFO: Testing model over test set
+2018-09-28 02:56:50,568:INFO: acc 97.97 - precision 0.90 - f1 90.07 - recall 0.90
+2018-09-28 02:56:50,664:INFO: glove word embeddings
+2018-09-28 02:56:50,667:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 02:56:50,668:INFO: language model word embeddings
+2018-09-28 02:56:50,668:INFO: >> d200		pretrained = True	trainable = False
+2018-09-28 02:56:50,669:INFO: init chars d100:	True
+2018-09-28 02:56:50,670:INFO: using CRF:	True
+2018-09-28 02:56:50,670:INFO: 
+
+
+2018-09-28 02:56:53,456:INFO: Initializing tf session
+2018-09-28 02:56:55,075:INFO: Epoch 1 out of 20
+2018-09-28 02:58:29,982:INFO: acc 97.89 - precision 0.86 - f1 86.98 - recall 0.88
+2018-09-28 02:58:30,694:INFO: - new best score!
+2018-09-28 02:58:30,722:INFO: Epoch 2 out of 20
+2018-09-28 03:00:03,401:INFO: acc 98.45 - precision 0.90 - f1 90.75 - recall 0.91
+2018-09-28 03:00:03,905:INFO: - new best score!
+2018-09-28 03:00:03,932:INFO: Epoch 3 out of 20
+2018-09-28 03:01:37,010:INFO: acc 98.62 - precision 0.92 - f1 91.81 - recall 0.92
+2018-09-28 03:01:37,643:INFO: - new best score!
+2018-09-28 03:01:37,670:INFO: Epoch 4 out of 20
+2018-09-28 03:03:12,531:INFO: acc 98.77 - precision 0.93 - f1 92.91 - recall 0.93
+2018-09-28 03:03:13,044:INFO: - new best score!
+2018-09-28 03:03:13,068:INFO: Epoch 5 out of 20
+2018-09-28 03:04:49,349:INFO: acc 98.84 - precision 0.93 - f1 93.29 - recall 0.93
+2018-09-28 03:04:49,851:INFO: - new best score!
+2018-09-28 03:04:49,879:INFO: Epoch 6 out of 20
+2018-09-28 03:06:25,612:INFO: acc 98.84 - precision 0.93 - f1 93.23 - recall 0.93
+2018-09-28 03:06:25,614:INFO: Epoch 7 out of 20
+2018-09-28 03:08:01,849:INFO: acc 98.90 - precision 0.94 - f1 93.59 - recall 0.94
+2018-09-28 03:08:02,378:INFO: - new best score!
+2018-09-28 03:08:02,411:INFO: Epoch 8 out of 20
+2018-09-28 03:09:38,043:INFO: acc 98.93 - precision 0.94 - f1 93.78 - recall 0.94
+2018-09-28 03:09:38,711:INFO: - new best score!
+2018-09-28 03:09:38,740:INFO: Epoch 9 out of 20
+2018-09-28 03:11:13,326:INFO: acc 98.94 - precision 0.94 - f1 93.68 - recall 0.94
+2018-09-28 03:11:13,327:INFO: Epoch 10 out of 20
+2018-09-28 03:12:47,771:INFO: acc 98.96 - precision 0.94 - f1 93.82 - recall 0.94
+2018-09-28 03:12:48,288:INFO: - new best score!
+2018-09-28 03:12:48,318:INFO: Epoch 11 out of 20
+2018-09-28 03:14:24,378:INFO: acc 98.99 - precision 0.94 - f1 93.90 - recall 0.94
+2018-09-28 03:14:24,880:INFO: - new best score!
+2018-09-28 03:14:24,901:INFO: Epoch 12 out of 20
+2018-09-28 03:16:00,506:INFO: acc 98.95 - precision 0.94 - f1 93.76 - recall 0.94
+2018-09-28 03:16:00,507:INFO: Epoch 13 out of 20
+2018-09-28 03:17:36,011:INFO: acc 98.95 - precision 0.94 - f1 93.80 - recall 0.94
+2018-09-28 03:17:36,011:INFO: Epoch 14 out of 20
+2018-09-28 03:19:10,051:INFO: acc 98.97 - precision 0.94 - f1 93.77 - recall 0.94
+2018-09-28 03:19:10,053:INFO: - early stopping 3 epochs without improvement
+2018-09-28 03:19:10,053:INFO: Reloading the latest trained model...
+2018-09-28 03:19:10,054:INFO: Restoring parameters from results/model.weights/
+2018-09-28 03:19:10,131:INFO: Testing model over test set
+2018-09-28 03:19:16,841:INFO: acc 97.96 - precision 0.89 - f1 89.87 - recall 0.90
+2018-09-28 03:19:16,842:INFO: glove word embeddings
+2018-09-28 03:19:16,843:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 03:19:16,843:INFO: language model word embeddings
+2018-09-28 03:19:16,844:INFO: >> d200		pretrained = True	trainable = False
+2018-09-28 03:19:16,845:INFO: init chars d100:	True
+2018-09-28 03:19:16,846:INFO: using CRF:	True
+2018-09-28 03:19:16,846:INFO: 
+
+
+2018-09-28 03:19:19,767:INFO: Initializing tf session
+2018-09-28 03:19:21,157:INFO: Epoch 1 out of 20
+2018-09-28 03:20:57,246:INFO: acc 97.71 - precision 0.84 - f1 85.41 - recall 0.87
+2018-09-28 03:20:57,826:INFO: - new best score!
+2018-09-28 03:20:57,859:INFO: Epoch 2 out of 20
+2018-09-28 03:22:32,181:INFO: acc 98.35 - precision 0.89 - f1 89.94 - recall 0.90
+2018-09-28 03:22:32,680:INFO: - new best score!
+2018-09-28 03:22:32,717:INFO: Epoch 3 out of 20
+2018-09-28 03:24:08,555:INFO: acc 98.61 - precision 0.92 - f1 91.90 - recall 0.92
+2018-09-28 03:24:09,221:INFO: - new best score!
+2018-09-28 03:24:09,264:INFO: Epoch 4 out of 20
+2018-09-28 03:25:44,355:INFO: acc 98.67 - precision 0.92 - f1 92.21 - recall 0.92
+2018-09-28 03:25:44,842:INFO: - new best score!
+2018-09-28 03:25:44,882:INFO: Epoch 5 out of 20
+2018-09-28 03:27:20,511:INFO: acc 98.77 - precision 0.93 - f1 92.85 - recall 0.93
+2018-09-28 03:27:21,031:INFO: - new best score!
+2018-09-28 03:27:21,074:INFO: Epoch 6 out of 20
+2018-09-28 03:28:56,946:INFO: acc 98.75 - precision 0.93 - f1 92.66 - recall 0.93
+2018-09-28 03:28:56,947:INFO: Epoch 7 out of 20
+2018-09-28 03:30:32,841:INFO: acc 98.86 - precision 0.93 - f1 93.31 - recall 0.93
+2018-09-28 03:30:33,345:INFO: - new best score!
+2018-09-28 03:30:33,381:INFO: Epoch 8 out of 20
+2018-09-28 03:32:08,816:INFO: acc 98.83 - precision 0.93 - f1 93.31 - recall 0.93
+2018-09-28 03:32:08,817:INFO: Epoch 9 out of 20
+2018-09-28 03:33:44,771:INFO: acc 98.86 - precision 0.93 - f1 93.39 - recall 0.93
+2018-09-28 03:33:45,255:INFO: - new best score!
+2018-09-28 03:33:45,284:INFO: Epoch 10 out of 20
+2018-09-28 03:35:21,134:INFO: acc 98.86 - precision 0.94 - f1 93.45 - recall 0.93
+2018-09-28 03:35:21,628:INFO: - new best score!
+2018-09-28 03:35:21,667:INFO: Epoch 11 out of 20
+2018-09-28 03:36:56,979:INFO: acc 98.91 - precision 0.94 - f1 93.78 - recall 0.94
+2018-09-28 03:36:57,503:INFO: - new best score!
+2018-09-28 03:36:57,543:INFO: Epoch 12 out of 20
+2018-09-28 03:38:30,929:INFO: acc 98.93 - precision 0.94 - f1 93.67 - recall 0.94
+2018-09-28 03:38:30,930:INFO: Epoch 13 out of 20
+2018-09-28 03:40:05,371:INFO: acc 98.92 - precision 0.94 - f1 93.64 - recall 0.94
+2018-09-28 03:40:05,372:INFO: Epoch 14 out of 20
+2018-09-28 03:41:39,020:INFO: acc 98.90 - precision 0.93 - f1 93.48 - recall 0.94
+2018-09-28 03:41:39,020:INFO: - early stopping 3 epochs without improvement
+2018-09-28 03:41:39,021:INFO: Reloading the latest trained model...
+2018-09-28 03:41:39,022:INFO: Restoring parameters from results/model.weights/
+2018-09-28 03:41:39,126:INFO: Testing model over test set
+2018-09-28 03:41:45,957:INFO: acc 97.91 - precision 0.89 - f1 89.64 - recall 0.90
+2018-09-28 03:41:45,957:INFO: glove word embeddings
+2018-09-28 03:41:45,958:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 03:41:45,958:INFO: language model word embeddings
+2018-09-28 03:41:45,959:INFO: >> d200		pretrained = True	trainable = False
+2018-09-28 03:41:45,959:INFO: init chars d100:	True
+2018-09-28 03:41:45,959:INFO: using CRF:	True
+2018-09-28 03:41:45,960:INFO: 
+
+
+2018-09-28 03:41:48,955:INFO: Initializing tf session
+2018-09-28 03:41:50,292:INFO: Epoch 1 out of 20
+2018-09-28 03:43:28,075:INFO: acc 97.89 - precision 0.86 - f1 87.22 - recall 0.88
+2018-09-28 03:43:28,822:INFO: - new best score!
+2018-09-28 03:43:28,863:INFO: Epoch 2 out of 20
+2018-09-28 03:45:05,749:INFO: acc 98.43 - precision 0.90 - f1 90.48 - recall 0.91
+2018-09-28 03:45:06,261:INFO: - new best score!
+2018-09-28 03:45:06,295:INFO: Epoch 3 out of 20
+2018-09-28 03:46:42,477:INFO: acc 98.63 - precision 0.92 - f1 91.99 - recall 0.92
+2018-09-28 03:46:43,145:INFO: - new best score!
+2018-09-28 03:46:43,180:INFO: Epoch 4 out of 20
+2018-09-28 03:48:19,883:INFO: acc 98.68 - precision 0.92 - f1 92.38 - recall 0.92
+2018-09-28 03:48:20,393:INFO: - new best score!
+2018-09-28 03:48:20,435:INFO: Epoch 5 out of 20
+2018-09-28 03:49:56,877:INFO: acc 98.79 - precision 0.93 - f1 92.99 - recall 0.93
+2018-09-28 03:49:57,368:INFO: - new best score!
+2018-09-28 03:49:57,404:INFO: Epoch 6 out of 20
+2018-09-28 03:51:34,008:INFO: acc 98.85 - precision 0.93 - f1 93.39 - recall 0.93
+2018-09-28 03:51:34,706:INFO: - new best score!
+2018-09-28 03:51:34,748:INFO: Epoch 7 out of 20
+2018-09-28 03:53:11,105:INFO: acc 98.82 - precision 0.93 - f1 93.19 - recall 0.93
+2018-09-28 03:53:11,106:INFO: Epoch 8 out of 20
+2018-09-28 03:54:47,147:INFO: acc 98.89 - precision 0.93 - f1 93.44 - recall 0.93
+2018-09-28 03:54:47,778:INFO: - new best score!
+2018-09-28 03:54:47,813:INFO: Epoch 9 out of 20
+2018-09-28 03:56:22,249:INFO: acc 98.90 - precision 0.93 - f1 93.47 - recall 0.94
+2018-09-28 03:56:22,732:INFO: - new best score!
+2018-09-28 03:56:22,764:INFO: Epoch 10 out of 20
+2018-09-28 03:57:57,449:INFO: acc 98.93 - precision 0.94 - f1 93.68 - recall 0.94
+2018-09-28 03:57:58,073:INFO: - new best score!
+2018-09-28 03:57:58,101:INFO: Epoch 11 out of 20
+2018-09-28 03:59:33,204:INFO: acc 98.94 - precision 0.94 - f1 93.66 - recall 0.94
+2018-09-28 03:59:33,206:INFO: Epoch 12 out of 20
+2018-09-28 04:01:08,145:INFO: acc 98.97 - precision 0.94 - f1 93.95 - recall 0.94
+2018-09-28 04:01:08,774:INFO: - new best score!
+2018-09-28 04:01:08,815:INFO: Epoch 13 out of 20
+2018-09-28 04:02:44,043:INFO: acc 98.98 - precision 0.94 - f1 93.86 - recall 0.94
+2018-09-28 04:02:44,044:INFO: Epoch 14 out of 20
+2018-09-28 04:04:19,696:INFO: acc 98.97 - precision 0.94 - f1 93.89 - recall 0.94
+2018-09-28 04:04:19,697:INFO: Epoch 15 out of 20
+2018-09-28 04:05:56,363:INFO: acc 98.96 - precision 0.94 - f1 93.84 - recall 0.94
+2018-09-28 04:05:56,365:INFO: - early stopping 3 epochs without improvement
+2018-09-28 04:05:56,365:INFO: Reloading the latest trained model...
+2018-09-28 04:05:56,366:INFO: Restoring parameters from results/model.weights/
+2018-09-28 04:05:56,456:INFO: Testing model over test set
+2018-09-28 04:06:03,475:INFO: acc 97.91 - precision 0.90 - f1 89.83 - recall 0.90
+2018-09-28 04:06:03,477:INFO: glove word embeddings
+2018-09-28 04:06:03,478:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 04:06:03,478:INFO: language model word embeddings
+2018-09-28 04:06:03,479:INFO: >> d200		pretrained = True	trainable = False
+2018-09-28 04:06:03,480:INFO: init chars d100:	True
+2018-09-28 04:06:03,481:INFO: using CRF:	True
+2018-09-28 04:06:03,482:INFO: 
+
+
+2018-09-28 04:06:06,279:INFO: Initializing tf session
+2018-09-28 04:06:08,090:INFO: Epoch 1 out of 20
+2018-09-28 04:07:44,524:INFO: acc 97.57 - precision 0.84 - f1 84.92 - recall 0.86
+2018-09-28 04:07:45,049:INFO: - new best score!
+2018-09-28 04:07:45,080:INFO: Epoch 2 out of 20
+2018-09-28 04:09:21,499:INFO: acc 98.36 - precision 0.90 - f1 90.04 - recall 0.91
+2018-09-28 04:09:21,997:INFO: - new best score!
+2018-09-28 04:09:22,037:INFO: Epoch 3 out of 20
+2018-09-28 04:10:57,850:INFO: acc 98.59 - precision 0.92 - f1 91.77 - recall 0.92
+2018-09-28 04:10:58,498:INFO: - new best score!
+2018-09-28 04:10:58,531:INFO: Epoch 4 out of 20
+2018-09-28 04:12:33,324:INFO: acc 98.73 - precision 0.92 - f1 92.39 - recall 0.93
+2018-09-28 04:12:33,817:INFO: - new best score!
+2018-09-28 04:12:33,855:INFO: Epoch 5 out of 20
+2018-09-28 04:14:09,522:INFO: acc 98.80 - precision 0.93 - f1 93.06 - recall 0.93
+2018-09-28 04:14:09,994:INFO: - new best score!
+2018-09-28 04:14:10,030:INFO: Epoch 6 out of 20
+2018-09-28 04:15:44,142:INFO: acc 98.95 - precision 0.94 - f1 93.75 - recall 0.94
+2018-09-28 04:15:44,815:INFO: - new best score!
+2018-09-28 04:15:44,850:INFO: Epoch 7 out of 20
+2018-09-28 04:17:19,481:INFO: acc 98.93 - precision 0.94 - f1 93.62 - recall 0.94
+2018-09-28 04:17:19,483:INFO: Epoch 8 out of 20
+2018-09-28 04:18:52,363:INFO: acc 98.98 - precision 0.94 - f1 93.90 - recall 0.94
+2018-09-28 04:18:52,836:INFO: - new best score!
+2018-09-28 04:18:52,869:INFO: Epoch 9 out of 20
+2018-09-28 04:20:26,966:INFO: acc 98.96 - precision 0.94 - f1 93.82 - recall 0.94
+2018-09-28 04:20:26,967:INFO: Epoch 10 out of 20
+2018-09-28 04:22:02,022:INFO: acc 98.99 - precision 0.94 - f1 94.06 - recall 0.94
+2018-09-28 04:22:02,509:INFO: - new best score!
+2018-09-28 04:22:02,544:INFO: Epoch 11 out of 20
+2018-09-28 04:23:36,819:INFO: acc 98.98 - precision 0.94 - f1 93.95 - recall 0.94
+2018-09-28 04:23:36,820:INFO: Epoch 12 out of 20
+2018-09-28 04:25:12,026:INFO: acc 98.99 - precision 0.94 - f1 93.92 - recall 0.94
+2018-09-28 04:25:12,027:INFO: Epoch 13 out of 20
+2018-09-28 04:26:46,125:INFO: acc 99.00 - precision 0.94 - f1 94.00 - recall 0.94
+2018-09-28 04:26:46,127:INFO: - early stopping 3 epochs without improvement
+2018-09-28 04:26:46,127:INFO: Reloading the latest trained model...
+2018-09-28 04:26:46,128:INFO: Restoring parameters from results/model.weights/
+2018-09-28 04:26:46,212:INFO: Testing model over test set
+2018-09-28 04:26:53,155:INFO: acc 97.83 - precision 0.89 - f1 89.28 - recall 0.90
+2018-09-28 04:26:53,157:INFO: glove word embeddings
+2018-09-28 04:26:53,158:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 04:26:53,158:INFO: language model word embeddings
+2018-09-28 04:26:53,159:INFO: >> d200		pretrained = True	trainable = False
+2018-09-28 04:26:53,160:INFO: init chars d100:	True
+2018-09-28 04:26:53,161:INFO: using CRF:	True
+2018-09-28 04:26:53,162:INFO: 
+
+
+2018-09-28 04:26:56,131:INFO: Initializing tf session
+2018-09-28 04:26:57,557:INFO: Epoch 1 out of 20
+2018-09-28 04:28:35,870:INFO: acc 97.84 - precision 0.86 - f1 86.94 - recall 0.88
+2018-09-28 04:28:36,603:INFO: - new best score!
+2018-09-28 04:28:36,646:INFO: Epoch 2 out of 20
+2018-09-28 04:30:12,540:INFO: acc 98.41 - precision 0.90 - f1 90.63 - recall 0.91
+2018-09-28 04:30:13,033:INFO: - new best score!
+2018-09-28 04:30:13,065:INFO: Epoch 3 out of 20
+2018-09-28 04:31:48,358:INFO: acc 98.58 - precision 0.92 - f1 91.71 - recall 0.92
+2018-09-28 04:31:48,857:INFO: - new best score!
+2018-09-28 04:31:48,893:INFO: Epoch 4 out of 20
+2018-09-28 04:33:24,411:INFO: acc 98.69 - precision 0.92 - f1 92.32 - recall 0.92
+2018-09-28 04:33:25,110:INFO: - new best score!
+2018-09-28 04:33:25,155:INFO: Epoch 5 out of 20
+2018-09-28 04:35:00,778:INFO: acc 98.80 - precision 0.93 - f1 93.05 - recall 0.93
+2018-09-28 04:35:01,269:INFO: - new best score!
+2018-09-28 04:35:01,305:INFO: Epoch 6 out of 20
+2018-09-28 04:36:35,477:INFO: acc 98.82 - precision 0.93 - f1 93.09 - recall 0.93
+2018-09-28 04:36:35,961:INFO: - new best score!
+2018-09-28 04:36:35,995:INFO: Epoch 7 out of 20
+2018-09-28 04:38:10,095:INFO: acc 98.90 - precision 0.93 - f1 93.58 - recall 0.94
+2018-09-28 04:38:10,723:INFO: - new best score!
+2018-09-28 04:38:10,761:INFO: Epoch 8 out of 20
+2018-09-28 04:39:44,711:INFO: acc 98.89 - precision 0.93 - f1 93.49 - recall 0.94
+2018-09-28 04:39:44,712:INFO: Epoch 9 out of 20
+2018-09-28 04:41:19,812:INFO: acc 98.91 - precision 0.94 - f1 93.67 - recall 0.94
+2018-09-28 04:41:20,315:INFO: - new best score!
+2018-09-28 04:41:20,355:INFO: Epoch 10 out of 20
+2018-09-28 04:42:56,557:INFO: acc 98.89 - precision 0.93 - f1 93.52 - recall 0.94
+2018-09-28 04:42:56,559:INFO: Epoch 11 out of 20
+2018-09-28 04:44:31,681:INFO: acc 98.92 - precision 0.94 - f1 93.69 - recall 0.94
+2018-09-28 04:44:32,183:INFO: - new best score!
+2018-09-28 04:44:32,222:INFO: Epoch 12 out of 20
+2018-09-28 04:46:08,113:INFO: acc 98.94 - precision 0.94 - f1 93.71 - recall 0.94
+2018-09-28 04:46:08,622:INFO: - new best score!
+2018-09-28 04:46:08,657:INFO: Epoch 13 out of 20
+2018-09-28 04:47:43,855:INFO: acc 98.96 - precision 0.94 - f1 93.95 - recall 0.94
+2018-09-28 04:47:44,548:INFO: - new best score!
+2018-09-28 04:47:44,584:INFO: Epoch 14 out of 20
+2018-09-28 04:49:19,668:INFO: acc 98.97 - precision 0.94 - f1 93.99 - recall 0.94
+2018-09-28 04:49:20,174:INFO: - new best score!
+2018-09-28 04:49:20,218:INFO: Epoch 15 out of 20
+2018-09-28 04:50:56,259:INFO: acc 98.98 - precision 0.94 - f1 93.86 - recall 0.94
+2018-09-28 04:50:56,260:INFO: Epoch 16 out of 20
+2018-09-28 04:52:32,420:INFO: acc 98.98 - precision 0.94 - f1 93.90 - recall 0.94
+2018-09-28 04:52:32,422:INFO: Epoch 17 out of 20
+2018-09-28 04:54:07,931:INFO: acc 99.01 - precision 0.94 - f1 94.04 - recall 0.94
+2018-09-28 04:54:08,567:INFO: - new best score!
+2018-09-28 04:54:08,603:INFO: Epoch 18 out of 20
+2018-09-28 04:55:41,782:INFO: acc 98.95 - precision 0.94 - f1 93.73 - recall 0.94
+2018-09-28 04:55:41,783:INFO: Epoch 19 out of 20
+2018-09-28 04:57:16,226:INFO: acc 98.96 - precision 0.94 - f1 93.71 - recall 0.94
+2018-09-28 04:57:16,227:INFO: Epoch 20 out of 20
+2018-09-28 04:58:50,638:INFO: acc 98.99 - precision 0.94 - f1 93.90 - recall 0.94
+2018-09-28 04:58:50,639:INFO: - early stopping 3 epochs without improvement
+2018-09-28 04:58:50,640:INFO: Reloading the latest trained model...
+2018-09-28 04:58:50,641:INFO: Restoring parameters from results/model.weights/
+2018-09-28 04:58:50,725:INFO: Testing model over test set
+2018-09-28 04:58:57,581:INFO: acc 97.94 - precision 0.89 - f1 89.72 - recall 0.90
+2018-09-28 04:58:57,583:INFO: glove word embeddings
+2018-09-28 04:58:57,584:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 04:58:57,585:INFO: language model word embeddings
+2018-09-28 04:58:57,585:INFO: >> d200		pretrained = True	trainable = False
+2018-09-28 04:58:57,586:INFO: init chars d100:	True
+2018-09-28 04:58:57,586:INFO: using CRF:	True
+2018-09-28 04:58:57,587:INFO: 
+
+
+2018-09-28 04:58:59,925:INFO: Initializing tf session
+2018-09-28 04:59:01,516:INFO: Epoch 1 out of 20
+2018-09-28 05:00:38,752:INFO: acc 97.87 - precision 0.86 - f1 87.25 - recall 0.88
+2018-09-28 05:00:39,248:INFO: - new best score!
+2018-09-28 05:00:39,278:INFO: Epoch 2 out of 20
+2018-09-28 05:02:15,266:INFO: acc 98.35 - precision 0.90 - f1 90.36 - recall 0.91
+2018-09-28 05:02:15,678:INFO: - new best score!
+2018-09-28 05:02:15,707:INFO: Epoch 3 out of 20
+2018-09-28 05:03:51,794:INFO: acc 98.63 - precision 0.92 - f1 92.01 - recall 0.92
+2018-09-28 05:03:52,430:INFO: - new best score!
+2018-09-28 05:03:52,460:INFO: Epoch 4 out of 20
+2018-09-28 05:05:28,416:INFO: acc 98.77 - precision 0.93 - f1 92.92 - recall 0.93
+2018-09-28 05:05:28,859:INFO: - new best score!
+2018-09-28 05:05:28,886:INFO: Epoch 5 out of 20
+2018-09-28 05:07:04,046:INFO: acc 98.82 - precision 0.93 - f1 93.22 - recall 0.93
+2018-09-28 05:07:04,529:INFO: - new best score!
+2018-09-28 05:07:04,565:INFO: Epoch 6 out of 20
+2018-09-28 05:08:40,608:INFO: acc 98.86 - precision 0.93 - f1 93.33 - recall 0.93
+2018-09-28 05:08:41,119:INFO: - new best score!
+2018-09-28 05:08:41,159:INFO: Epoch 7 out of 20
+2018-09-28 05:10:16,781:INFO: acc 98.86 - precision 0.94 - f1 93.52 - recall 0.93
+2018-09-28 05:10:17,188:INFO: - new best score!
+2018-09-28 05:10:17,224:INFO: Epoch 8 out of 20
+2018-09-28 05:11:52,147:INFO: acc 98.94 - precision 0.94 - f1 93.69 - recall 0.94
+2018-09-28 05:11:52,821:INFO: - new best score!
+2018-09-28 05:11:52,853:INFO: Epoch 9 out of 20
+2018-09-28 05:13:28,796:INFO: acc 98.93 - precision 0.94 - f1 93.67 - recall 0.94
+2018-09-28 05:13:28,797:INFO: Epoch 10 out of 20
+2018-09-28 05:15:03,083:INFO: acc 98.90 - precision 0.94 - f1 93.68 - recall 0.94
+2018-09-28 05:15:03,085:INFO: Epoch 11 out of 20
+2018-09-28 05:16:38,032:INFO: acc 98.97 - precision 0.94 - f1 93.99 - recall 0.94
+2018-09-28 05:16:38,692:INFO: - new best score!
+2018-09-28 05:16:38,727:INFO: Epoch 12 out of 20
+2018-09-28 05:18:12,922:INFO: acc 98.99 - precision 0.94 - f1 93.94 - recall 0.94
+2018-09-28 05:18:12,923:INFO: Epoch 13 out of 20
+2018-09-28 05:19:48,911:INFO: acc 98.97 - precision 0.94 - f1 93.90 - recall 0.94
+2018-09-28 05:19:48,913:INFO: Epoch 14 out of 20
+2018-09-28 05:21:25,049:INFO: acc 98.98 - precision 0.94 - f1 94.05 - recall 0.94
+2018-09-28 05:21:25,552:INFO: - new best score!
+2018-09-28 05:21:25,591:INFO: Epoch 15 out of 20
+2018-09-28 05:23:01,714:INFO: acc 98.93 - precision 0.94 - f1 93.79 - recall 0.94
+2018-09-28 05:23:01,715:INFO: Epoch 16 out of 20
+2018-09-28 05:24:37,413:INFO: acc 98.99 - precision 0.94 - f1 94.08 - recall 0.94
+2018-09-28 05:24:38,015:INFO: - new best score!
+2018-09-28 05:24:38,055:INFO: Epoch 17 out of 20
+2018-09-28 05:26:14,236:INFO: acc 98.96 - precision 0.94 - f1 93.95 - recall 0.94
+2018-09-28 05:26:14,237:INFO: Epoch 18 out of 20
+2018-09-28 05:27:49,663:INFO: acc 98.98 - precision 0.94 - f1 94.01 - recall 0.94
+2018-09-28 05:27:49,664:INFO: Epoch 19 out of 20
+2018-09-28 05:29:26,065:INFO: acc 98.98 - precision 0.94 - f1 94.03 - recall 0.94
+2018-09-28 05:29:26,066:INFO: - early stopping 3 epochs without improvement
+2018-09-28 05:29:26,066:INFO: Reloading the latest trained model...
+2018-09-28 05:29:26,067:INFO: Restoring parameters from results/model.weights/
+2018-09-28 05:29:26,147:INFO: Testing model over test set
+2018-09-28 05:29:32,907:INFO: acc 97.96 - precision 0.90 - f1 89.80 - recall 0.90
+2018-09-28 05:29:33,002:INFO: glove word embeddings
+2018-09-28 05:29:33,003:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 05:29:33,004:INFO: language model word embeddings
+2018-09-28 05:29:33,005:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 05:29:33,005:INFO: init chars d100:	True
+2018-09-28 05:29:33,006:INFO: using CRF:	True
+2018-09-28 05:29:33,007:INFO: 
+
+
+2018-09-28 05:29:35,958:INFO: Initializing tf session
+2018-09-28 05:29:37,447:INFO: Epoch 1 out of 20
+2018-09-28 05:31:14,845:INFO: acc 97.79 - precision 0.86 - f1 86.55 - recall 0.88
+2018-09-28 05:31:15,616:INFO: - new best score!
+2018-09-28 05:31:15,617:INFO: Epoch 2 out of 20
+2018-09-28 05:32:51,622:INFO: acc 98.33 - precision 0.90 - f1 90.01 - recall 0.90
+2018-09-28 05:32:52,142:INFO: - new best score!
+2018-09-28 05:32:52,143:INFO: Epoch 3 out of 20
+2018-09-28 05:34:25,844:INFO: acc 98.54 - precision 0.91 - f1 91.40 - recall 0.92
+2018-09-28 05:34:26,564:INFO: - new best score!
+2018-09-28 05:34:26,566:INFO: Epoch 4 out of 20
+2018-09-28 05:36:01,598:INFO: acc 98.71 - precision 0.92 - f1 92.52 - recall 0.93
+2018-09-28 05:36:02,156:INFO: - new best score!
+2018-09-28 05:36:02,157:INFO: Epoch 5 out of 20
+2018-09-28 05:37:36,895:INFO: acc 98.62 - precision 0.92 - f1 92.24 - recall 0.93
+2018-09-28 05:37:36,896:INFO: Epoch 6 out of 20
+2018-09-28 05:39:12,868:INFO: acc 98.83 - precision 0.93 - f1 93.12 - recall 0.93
+2018-09-28 05:39:13,409:INFO: - new best score!
+2018-09-28 05:39:13,410:INFO: Epoch 7 out of 20
+2018-09-28 05:40:49,099:INFO: acc 98.82 - precision 0.93 - f1 93.25 - recall 0.93
+2018-09-28 05:40:49,618:INFO: - new best score!
+2018-09-28 05:40:49,619:INFO: Epoch 8 out of 20
+2018-09-28 05:42:26,242:INFO: acc 98.89 - precision 0.93 - f1 93.40 - recall 0.93
+2018-09-28 05:42:27,009:INFO: - new best score!
+2018-09-28 05:42:27,010:INFO: Epoch 9 out of 20
+2018-09-28 05:44:02,267:INFO: acc 98.91 - precision 0.94 - f1 93.65 - recall 0.94
+2018-09-28 05:44:02,828:INFO: - new best score!
+2018-09-28 05:44:02,829:INFO: Epoch 10 out of 20
+2018-09-28 05:45:38,959:INFO: acc 98.92 - precision 0.94 - f1 93.69 - recall 0.94
+2018-09-28 05:45:39,517:INFO: - new best score!
+2018-09-28 05:45:39,518:INFO: Epoch 11 out of 20
+2018-09-28 05:47:16,121:INFO: acc 98.94 - precision 0.94 - f1 93.90 - recall 0.94
+2018-09-28 05:47:16,861:INFO: - new best score!
+2018-09-28 05:47:16,862:INFO: Epoch 12 out of 20
+2018-09-28 05:48:52,147:INFO: acc 98.94 - precision 0.94 - f1 93.91 - recall 0.94
+2018-09-28 05:48:52,675:INFO: - new best score!
+2018-09-28 05:48:52,676:INFO: Epoch 13 out of 20
+2018-09-28 05:50:28,907:INFO: acc 98.95 - precision 0.94 - f1 93.94 - recall 0.94
+2018-09-28 05:50:29,541:INFO: - new best score!
+2018-09-28 05:50:29,542:INFO: Epoch 14 out of 20
+2018-09-28 05:52:05,350:INFO: acc 98.93 - precision 0.94 - f1 93.81 - recall 0.94
+2018-09-28 05:52:05,351:INFO: Epoch 15 out of 20
+2018-09-28 05:53:40,377:INFO: acc 98.97 - precision 0.94 - f1 93.93 - recall 0.94
+2018-09-28 05:53:40,378:INFO: Epoch 16 out of 20
+2018-09-28 05:55:15,036:INFO: acc 98.98 - precision 0.94 - f1 94.05 - recall 0.94
+2018-09-28 05:55:15,537:INFO: - new best score!
+2018-09-28 05:55:15,538:INFO: Epoch 17 out of 20
+2018-09-28 05:56:48,647:INFO: acc 98.99 - precision 0.94 - f1 94.01 - recall 0.94
+2018-09-28 05:56:48,648:INFO: Epoch 18 out of 20
+2018-09-28 05:58:24,488:INFO: acc 98.97 - precision 0.94 - f1 93.97 - recall 0.94
+2018-09-28 05:58:24,489:INFO: Epoch 19 out of 20
+2018-09-28 06:00:00,841:INFO: acc 98.94 - precision 0.94 - f1 93.86 - recall 0.94
+2018-09-28 06:00:00,842:INFO: - early stopping 3 epochs without improvement
+2018-09-28 06:00:00,843:INFO: Reloading the latest trained model...
+2018-09-28 06:00:00,844:INFO: Restoring parameters from results/model.weights/
+2018-09-28 06:00:00,927:INFO: Testing model over test set
+2018-09-28 06:00:07,743:INFO: acc 97.98 - precision 0.89 - f1 89.82 - recall 0.90
+2018-09-28 06:00:07,745:INFO: glove word embeddings
+2018-09-28 06:00:07,746:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 06:00:07,747:INFO: language model word embeddings
+2018-09-28 06:00:07,747:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 06:00:07,748:INFO: init chars d100:	True
+2018-09-28 06:00:07,749:INFO: using CRF:	True
+2018-09-28 06:00:07,750:INFO: 
+
+
+2018-09-28 06:00:10,653:INFO: Initializing tf session
+2018-09-28 06:00:12,153:INFO: Epoch 1 out of 20
+2018-09-28 06:01:50,731:INFO: acc 97.83 - precision 0.87 - f1 87.17 - recall 0.88
+2018-09-28 06:01:51,320:INFO: - new best score!
+2018-09-28 06:01:51,362:INFO: Epoch 2 out of 20
+2018-09-28 06:03:27,631:INFO: acc 98.38 - precision 0.90 - f1 90.13 - recall 0.90
+2018-09-28 06:03:28,120:INFO: - new best score!
+2018-09-28 06:03:28,162:INFO: Epoch 3 out of 20
+2018-09-28 06:05:04,825:INFO: acc 98.66 - precision 0.92 - f1 92.03 - recall 0.92
+2018-09-28 06:05:05,518:INFO: - new best score!
+2018-09-28 06:05:05,560:INFO: Epoch 4 out of 20
+2018-09-28 06:06:41,081:INFO: acc 98.57 - precision 0.92 - f1 91.93 - recall 0.92
+2018-09-28 06:06:41,082:INFO: Epoch 5 out of 20
+2018-09-28 06:08:17,963:INFO: acc 98.78 - precision 0.93 - f1 93.04 - recall 0.93
+2018-09-28 06:08:18,450:INFO: - new best score!
+2018-09-28 06:08:18,487:INFO: Epoch 6 out of 20
+2018-09-28 06:09:55,338:INFO: acc 98.91 - precision 0.94 - f1 93.85 - recall 0.94
+2018-09-28 06:09:55,794:INFO: - new best score!
+2018-09-28 06:09:55,828:INFO: Epoch 7 out of 20
+2018-09-28 06:11:31,977:INFO: acc 98.89 - precision 0.94 - f1 93.67 - recall 0.94
+2018-09-28 06:11:31,978:INFO: Epoch 8 out of 20
+2018-09-28 06:13:07,018:INFO: acc 98.94 - precision 0.94 - f1 93.92 - recall 0.94
+2018-09-28 06:13:07,517:INFO: - new best score!
+2018-09-28 06:13:07,554:INFO: Epoch 9 out of 20
+2018-09-28 06:14:42,853:INFO: acc 98.92 - precision 0.94 - f1 93.98 - recall 0.94
+2018-09-28 06:14:43,526:INFO: - new best score!
+2018-09-28 06:14:43,566:INFO: Epoch 10 out of 20
+2018-09-28 06:16:19,029:INFO: acc 98.95 - precision 0.94 - f1 94.01 - recall 0.94
+2018-09-28 06:16:19,538:INFO: - new best score!
+2018-09-28 06:16:19,570:INFO: Epoch 11 out of 20
+2018-09-28 06:17:55,589:INFO: acc 98.98 - precision 0.94 - f1 94.19 - recall 0.94
+2018-09-28 06:17:56,083:INFO: - new best score!
+2018-09-28 06:17:56,119:INFO: Epoch 12 out of 20
+2018-09-28 06:19:32,059:INFO: acc 98.92 - precision 0.94 - f1 93.88 - recall 0.94
+2018-09-28 06:19:32,061:INFO: Epoch 13 out of 20
+2018-09-28 06:21:08,867:INFO: acc 98.91 - precision 0.94 - f1 93.98 - recall 0.94
+2018-09-28 06:21:08,869:INFO: Epoch 14 out of 20
+2018-09-28 06:22:44,895:INFO: acc 98.96 - precision 0.94 - f1 94.20 - recall 0.94
+2018-09-28 06:22:45,387:INFO: - new best score!
+2018-09-28 06:22:45,424:INFO: Epoch 15 out of 20
+2018-09-28 06:24:22,059:INFO: acc 98.93 - precision 0.94 - f1 94.00 - recall 0.94
+2018-09-28 06:24:22,060:INFO: Epoch 16 out of 20
+2018-09-28 06:25:58,150:INFO: acc 98.94 - precision 0.94 - f1 93.98 - recall 0.94
+2018-09-28 06:25:58,151:INFO: Epoch 17 out of 20
+2018-09-28 06:27:34,436:INFO: acc 98.95 - precision 0.94 - f1 94.00 - recall 0.94
+2018-09-28 06:27:34,437:INFO: - early stopping 3 epochs without improvement
+2018-09-28 06:27:34,438:INFO: Reloading the latest trained model...
+2018-09-28 06:27:34,438:INFO: Restoring parameters from results/model.weights/
+2018-09-28 06:27:34,535:INFO: Testing model over test set
+2018-09-28 06:27:41,297:INFO: acc 97.86 - precision 0.89 - f1 89.42 - recall 0.90
+2018-09-28 06:27:41,299:INFO: glove word embeddings
+2018-09-28 06:27:41,300:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 06:27:41,300:INFO: language model word embeddings
+2018-09-28 06:27:41,301:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 06:27:41,302:INFO: init chars d100:	True
+2018-09-28 06:27:41,302:INFO: using CRF:	True
+2018-09-28 06:27:41,303:INFO: 
+
+
+2018-09-28 06:27:44,350:INFO: Initializing tf session
+2018-09-28 06:27:45,741:INFO: Epoch 1 out of 20
+2018-09-28 06:29:23,875:INFO: acc 97.83 - precision 0.85 - f1 86.31 - recall 0.88
+2018-09-28 06:29:24,620:INFO: - new best score!
+2018-09-28 06:29:24,660:INFO: Epoch 2 out of 20
+2018-09-28 06:31:00,399:INFO: acc 98.34 - precision 0.89 - f1 89.86 - recall 0.90
+2018-09-28 06:31:00,956:INFO: - new best score!
+2018-09-28 06:31:00,998:INFO: Epoch 3 out of 20
+2018-09-28 06:32:35,407:INFO: acc 98.59 - precision 0.91 - f1 91.70 - recall 0.92
+2018-09-28 06:32:36,120:INFO: - new best score!
+2018-09-28 06:32:36,162:INFO: Epoch 4 out of 20
+2018-09-28 06:34:10,375:INFO: acc 98.77 - precision 0.93 - f1 92.73 - recall 0.93
+2018-09-28 06:34:10,925:INFO: - new best score!
+2018-09-28 06:34:10,959:INFO: Epoch 5 out of 20
+2018-09-28 06:35:45,108:INFO: acc 98.85 - precision 0.93 - f1 93.25 - recall 0.93
+2018-09-28 06:35:45,631:INFO: - new best score!
+2018-09-28 06:35:45,666:INFO: Epoch 6 out of 20
+2018-09-28 06:37:19,878:INFO: acc 98.88 - precision 0.94 - f1 93.66 - recall 0.94
+2018-09-28 06:37:20,556:INFO: - new best score!
+2018-09-28 06:37:20,590:INFO: Epoch 7 out of 20
+2018-09-28 06:38:56,080:INFO: acc 98.82 - precision 0.94 - f1 93.51 - recall 0.94
+2018-09-28 06:38:56,082:INFO: Epoch 8 out of 20
+2018-09-28 06:40:31,688:INFO: acc 98.92 - precision 0.94 - f1 93.89 - recall 0.94
+2018-09-28 06:40:32,369:INFO: - new best score!
+2018-09-28 06:40:32,404:INFO: Epoch 9 out of 20
+2018-09-28 06:42:07,354:INFO: acc 98.93 - precision 0.94 - f1 93.76 - recall 0.94
+2018-09-28 06:42:07,356:INFO: Epoch 10 out of 20
+2018-09-28 06:43:41,764:INFO: acc 98.93 - precision 0.94 - f1 93.93 - recall 0.94
+2018-09-28 06:43:42,295:INFO: - new best score!
+2018-09-28 06:43:42,337:INFO: Epoch 11 out of 20
+2018-09-28 06:45:18,074:INFO: acc 98.94 - precision 0.94 - f1 93.84 - recall 0.94
+2018-09-28 06:45:18,075:INFO: Epoch 12 out of 20
+2018-09-28 06:46:52,587:INFO: acc 98.96 - precision 0.94 - f1 94.02 - recall 0.94
+2018-09-28 06:46:53,135:INFO: - new best score!
+2018-09-28 06:46:53,171:INFO: Epoch 13 out of 20
+2018-09-28 06:48:28,765:INFO: acc 98.93 - precision 0.94 - f1 93.87 - recall 0.94
+2018-09-28 06:48:28,766:INFO: Epoch 14 out of 20
+2018-09-28 06:50:04,614:INFO: acc 98.96 - precision 0.94 - f1 94.02 - recall 0.94
+2018-09-28 06:50:05,158:INFO: - new best score!
+2018-09-28 06:50:05,195:INFO: Epoch 15 out of 20
+2018-09-28 06:51:39,162:INFO: acc 98.93 - precision 0.94 - f1 93.98 - recall 0.94
+2018-09-28 06:51:39,163:INFO: Epoch 16 out of 20
+2018-09-28 06:53:13,616:INFO: acc 98.95 - precision 0.94 - f1 93.94 - recall 0.94
+2018-09-28 06:53:13,617:INFO: Epoch 17 out of 20
+2018-09-28 06:54:47,704:INFO: acc 98.95 - precision 0.94 - f1 93.98 - recall 0.94
+2018-09-28 06:54:47,706:INFO: - early stopping 3 epochs without improvement
+2018-09-28 06:54:47,707:INFO: Reloading the latest trained model...
+2018-09-28 06:54:47,708:INFO: Restoring parameters from results/model.weights/
+2018-09-28 06:54:47,784:INFO: Testing model over test set
+2018-09-28 06:54:54,525:INFO: acc 97.90 - precision 0.89 - f1 89.74 - recall 0.90
+2018-09-28 06:54:54,526:INFO: glove word embeddings
+2018-09-28 06:54:54,527:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 06:54:54,528:INFO: language model word embeddings
+2018-09-28 06:54:54,528:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 06:54:54,529:INFO: init chars d100:	True
+2018-09-28 06:54:54,530:INFO: using CRF:	True
+2018-09-28 06:54:54,531:INFO: 
+
+
+2018-09-28 06:54:57,293:INFO: Initializing tf session
+2018-09-28 06:54:58,710:INFO: Epoch 1 out of 20
+2018-09-28 06:56:34,762:INFO: acc 97.90 - precision 0.87 - f1 87.37 - recall 0.88
+2018-09-28 06:56:35,500:INFO: - new best score!
+2018-09-28 06:56:35,544:INFO: Epoch 2 out of 20
+2018-09-28 06:58:11,945:INFO: acc 98.42 - precision 0.90 - f1 90.67 - recall 0.91
+2018-09-28 06:58:12,467:INFO: - new best score!
+2018-09-28 06:58:12,504:INFO: Epoch 3 out of 20
+2018-09-28 06:59:49,060:INFO: acc 98.64 - precision 0.92 - f1 92.27 - recall 0.92
+2018-09-28 06:59:49,586:INFO: - new best score!
+2018-09-28 06:59:49,629:INFO: Epoch 4 out of 20
+2018-09-28 07:01:25,783:INFO: acc 98.74 - precision 0.93 - f1 92.66 - recall 0.93
+2018-09-28 07:01:26,503:INFO: - new best score!
+2018-09-28 07:01:26,550:INFO: Epoch 5 out of 20
+2018-09-28 07:03:02,917:INFO: acc 98.83 - precision 0.93 - f1 93.17 - recall 0.93
+2018-09-28 07:03:03,424:INFO: - new best score!
+2018-09-28 07:03:03,461:INFO: Epoch 6 out of 20
+2018-09-28 07:04:39,059:INFO: acc 98.90 - precision 0.94 - f1 93.49 - recall 0.93
+2018-09-28 07:04:39,706:INFO: - new best score!
+2018-09-28 07:04:39,747:INFO: Epoch 7 out of 20
+2018-09-28 07:06:16,435:INFO: acc 98.89 - precision 0.94 - f1 93.75 - recall 0.94
+2018-09-28 07:06:16,973:INFO: - new best score!
+2018-09-28 07:06:17,014:INFO: Epoch 8 out of 20
+2018-09-28 07:07:53,127:INFO: acc 98.95 - precision 0.94 - f1 93.84 - recall 0.94
+2018-09-28 07:07:53,624:INFO: - new best score!
+2018-09-28 07:07:53,662:INFO: Epoch 9 out of 20
+2018-09-28 07:09:29,457:INFO: acc 98.93 - precision 0.94 - f1 93.76 - recall 0.94
+2018-09-28 07:09:29,458:INFO: Epoch 10 out of 20
+2018-09-28 07:11:05,311:INFO: acc 98.96 - precision 0.94 - f1 93.98 - recall 0.94
+2018-09-28 07:11:05,844:INFO: - new best score!
+2018-09-28 07:11:05,886:INFO: Epoch 11 out of 20
+2018-09-28 07:12:40,240:INFO: acc 98.93 - precision 0.94 - f1 93.86 - recall 0.94
+2018-09-28 07:12:40,241:INFO: Epoch 12 out of 20
+2018-09-28 07:14:15,189:INFO: acc 98.97 - precision 0.94 - f1 94.16 - recall 0.94
+2018-09-28 07:14:15,868:INFO: - new best score!
+2018-09-28 07:14:15,906:INFO: Epoch 13 out of 20
+2018-09-28 07:15:51,267:INFO: acc 98.94 - precision 0.94 - f1 93.91 - recall 0.94
+2018-09-28 07:15:51,269:INFO: Epoch 14 out of 20
+2018-09-28 07:17:26,711:INFO: acc 98.96 - precision 0.94 - f1 93.99 - recall 0.94
+2018-09-28 07:17:26,712:INFO: Epoch 15 out of 20
+2018-09-28 07:19:03,380:INFO: acc 98.94 - precision 0.94 - f1 93.91 - recall 0.94
+2018-09-28 07:19:03,382:INFO: - early stopping 3 epochs without improvement
+2018-09-28 07:19:03,382:INFO: Reloading the latest trained model...
+2018-09-28 07:19:03,383:INFO: Restoring parameters from results/model.weights/
+2018-09-28 07:19:03,476:INFO: Testing model over test set
+2018-09-28 07:19:10,330:INFO: acc 97.89 - precision 0.89 - f1 89.62 - recall 0.90
+2018-09-28 07:19:10,332:INFO: glove word embeddings
+2018-09-28 07:19:10,334:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 07:19:10,335:INFO: language model word embeddings
+2018-09-28 07:19:10,336:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 07:19:10,337:INFO: init chars d100:	True
+2018-09-28 07:19:10,338:INFO: using CRF:	True
+2018-09-28 07:19:10,339:INFO: 
+
+
+2018-09-28 07:19:12,961:INFO: Initializing tf session
+2018-09-28 07:19:14,865:INFO: Epoch 1 out of 20
+2018-09-28 07:20:51,447:INFO: acc 97.78 - precision 0.86 - f1 86.24 - recall 0.87
+2018-09-28 07:20:52,134:INFO: - new best score!
+2018-09-28 07:20:52,169:INFO: Epoch 2 out of 20
+2018-09-28 07:22:27,077:INFO: acc 98.41 - precision 0.90 - f1 90.33 - recall 0.91
+2018-09-28 07:22:27,579:INFO: - new best score!
+2018-09-28 07:22:27,619:INFO: Epoch 3 out of 20
+2018-09-28 07:24:02,215:INFO: acc 98.62 - precision 0.92 - f1 91.74 - recall 0.92
+2018-09-28 07:24:02,903:INFO: - new best score!
+2018-09-28 07:24:02,940:INFO: Epoch 4 out of 20
+2018-09-28 07:25:37,563:INFO: acc 98.77 - precision 0.93 - f1 92.93 - recall 0.93
+2018-09-28 07:25:38,041:INFO: - new best score!
+2018-09-28 07:25:38,075:INFO: Epoch 5 out of 20
+2018-09-28 07:27:13,594:INFO: acc 98.81 - precision 0.93 - f1 93.03 - recall 0.93
+2018-09-28 07:27:14,087:INFO: - new best score!
+2018-09-28 07:27:14,116:INFO: Epoch 6 out of 20
+2018-09-28 07:28:48,982:INFO: acc 98.88 - precision 0.94 - f1 93.56 - recall 0.94
+2018-09-28 07:28:49,667:INFO: - new best score!
+2018-09-28 07:28:49,703:INFO: Epoch 7 out of 20
+2018-09-28 07:30:22,375:INFO: acc 98.86 - precision 0.93 - f1 93.28 - recall 0.93
+2018-09-28 07:30:22,376:INFO: Epoch 8 out of 20
+2018-09-28 07:31:55,206:INFO: acc 98.93 - precision 0.94 - f1 93.87 - recall 0.94
+2018-09-28 07:31:55,833:INFO: - new best score!
+2018-09-28 07:31:55,866:INFO: Epoch 9 out of 20
+2018-09-28 07:33:29,291:INFO: acc 98.94 - precision 0.94 - f1 93.90 - recall 0.94
+2018-09-28 07:33:29,782:INFO: - new best score!
+2018-09-28 07:33:29,811:INFO: Epoch 10 out of 20
+2018-09-28 07:35:04,295:INFO: acc 98.93 - precision 0.94 - f1 93.78 - recall 0.94
+2018-09-28 07:35:04,296:INFO: Epoch 11 out of 20
+2018-09-28 07:36:39,002:INFO: acc 98.94 - precision 0.94 - f1 93.86 - recall 0.94
+2018-09-28 07:36:39,003:INFO: Epoch 12 out of 20
+2018-09-28 07:38:14,074:INFO: acc 98.93 - precision 0.94 - f1 93.81 - recall 0.94
+2018-09-28 07:38:14,075:INFO: - early stopping 3 epochs without improvement
+2018-09-28 07:38:14,077:INFO: Reloading the latest trained model...
+2018-09-28 07:38:14,077:INFO: Restoring parameters from results/model.weights/
+2018-09-28 07:38:14,170:INFO: Testing model over test set
+2018-09-28 07:38:20,876:INFO: acc 97.87 - precision 0.89 - f1 89.30 - recall 0.90
+2018-09-28 07:38:20,877:INFO: glove word embeddings
+2018-09-28 07:38:20,878:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 07:38:20,878:INFO: language model word embeddings
+2018-09-28 07:38:20,879:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 07:38:20,879:INFO: init chars d100:	True
+2018-09-28 07:38:20,880:INFO: using CRF:	True
+2018-09-28 07:38:20,881:INFO: 
+
+
+2018-09-28 07:38:23,716:INFO: Initializing tf session
+2018-09-28 07:38:25,089:INFO: Epoch 1 out of 20
+2018-09-28 07:40:01,535:INFO: acc 97.75 - precision 0.86 - f1 86.35 - recall 0.87
+2018-09-28 07:40:02,216:INFO: - new best score!
+2018-09-28 07:40:02,257:INFO: Epoch 2 out of 20
+2018-09-28 07:41:37,632:INFO: acc 98.40 - precision 0.90 - f1 90.29 - recall 0.91
+2018-09-28 07:41:38,111:INFO: - new best score!
+2018-09-28 07:41:38,152:INFO: Epoch 3 out of 20
+2018-09-28 07:43:14,036:INFO: acc 98.59 - precision 0.92 - f1 91.89 - recall 0.92
+2018-09-28 07:43:14,564:INFO: - new best score!
+2018-09-28 07:43:14,605:INFO: Epoch 4 out of 20
+2018-09-28 07:44:49,237:INFO: acc 98.69 - precision 0.93 - f1 92.61 - recall 0.93
+2018-09-28 07:44:49,981:INFO: - new best score!
+2018-09-28 07:44:50,025:INFO: Epoch 5 out of 20
+2018-09-28 07:46:25,231:INFO: acc 98.82 - precision 0.93 - f1 93.21 - recall 0.93
+2018-09-28 07:46:25,748:INFO: - new best score!
+2018-09-28 07:46:25,788:INFO: Epoch 6 out of 20
+2018-09-28 07:48:01,398:INFO: acc 98.92 - precision 0.94 - f1 93.77 - recall 0.94
+2018-09-28 07:48:02,040:INFO: - new best score!
+2018-09-28 07:48:02,081:INFO: Epoch 7 out of 20
+2018-09-28 07:49:35,868:INFO: acc 98.94 - precision 0.94 - f1 93.76 - recall 0.94
+2018-09-28 07:49:35,870:INFO: Epoch 8 out of 20
+2018-09-28 07:51:10,514:INFO: acc 98.95 - precision 0.94 - f1 93.68 - recall 0.94
+2018-09-28 07:51:10,516:INFO: Epoch 9 out of 20
+2018-09-28 07:52:44,598:INFO: acc 98.92 - precision 0.93 - f1 93.62 - recall 0.94
+2018-09-28 07:52:44,600:INFO: - early stopping 3 epochs without improvement
+2018-09-28 07:52:44,601:INFO: Reloading the latest trained model...
+2018-09-28 07:52:44,602:INFO: Restoring parameters from results/model.weights/
+2018-09-28 07:52:44,689:INFO: Testing model over test set
+2018-09-28 07:52:51,564:INFO: acc 97.84 - precision 0.89 - f1 89.02 - recall 0.89
+2018-09-28 07:52:51,648:INFO: glove word embeddings
+2018-09-28 07:52:51,650:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 07:52:51,651:INFO: language model word embeddings
+2018-09-28 07:52:51,652:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 07:52:51,653:INFO: init chars d100:	True
+2018-09-28 07:52:51,653:INFO: using CRF:	True
+2018-09-28 07:52:51,654:INFO: 
+
+
+2018-09-28 07:52:54,592:INFO: Initializing tf session
+2018-09-28 07:52:56,114:INFO: Epoch 1 out of 20
+2018-09-28 07:54:33,079:INFO: acc 97.87 - precision 0.86 - f1 86.88 - recall 0.88
+2018-09-28 07:54:33,626:INFO: - new best score!
+2018-09-28 07:54:33,641:INFO: Epoch 2 out of 20
+2018-09-28 07:56:08,298:INFO: acc 98.37 - precision 0.90 - f1 90.17 - recall 0.91
+2018-09-28 07:56:08,799:INFO: - new best score!
+2018-09-28 07:56:08,826:INFO: Epoch 3 out of 20
+2018-09-28 07:57:44,730:INFO: acc 98.58 - precision 0.91 - f1 91.61 - recall 0.92
+2018-09-28 07:57:45,359:INFO: - new best score!
+2018-09-28 07:57:45,383:INFO: Epoch 4 out of 20
+2018-09-28 07:59:21,287:INFO: acc 98.73 - precision 0.92 - f1 92.47 - recall 0.93
+2018-09-28 07:59:21,812:INFO: - new best score!
+2018-09-28 07:59:21,847:INFO: Epoch 5 out of 20
+2018-09-28 08:00:57,979:INFO: acc 98.82 - precision 0.93 - f1 93.11 - recall 0.93
+2018-09-28 08:00:58,502:INFO: - new best score!
+2018-09-28 08:00:58,533:INFO: Epoch 6 out of 20
+2018-09-28 08:02:34,221:INFO: acc 98.82 - precision 0.93 - f1 93.07 - recall 0.93
+2018-09-28 08:02:34,222:INFO: Epoch 7 out of 20
+2018-09-28 08:04:10,283:INFO: acc 98.87 - precision 0.94 - f1 93.47 - recall 0.93
+2018-09-28 08:04:10,809:INFO: - new best score!
+2018-09-28 08:04:10,842:INFO: Epoch 8 out of 20
+2018-09-28 08:05:47,242:INFO: acc 98.84 - precision 0.93 - f1 93.52 - recall 0.94
+2018-09-28 08:05:47,949:INFO: - new best score!
+2018-09-28 08:05:47,981:INFO: Epoch 9 out of 20
+2018-09-28 08:07:24,327:INFO: acc 98.94 - precision 0.94 - f1 93.87 - recall 0.94
+2018-09-28 08:07:24,842:INFO: - new best score!
+2018-09-28 08:07:24,877:INFO: Epoch 10 out of 20
+2018-09-28 08:08:59,949:INFO: acc 98.96 - precision 0.94 - f1 93.90 - recall 0.94
+2018-09-28 08:09:00,640:INFO: - new best score!
+2018-09-28 08:09:00,665:INFO: Epoch 11 out of 20
+2018-09-28 08:10:34,678:INFO: acc 98.94 - precision 0.94 - f1 93.82 - recall 0.94
+2018-09-28 08:10:34,679:INFO: Epoch 12 out of 20
+2018-09-28 08:12:09,113:INFO: acc 98.97 - precision 0.94 - f1 94.06 - recall 0.94
+2018-09-28 08:12:09,809:INFO: - new best score!
+2018-09-28 08:12:09,841:INFO: Epoch 13 out of 20
+2018-09-28 08:13:44,319:INFO: acc 98.97 - precision 0.94 - f1 94.04 - recall 0.94
+2018-09-28 08:13:44,321:INFO: Epoch 14 out of 20
+2018-09-28 08:15:21,302:INFO: acc 98.95 - precision 0.94 - f1 93.87 - recall 0.94
+2018-09-28 08:15:21,303:INFO: Epoch 15 out of 20
+2018-09-28 08:16:56,976:INFO: acc 98.94 - precision 0.94 - f1 93.85 - recall 0.94
+2018-09-28 08:16:56,978:INFO: - early stopping 3 epochs without improvement
+2018-09-28 08:16:56,979:INFO: Reloading the latest trained model...
+2018-09-28 08:16:56,980:INFO: Restoring parameters from results/model.weights/
+2018-09-28 08:16:57,064:INFO: Testing model over test set
+2018-09-28 08:17:03,999:INFO: acc 97.78 - precision 0.89 - f1 89.04 - recall 0.90
+2018-09-28 08:17:04,001:INFO: glove word embeddings
+2018-09-28 08:17:04,002:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 08:17:04,002:INFO: language model word embeddings
+2018-09-28 08:17:04,003:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 08:17:04,003:INFO: init chars d100:	True
+2018-09-28 08:17:04,004:INFO: using CRF:	True
+2018-09-28 08:17:04,004:INFO: 
+
+
+2018-09-28 08:17:06,873:INFO: Initializing tf session
+2018-09-28 08:17:08,134:INFO: Epoch 1 out of 20
+2018-09-28 08:18:45,560:INFO: acc 97.72 - precision 0.86 - f1 86.37 - recall 0.87
+2018-09-28 08:18:46,134:INFO: - new best score!
+2018-09-28 08:18:46,169:INFO: Epoch 2 out of 20
+2018-09-28 08:20:22,376:INFO: acc 98.40 - precision 0.90 - f1 90.50 - recall 0.91
+2018-09-28 08:20:23,076:INFO: - new best score!
+2018-09-28 08:20:23,113:INFO: Epoch 3 out of 20
+2018-09-28 08:21:59,637:INFO: acc 98.56 - precision 0.91 - f1 91.58 - recall 0.92
+2018-09-28 08:22:00,158:INFO: - new best score!
+2018-09-28 08:22:00,197:INFO: Epoch 4 out of 20
+2018-09-28 08:23:35,185:INFO: acc 98.70 - precision 0.92 - f1 92.27 - recall 0.92
+2018-09-28 08:23:35,863:INFO: - new best score!
+2018-09-28 08:23:35,908:INFO: Epoch 5 out of 20
+2018-09-28 08:25:11,435:INFO: acc 98.76 - precision 0.93 - f1 93.02 - recall 0.93
+2018-09-28 08:25:11,928:INFO: - new best score!
+2018-09-28 08:25:11,955:INFO: Epoch 6 out of 20
+2018-09-28 08:26:48,297:INFO: acc 98.84 - precision 0.93 - f1 93.19 - recall 0.93
+2018-09-28 08:26:48,791:INFO: - new best score!
+2018-09-28 08:26:48,823:INFO: Epoch 7 out of 20
+2018-09-28 08:28:23,745:INFO: acc 98.85 - precision 0.93 - f1 93.50 - recall 0.94
+2018-09-28 08:28:24,369:INFO: - new best score!
+2018-09-28 08:28:24,409:INFO: Epoch 8 out of 20
+2018-09-28 08:29:59,017:INFO: acc 98.89 - precision 0.94 - f1 93.68 - recall 0.94
+2018-09-28 08:29:59,529:INFO: - new best score!
+2018-09-28 08:29:59,566:INFO: Epoch 9 out of 20
+2018-09-28 08:31:32,781:INFO: acc 98.95 - precision 0.94 - f1 93.86 - recall 0.94
+2018-09-28 08:31:33,444:INFO: - new best score!
+2018-09-28 08:31:33,484:INFO: Epoch 10 out of 20
+2018-09-28 08:33:08,308:INFO: acc 98.91 - precision 0.94 - f1 93.79 - recall 0.94
+2018-09-28 08:33:08,309:INFO: Epoch 11 out of 20
+2018-09-28 08:34:45,098:INFO: acc 98.96 - precision 0.94 - f1 94.05 - recall 0.94
+2018-09-28 08:34:45,714:INFO: - new best score!
+2018-09-28 08:34:45,752:INFO: Epoch 12 out of 20
+2018-09-28 08:36:21,378:INFO: acc 98.92 - precision 0.94 - f1 93.78 - recall 0.94
+2018-09-28 08:36:21,380:INFO: Epoch 13 out of 20
+2018-09-28 08:37:57,491:INFO: acc 98.96 - precision 0.94 - f1 93.91 - recall 0.94
+2018-09-28 08:37:57,493:INFO: Epoch 14 out of 20
+2018-09-28 08:39:33,609:INFO: acc 98.95 - precision 0.94 - f1 93.98 - recall 0.94
+2018-09-28 08:39:33,610:INFO: - early stopping 3 epochs without improvement
+2018-09-28 08:39:33,611:INFO: Reloading the latest trained model...
+2018-09-28 08:39:33,611:INFO: Restoring parameters from results/model.weights/
+2018-09-28 08:39:33,706:INFO: Testing model over test set
+2018-09-28 08:39:40,391:INFO: acc 97.83 - precision 0.89 - f1 89.52 - recall 0.90
+2018-09-28 08:39:40,392:INFO: glove word embeddings
+2018-09-28 08:39:40,392:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 08:39:40,393:INFO: language model word embeddings
+2018-09-28 08:39:40,394:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 08:39:40,394:INFO: init chars d100:	True
+2018-09-28 08:39:40,395:INFO: using CRF:	True
+2018-09-28 08:39:40,395:INFO: 
+
+
+2018-09-28 08:39:43,274:INFO: Initializing tf session
+2018-09-28 08:39:44,670:INFO: Epoch 1 out of 20
+2018-09-28 08:41:23,115:INFO: acc 97.83 - precision 0.85 - f1 86.53 - recall 0.88
+2018-09-28 08:41:23,675:INFO: - new best score!
+2018-09-28 08:41:23,711:INFO: Epoch 2 out of 20
+2018-09-28 08:42:59,167:INFO: acc 98.38 - precision 0.90 - f1 90.19 - recall 0.90
+2018-09-28 08:42:59,864:INFO: - new best score!
+2018-09-28 08:42:59,900:INFO: Epoch 3 out of 20
+2018-09-28 08:44:36,263:INFO: acc 98.59 - precision 0.91 - f1 91.63 - recall 0.92
+2018-09-28 08:44:36,795:INFO: - new best score!
+2018-09-28 08:44:36,831:INFO: Epoch 4 out of 20
+2018-09-28 08:46:13,236:INFO: acc 98.73 - precision 0.92 - f1 92.55 - recall 0.93
+2018-09-28 08:46:13,921:INFO: - new best score!
+2018-09-28 08:46:13,966:INFO: Epoch 5 out of 20
+2018-09-28 08:47:49,191:INFO: acc 98.81 - precision 0.93 - f1 92.92 - recall 0.93
+2018-09-28 08:47:49,715:INFO: - new best score!
+2018-09-28 08:47:49,749:INFO: Epoch 6 out of 20
+2018-09-28 08:49:24,489:INFO: acc 98.86 - precision 0.93 - f1 93.20 - recall 0.93
+2018-09-28 08:49:25,031:INFO: - new best score!
+2018-09-28 08:49:25,071:INFO: Epoch 7 out of 20
+2018-09-28 08:50:59,581:INFO: acc 98.92 - precision 0.94 - f1 93.63 - recall 0.94
+2018-09-28 08:51:00,296:INFO: - new best score!
+2018-09-28 08:51:00,335:INFO: Epoch 8 out of 20
+2018-09-28 08:52:34,561:INFO: acc 98.96 - precision 0.94 - f1 93.93 - recall 0.94
+2018-09-28 08:52:35,077:INFO: - new best score!
+2018-09-28 08:52:35,112:INFO: Epoch 9 out of 20
+2018-09-28 08:54:10,572:INFO: acc 98.94 - precision 0.94 - f1 93.67 - recall 0.94
+2018-09-28 08:54:10,573:INFO: Epoch 10 out of 20
+2018-09-28 08:55:46,380:INFO: acc 98.93 - precision 0.93 - f1 93.70 - recall 0.94
+2018-09-28 08:55:46,381:INFO: Epoch 11 out of 20
+2018-09-28 08:57:22,367:INFO: acc 98.93 - precision 0.94 - f1 93.71 - recall 0.94
+2018-09-28 08:57:22,368:INFO: - early stopping 3 epochs without improvement
+2018-09-28 08:57:22,369:INFO: Reloading the latest trained model...
+2018-09-28 08:57:22,370:INFO: Restoring parameters from results/model.weights/
+2018-09-28 08:57:22,475:INFO: Testing model over test set
+2018-09-28 08:57:29,278:INFO: acc 97.91 - precision 0.89 - f1 89.42 - recall 0.90
+2018-09-28 08:57:29,279:INFO: glove word embeddings
+2018-09-28 08:57:29,281:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 08:57:29,282:INFO: language model word embeddings
+2018-09-28 08:57:29,282:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 08:57:29,283:INFO: init chars d100:	True
+2018-09-28 08:57:29,284:INFO: using CRF:	True
+2018-09-28 08:57:29,284:INFO: 
+
+
+2018-09-28 08:57:32,366:INFO: Initializing tf session
+2018-09-28 08:57:33,741:INFO: Epoch 1 out of 20
+2018-09-28 08:59:11,963:INFO: acc 97.93 - precision 0.87 - f1 87.48 - recall 0.88
+2018-09-28 08:59:12,526:INFO: - new best score!
+2018-09-28 08:59:12,569:INFO: Epoch 2 out of 20
+2018-09-28 09:00:48,538:INFO: acc 98.40 - precision 0.90 - f1 90.66 - recall 0.91
+2018-09-28 09:00:49,078:INFO: - new best score!
+2018-09-28 09:00:49,114:INFO: Epoch 3 out of 20
+2018-09-28 09:02:25,258:INFO: acc 98.59 - precision 0.91 - f1 91.71 - recall 0.92
+2018-09-28 09:02:25,796:INFO: - new best score!
+2018-09-28 09:02:25,840:INFO: Epoch 4 out of 20
+2018-09-28 09:04:01,739:INFO: acc 98.71 - precision 0.93 - f1 92.53 - recall 0.93
+2018-09-28 09:04:02,236:INFO: - new best score!
+2018-09-28 09:04:02,277:INFO: Epoch 5 out of 20
+2018-09-28 09:05:38,047:INFO: acc 98.85 - precision 0.94 - f1 93.49 - recall 0.93
+2018-09-28 09:05:38,566:INFO: - new best score!
+2018-09-28 09:05:38,600:INFO: Epoch 6 out of 20
+2018-09-28 09:07:12,895:INFO: acc 98.86 - precision 0.93 - f1 93.57 - recall 0.94
+2018-09-28 09:07:13,614:INFO: - new best score!
+2018-09-28 09:07:13,659:INFO: Epoch 7 out of 20
+2018-09-28 09:08:48,240:INFO: acc 98.89 - precision 0.94 - f1 93.51 - recall 0.93
+2018-09-28 09:08:48,241:INFO: Epoch 8 out of 20
+2018-09-28 09:10:21,539:INFO: acc 98.92 - precision 0.94 - f1 93.79 - recall 0.94
+2018-09-28 09:10:22,250:INFO: - new best score!
+2018-09-28 09:10:22,291:INFO: Epoch 9 out of 20
+2018-09-28 09:11:56,459:INFO: acc 98.90 - precision 0.94 - f1 93.62 - recall 0.94
+2018-09-28 09:11:56,460:INFO: Epoch 10 out of 20
+2018-09-28 09:13:32,428:INFO: acc 98.93 - precision 0.94 - f1 93.76 - recall 0.94
+2018-09-28 09:13:32,430:INFO: Epoch 11 out of 20
+2018-09-28 09:15:07,593:INFO: acc 98.96 - precision 0.94 - f1 93.88 - recall 0.94
+2018-09-28 09:15:08,224:INFO: - new best score!
+2018-09-28 09:15:08,266:INFO: Epoch 12 out of 20
+2018-09-28 09:16:43,081:INFO: acc 99.02 - precision 0.94 - f1 94.12 - recall 0.94
+2018-09-28 09:16:43,793:INFO: - new best score!
+2018-09-28 09:16:43,833:INFO: Epoch 13 out of 20
+2018-09-28 09:18:19,639:INFO: acc 98.96 - precision 0.94 - f1 93.95 - recall 0.94
+2018-09-28 09:18:19,640:INFO: Epoch 14 out of 20
+2018-09-28 09:19:55,335:INFO: acc 98.98 - precision 0.94 - f1 93.91 - recall 0.94
+2018-09-28 09:19:55,337:INFO: Epoch 15 out of 20
+2018-09-28 09:21:31,411:INFO: acc 99.00 - precision 0.94 - f1 94.00 - recall 0.94
+2018-09-28 09:21:31,413:INFO: - early stopping 3 epochs without improvement
+2018-09-28 09:21:31,413:INFO: Reloading the latest trained model...
+2018-09-28 09:21:31,414:INFO: Restoring parameters from results/model.weights/
+2018-09-28 09:21:31,510:INFO: Testing model over test set
+2018-09-28 09:21:38,522:INFO: acc 97.86 - precision 0.89 - f1 89.53 - recall 0.90
+2018-09-28 09:21:38,525:INFO: glove word embeddings
+2018-09-28 09:21:38,526:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 09:21:38,527:INFO: language model word embeddings
+2018-09-28 09:21:38,529:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 09:21:38,529:INFO: init chars d100:	True
+2018-09-28 09:21:38,530:INFO: using CRF:	True
+2018-09-28 09:21:38,530:INFO: 
+
+
+2018-09-28 09:21:41,379:INFO: Initializing tf session
+2018-09-28 09:21:42,934:INFO: Epoch 1 out of 20
+2018-09-28 09:23:20,865:INFO: acc 97.90 - precision 0.86 - f1 87.09 - recall 0.88
+2018-09-28 09:23:21,614:INFO: - new best score!
+2018-09-28 09:23:21,661:INFO: Epoch 2 out of 20
+2018-09-28 09:24:56,741:INFO: acc 98.34 - precision 0.90 - f1 90.25 - recall 0.91
+2018-09-28 09:24:57,257:INFO: - new best score!
+2018-09-28 09:24:57,301:INFO: Epoch 3 out of 20
+2018-09-28 09:26:32,874:INFO: acc 98.58 - precision 0.92 - f1 91.83 - recall 0.92
+2018-09-28 09:26:33,546:INFO: - new best score!
+2018-09-28 09:26:33,589:INFO: Epoch 4 out of 20
+2018-09-28 09:28:07,409:INFO: acc 98.76 - precision 0.93 - f1 92.79 - recall 0.93
+2018-09-28 09:28:07,950:INFO: - new best score!
+2018-09-28 09:28:07,988:INFO: Epoch 5 out of 20
+2018-09-28 09:29:42,411:INFO: acc 98.88 - precision 0.93 - f1 93.44 - recall 0.94
+2018-09-28 09:29:42,937:INFO: - new best score!
+2018-09-28 09:29:42,982:INFO: Epoch 6 out of 20
+2018-09-28 09:31:16,861:INFO: acc 98.83 - precision 0.93 - f1 93.29 - recall 0.93
+2018-09-28 09:31:16,862:INFO: Epoch 7 out of 20
+2018-09-28 09:32:51,862:INFO: acc 98.86 - precision 0.94 - f1 93.57 - recall 0.93
+2018-09-28 09:32:52,370:INFO: - new best score!
+2018-09-28 09:32:52,406:INFO: Epoch 8 out of 20
+2018-09-28 09:34:26,818:INFO: acc 98.91 - precision 0.93 - f1 93.55 - recall 0.94
+2018-09-28 09:34:26,820:INFO: Epoch 9 out of 20
+2018-09-28 09:36:01,273:INFO: acc 98.94 - precision 0.94 - f1 93.83 - recall 0.94
+2018-09-28 09:36:01,775:INFO: - new best score!
+2018-09-28 09:36:01,814:INFO: Epoch 10 out of 20
+2018-09-28 09:37:37,262:INFO: acc 98.94 - precision 0.94 - f1 93.91 - recall 0.94
+2018-09-28 09:37:37,951:INFO: - new best score!
+2018-09-28 09:37:37,995:INFO: Epoch 11 out of 20
+2018-09-28 09:39:12,866:INFO: acc 98.96 - precision 0.94 - f1 93.92 - recall 0.94
+2018-09-28 09:39:13,379:INFO: - new best score!
+2018-09-28 09:39:13,416:INFO: Epoch 12 out of 20
+2018-09-28 09:40:48,708:INFO: acc 98.94 - precision 0.94 - f1 93.87 - recall 0.94
+2018-09-28 09:40:48,710:INFO: Epoch 13 out of 20
+2018-09-28 09:42:24,150:INFO: acc 98.94 - precision 0.94 - f1 93.81 - recall 0.94
+2018-09-28 09:42:24,152:INFO: Epoch 14 out of 20
+2018-09-28 09:43:59,030:INFO: acc 98.92 - precision 0.94 - f1 93.86 - recall 0.94
+2018-09-28 09:43:59,032:INFO: - early stopping 3 epochs without improvement
+2018-09-28 09:43:59,033:INFO: Reloading the latest trained model...
+2018-09-28 09:43:59,035:INFO: Restoring parameters from results/model.weights/
+2018-09-28 09:43:59,114:INFO: Testing model over test set
+2018-09-28 09:44:05,835:INFO: acc 97.88 - precision 0.89 - f1 89.58 - recall 0.90
+2018-09-28 09:44:05,837:INFO: glove word embeddings
+2018-09-28 09:44:05,838:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 09:44:05,839:INFO: language model word embeddings
+2018-09-28 09:44:05,840:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 09:44:05,841:INFO: init chars d100:	True
+2018-09-28 09:44:05,842:INFO: using CRF:	True
+2018-09-28 09:44:05,844:INFO: 
+
+
+2018-09-28 09:44:08,748:INFO: Initializing tf session
+2018-09-28 09:44:10,139:INFO: Epoch 1 out of 20
+2018-09-28 09:45:46,847:INFO: acc 97.75 - precision 0.85 - f1 85.96 - recall 0.87
+2018-09-28 09:45:47,540:INFO: - new best score!
+2018-09-28 09:45:47,576:INFO: Epoch 2 out of 20
+2018-09-28 09:47:22,190:INFO: acc 98.36 - precision 0.90 - f1 90.11 - recall 0.90
+2018-09-28 09:47:22,737:INFO: - new best score!
+2018-09-28 09:47:22,781:INFO: Epoch 3 out of 20
+2018-09-28 09:48:57,379:INFO: acc 98.62 - precision 0.92 - f1 92.00 - recall 0.92
+2018-09-28 09:48:57,919:INFO: - new best score!
+2018-09-28 09:48:57,960:INFO: Epoch 4 out of 20
+2018-09-28 09:50:32,579:INFO: acc 98.74 - precision 0.93 - f1 92.71 - recall 0.93
+2018-09-28 09:50:33,281:INFO: - new best score!
+2018-09-28 09:50:33,327:INFO: Epoch 5 out of 20
+2018-09-28 09:52:09,152:INFO: acc 98.84 - precision 0.93 - f1 93.15 - recall 0.93
+2018-09-28 09:52:09,684:INFO: - new best score!
+2018-09-28 09:52:09,726:INFO: Epoch 6 out of 20
+2018-09-28 09:53:44,476:INFO: acc 98.85 - precision 0.93 - f1 93.28 - recall 0.93
+2018-09-28 09:53:45,139:INFO: - new best score!
+2018-09-28 09:53:45,177:INFO: Epoch 7 out of 20
+2018-09-28 09:55:20,780:INFO: acc 98.84 - precision 0.93 - f1 93.32 - recall 0.93
+2018-09-28 09:55:21,324:INFO: - new best score!
+2018-09-28 09:55:21,372:INFO: Epoch 8 out of 20
+2018-09-28 09:56:57,158:INFO: acc 98.91 - precision 0.94 - f1 93.75 - recall 0.94
+2018-09-28 09:56:57,668:INFO: - new best score!
+2018-09-28 09:56:57,708:INFO: Epoch 9 out of 20
+2018-09-28 09:58:33,514:INFO: acc 98.92 - precision 0.94 - f1 93.93 - recall 0.94
+2018-09-28 09:58:34,223:INFO: - new best score!
+2018-09-28 09:58:34,262:INFO: Epoch 10 out of 20
+2018-09-28 10:00:10,507:INFO: acc 98.93 - precision 0.94 - f1 93.65 - recall 0.94
+2018-09-28 10:00:10,509:INFO: Epoch 11 out of 20
+2018-09-28 10:01:46,816:INFO: acc 98.93 - precision 0.94 - f1 93.80 - recall 0.94
+2018-09-28 10:01:46,818:INFO: Epoch 12 out of 20
+2018-09-28 10:03:22,199:INFO: acc 98.96 - precision 0.94 - f1 93.80 - recall 0.94
+2018-09-28 10:03:22,200:INFO: - early stopping 3 epochs without improvement
+2018-09-28 10:03:22,201:INFO: Reloading the latest trained model...
+2018-09-28 10:03:22,202:INFO: Restoring parameters from results/model.weights/
+2018-09-28 10:03:22,316:INFO: Testing model over test set
+2018-09-28 10:03:29,178:INFO: acc 97.88 - precision 0.89 - f1 89.44 - recall 0.90
+2018-09-28 10:03:29,262:INFO: glove word embeddings
+2018-09-28 10:03:29,266:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 10:03:29,267:INFO: language model word embeddings
+2018-09-28 10:03:29,268:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 10:03:29,269:INFO: init chars d100:	True
+2018-09-28 10:03:29,270:INFO: using CRF:	True
+2018-09-28 10:03:29,271:INFO: 
+
+
+2018-09-28 10:03:33,193:INFO: Initializing tf session
+2018-09-28 10:03:35,668:INFO: Epoch 1 out of 20
+2018-09-28 10:05:16,292:INFO: acc 97.99 - precision 0.88 - f1 87.74 - recall 0.88
+2018-09-28 10:05:17,273:INFO: - new best score!
+2018-09-28 10:05:17,307:INFO: Epoch 2 out of 20
+2018-09-28 10:06:55,131:INFO: acc 98.41 - precision 0.90 - f1 90.43 - recall 0.90
+2018-09-28 10:06:56,216:INFO: - new best score!
+2018-09-28 10:06:56,239:INFO: Epoch 3 out of 20
+2018-09-28 10:08:33,182:INFO: acc 98.58 - precision 0.92 - f1 91.74 - recall 0.92
+2018-09-28 10:08:34,049:INFO: - new best score!
+2018-09-28 10:08:34,076:INFO: Epoch 4 out of 20
+2018-09-28 10:10:12,027:INFO: acc 98.68 - precision 0.92 - f1 92.12 - recall 0.92
+2018-09-28 10:10:13,033:INFO: - new best score!
+2018-09-28 10:10:13,068:INFO: Epoch 5 out of 20
+2018-09-28 10:11:52,720:INFO: acc 98.72 - precision 0.92 - f1 92.34 - recall 0.92
+2018-09-28 10:11:53,758:INFO: - new best score!
+2018-09-28 10:11:53,788:INFO: Epoch 6 out of 20
+2018-09-28 10:13:33,634:INFO: acc 98.75 - precision 0.93 - f1 92.66 - recall 0.92
+2018-09-28 10:13:34,534:INFO: - new best score!
+2018-09-28 10:13:34,570:INFO: Epoch 7 out of 20
+2018-09-28 10:15:13,965:INFO: acc 98.75 - precision 0.93 - f1 92.72 - recall 0.93
+2018-09-28 10:15:15,043:INFO: - new best score!
+2018-09-28 10:15:15,072:INFO: Epoch 8 out of 20
+2018-09-28 10:16:54,623:INFO: acc 98.79 - precision 0.93 - f1 93.02 - recall 0.93
+2018-09-28 10:16:55,566:INFO: - new best score!
+2018-09-28 10:16:55,594:INFO: Epoch 9 out of 20
+2018-09-28 10:18:34,293:INFO: acc 98.78 - precision 0.93 - f1 92.87 - recall 0.93
+2018-09-28 10:18:34,295:INFO: Epoch 10 out of 20
+2018-09-28 10:20:13,847:INFO: acc 98.78 - precision 0.93 - f1 93.01 - recall 0.93
+2018-09-28 10:20:13,849:INFO: Epoch 11 out of 20
+2018-09-28 10:21:53,029:INFO: acc 98.78 - precision 0.93 - f1 93.02 - recall 0.93
+2018-09-28 10:21:53,954:INFO: - new best score!
+2018-09-28 10:21:53,979:INFO: Epoch 12 out of 20
+2018-09-28 10:23:33,340:INFO: acc 98.81 - precision 0.93 - f1 93.15 - recall 0.93
+2018-09-28 10:23:34,405:INFO: - new best score!
+2018-09-28 10:23:34,433:INFO: Epoch 13 out of 20
+2018-09-28 10:25:12,099:INFO: acc 98.79 - precision 0.93 - f1 93.03 - recall 0.93
+2018-09-28 10:25:12,100:INFO: Epoch 14 out of 20
+2018-09-28 10:26:49,710:INFO: acc 98.82 - precision 0.93 - f1 93.19 - recall 0.93
+2018-09-28 10:26:50,676:INFO: - new best score!
+2018-09-28 10:26:50,707:INFO: Epoch 15 out of 20
+2018-09-28 10:28:27,628:INFO: acc 98.86 - precision 0.93 - f1 93.33 - recall 0.93
+2018-09-28 10:28:28,746:INFO: - new best score!
+2018-09-28 10:28:28,775:INFO: Epoch 16 out of 20
+2018-09-28 10:30:07,514:INFO: acc 98.82 - precision 0.93 - f1 93.24 - recall 0.93
+2018-09-28 10:30:07,515:INFO: Epoch 17 out of 20
+2018-09-28 10:31:47,061:INFO: acc 98.80 - precision 0.93 - f1 93.09 - recall 0.93
+2018-09-28 10:31:47,063:INFO: Epoch 18 out of 20
+2018-09-28 10:33:26,059:INFO: acc 98.77 - precision 0.93 - f1 92.97 - recall 0.93
+2018-09-28 10:33:26,060:INFO: - early stopping 3 epochs without improvement
+2018-09-28 10:33:26,061:INFO: Reloading the latest trained model...
+2018-09-28 10:33:26,062:INFO: Restoring parameters from results/model.weights/
+2018-09-28 10:33:26,188:INFO: Testing model over test set
+2018-09-28 10:33:34,191:INFO: acc 97.82 - precision 0.89 - f1 88.81 - recall 0.89
+2018-09-28 10:33:34,193:INFO: glove word embeddings
+2018-09-28 10:33:34,194:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 10:33:34,195:INFO: language model word embeddings
+2018-09-28 10:33:34,196:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 10:33:34,197:INFO: init chars d100:	True
+2018-09-28 10:33:34,198:INFO: using CRF:	True
+2018-09-28 10:33:34,199:INFO: 
+
+
+2018-09-28 10:33:37,822:INFO: Initializing tf session
+2018-09-28 10:33:40,357:INFO: Epoch 1 out of 20
+2018-09-28 10:35:20,670:INFO: acc 97.90 - precision 0.87 - f1 87.26 - recall 0.88
+2018-09-28 10:35:21,567:INFO: - new best score!
+2018-09-28 10:35:21,604:INFO: Epoch 2 out of 20
+2018-09-28 10:37:00,725:INFO: acc 98.33 - precision 0.91 - f1 90.30 - recall 0.90
+2018-09-28 10:37:01,605:INFO: - new best score!
+2018-09-28 10:37:01,641:INFO: Epoch 3 out of 20
+2018-09-28 10:38:40,903:INFO: acc 98.51 - precision 0.91 - f1 91.17 - recall 0.91
+2018-09-28 10:38:41,965:INFO: - new best score!
+2018-09-28 10:38:42,000:INFO: Epoch 4 out of 20
+2018-09-28 10:40:20,525:INFO: acc 98.66 - precision 0.92 - f1 92.26 - recall 0.92
+2018-09-28 10:40:21,397:INFO: - new best score!
+2018-09-28 10:40:21,426:INFO: Epoch 5 out of 20
+2018-09-28 10:42:01,145:INFO: acc 98.72 - precision 0.93 - f1 92.59 - recall 0.92
+2018-09-28 10:42:02,013:INFO: - new best score!
+2018-09-28 10:42:02,040:INFO: Epoch 6 out of 20
+2018-09-28 10:43:41,366:INFO: acc 98.78 - precision 0.93 - f1 92.90 - recall 0.93
+2018-09-28 10:43:42,368:INFO: - new best score!
+2018-09-28 10:43:42,395:INFO: Epoch 7 out of 20
+2018-09-28 10:45:19,337:INFO: acc 98.73 - precision 0.93 - f1 92.71 - recall 0.93
+2018-09-28 10:45:19,338:INFO: Epoch 8 out of 20
+2018-09-28 10:46:56,113:INFO: acc 98.80 - precision 0.93 - f1 92.95 - recall 0.93
+2018-09-28 10:46:56,988:INFO: - new best score!
+2018-09-28 10:46:57,020:INFO: Epoch 9 out of 20
+2018-09-28 10:48:34,363:INFO: acc 98.82 - precision 0.93 - f1 93.03 - recall 0.93
+2018-09-28 10:48:35,130:INFO: - new best score!
+2018-09-28 10:48:35,162:INFO: Epoch 10 out of 20
+2018-09-28 10:50:13,974:INFO: acc 98.80 - precision 0.93 - f1 93.14 - recall 0.93
+2018-09-28 10:50:14,977:INFO: - new best score!
+2018-09-28 10:50:15,010:INFO: Epoch 11 out of 20
+2018-09-28 10:51:54,045:INFO: acc 98.81 - precision 0.93 - f1 93.19 - recall 0.93
+2018-09-28 10:51:54,943:INFO: - new best score!
+2018-09-28 10:51:54,978:INFO: Epoch 12 out of 20
+2018-09-28 10:53:34,361:INFO: acc 98.82 - precision 0.93 - f1 93.18 - recall 0.93
+2018-09-28 10:53:34,362:INFO: Epoch 13 out of 20
+2018-09-28 10:55:12,546:INFO: acc 98.82 - precision 0.93 - f1 93.12 - recall 0.93
+2018-09-28 10:55:12,547:INFO: Epoch 14 out of 20
+2018-09-28 10:56:51,362:INFO: acc 98.82 - precision 0.93 - f1 93.16 - recall 0.93
+2018-09-28 10:56:51,364:INFO: - early stopping 3 epochs without improvement
+2018-09-28 10:56:51,365:INFO: Reloading the latest trained model...
+2018-09-28 10:56:51,365:INFO: Restoring parameters from results/model.weights/
+2018-09-28 10:56:51,485:INFO: Testing model over test set
+2018-09-28 10:56:59,507:INFO: acc 97.72 - precision 0.88 - f1 88.42 - recall 0.89
+2018-09-28 10:56:59,509:INFO: glove word embeddings
+2018-09-28 10:56:59,510:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 10:56:59,510:INFO: language model word embeddings
+2018-09-28 10:56:59,511:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 10:56:59,512:INFO: init chars d100:	True
+2018-09-28 10:56:59,513:INFO: using CRF:	True
+2018-09-28 10:56:59,514:INFO: 
+
+
+2018-09-28 10:57:03,609:INFO: Initializing tf session
+2018-09-28 10:57:06,292:INFO: Epoch 1 out of 20
+2018-09-28 10:58:47,048:INFO: acc 97.94 - precision 0.88 - f1 87.82 - recall 0.88
+2018-09-28 10:58:48,223:INFO: - new best score!
+2018-09-28 10:58:48,255:INFO: Epoch 2 out of 20
+2018-09-28 11:00:27,369:INFO: acc 98.32 - precision 0.90 - f1 90.01 - recall 0.90
+2018-09-28 11:00:28,290:INFO: - new best score!
+2018-09-28 11:00:28,323:INFO: Epoch 3 out of 20
+2018-09-28 11:02:07,103:INFO: acc 98.59 - precision 0.92 - f1 91.91 - recall 0.92
+2018-09-28 11:02:07,999:INFO: - new best score!
+2018-09-28 11:02:08,035:INFO: Epoch 4 out of 20
+2018-09-28 11:03:45,885:INFO: acc 98.62 - precision 0.92 - f1 91.96 - recall 0.92
+2018-09-28 11:03:46,867:INFO: - new best score!
+2018-09-28 11:03:46,899:INFO: Epoch 5 out of 20
+2018-09-28 11:05:24,509:INFO: acc 98.71 - precision 0.93 - f1 92.47 - recall 0.92
+2018-09-28 11:05:25,424:INFO: - new best score!
+2018-09-28 11:05:25,466:INFO: Epoch 6 out of 20
+2018-09-28 11:07:03,572:INFO: acc 98.75 - precision 0.93 - f1 92.53 - recall 0.92
+2018-09-28 11:07:04,694:INFO: - new best score!
+2018-09-28 11:07:04,735:INFO: Epoch 7 out of 20
+2018-09-28 11:08:42,171:INFO: acc 98.81 - precision 0.93 - f1 92.98 - recall 0.93
+2018-09-28 11:08:43,123:INFO: - new best score!
+2018-09-28 11:08:43,150:INFO: Epoch 8 out of 20
+2018-09-28 11:10:20,671:INFO: acc 98.81 - precision 0.93 - f1 93.07 - recall 0.93
+2018-09-28 11:10:21,551:INFO: - new best score!
+2018-09-28 11:10:21,585:INFO: Epoch 9 out of 20
+2018-09-28 11:11:59,343:INFO: acc 98.78 - precision 0.93 - f1 92.86 - recall 0.93
+2018-09-28 11:11:59,344:INFO: Epoch 10 out of 20
+2018-09-28 11:13:38,182:INFO: acc 98.86 - precision 0.93 - f1 93.22 - recall 0.93
+2018-09-28 11:13:39,132:INFO: - new best score!
+2018-09-28 11:13:39,161:INFO: Epoch 11 out of 20
+2018-09-28 11:15:18,616:INFO: acc 98.84 - precision 0.93 - f1 93.15 - recall 0.93
+2018-09-28 11:15:18,617:INFO: Epoch 12 out of 20
+2018-09-28 11:16:56,872:INFO: acc 98.85 - precision 0.93 - f1 93.20 - recall 0.93
+2018-09-28 11:16:56,874:INFO: Epoch 13 out of 20
+2018-09-28 11:18:36,045:INFO: acc 98.82 - precision 0.93 - f1 93.02 - recall 0.93
+2018-09-28 11:18:36,047:INFO: - early stopping 3 epochs without improvement
+2018-09-28 11:18:36,048:INFO: Reloading the latest trained model...
+2018-09-28 11:18:36,049:INFO: Restoring parameters from results/model.weights/
+2018-09-28 11:18:36,170:INFO: Testing model over test set
+2018-09-28 11:18:44,091:INFO: acc 97.76 - precision 0.88 - f1 88.38 - recall 0.89
+2018-09-28 11:18:44,092:INFO: glove word embeddings
+2018-09-28 11:18:44,093:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 11:18:44,093:INFO: language model word embeddings
+2018-09-28 11:18:44,094:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 11:18:44,095:INFO: init chars d100:	True
+2018-09-28 11:18:44,095:INFO: using CRF:	True
+2018-09-28 11:18:44,096:INFO: 
+
+
+2018-09-28 11:18:48,049:INFO: Initializing tf session
+2018-09-28 11:18:50,852:INFO: Epoch 1 out of 20
+2018-09-28 11:20:31,631:INFO: acc 98.00 - precision 0.88 - f1 87.90 - recall 0.88
+2018-09-28 11:20:32,633:INFO: - new best score!
+2018-09-28 11:20:32,665:INFO: Epoch 2 out of 20
+2018-09-28 11:22:10,736:INFO: acc 98.37 - precision 0.91 - f1 90.35 - recall 0.90
+2018-09-28 11:22:11,730:INFO: - new best score!
+2018-09-28 11:22:11,770:INFO: Epoch 3 out of 20
+2018-09-28 11:23:48,218:INFO: acc 98.54 - precision 0.92 - f1 91.44 - recall 0.91
+2018-09-28 11:23:49,325:INFO: - new best score!
+2018-09-28 11:23:49,359:INFO: Epoch 4 out of 20
+2018-09-28 11:25:25,894:INFO: acc 98.66 - precision 0.92 - f1 92.15 - recall 0.92
+2018-09-28 11:25:26,832:INFO: - new best score!
+2018-09-28 11:25:26,868:INFO: Epoch 5 out of 20
+2018-09-28 11:27:03,294:INFO: acc 98.74 - precision 0.92 - f1 92.39 - recall 0.92
+2018-09-28 11:27:04,395:INFO: - new best score!
+2018-09-28 11:27:04,429:INFO: Epoch 6 out of 20
+2018-09-28 11:28:43,028:INFO: acc 98.70 - precision 0.92 - f1 92.22 - recall 0.92
+2018-09-28 11:28:43,030:INFO: Epoch 7 out of 20
+2018-09-28 11:30:21,837:INFO: acc 98.76 - precision 0.92 - f1 92.48 - recall 0.93
+2018-09-28 11:30:22,915:INFO: - new best score!
+2018-09-28 11:30:22,949:INFO: Epoch 8 out of 20
+2018-09-28 11:32:00,715:INFO: acc 98.73 - precision 0.92 - f1 92.31 - recall 0.92
+2018-09-28 11:32:00,717:INFO: Epoch 9 out of 20
+2018-09-28 11:33:39,485:INFO: acc 98.78 - precision 0.93 - f1 92.74 - recall 0.93
+2018-09-28 11:33:40,393:INFO: - new best score!
+2018-09-28 11:33:40,431:INFO: Epoch 10 out of 20
+2018-09-28 11:35:18,624:INFO: acc 98.79 - precision 0.93 - f1 92.92 - recall 0.93
+2018-09-28 11:35:19,592:INFO: - new best score!
+2018-09-28 11:35:19,629:INFO: Epoch 11 out of 20
+2018-09-28 11:36:57,827:INFO: acc 98.81 - precision 0.93 - f1 92.99 - recall 0.93
+2018-09-28 11:36:58,916:INFO: - new best score!
+2018-09-28 11:36:58,952:INFO: Epoch 12 out of 20
+2018-09-28 11:38:36,273:INFO: acc 98.82 - precision 0.93 - f1 93.02 - recall 0.93
+2018-09-28 11:38:37,246:INFO: - new best score!
+2018-09-28 11:38:37,283:INFO: Epoch 13 out of 20
+2018-09-28 11:40:15,188:INFO: acc 98.84 - precision 0.93 - f1 93.11 - recall 0.93
+2018-09-28 11:40:16,147:INFO: - new best score!
+2018-09-28 11:40:16,184:INFO: Epoch 14 out of 20
+2018-09-28 11:41:53,638:INFO: acc 98.80 - precision 0.93 - f1 92.98 - recall 0.93
+2018-09-28 11:41:53,640:INFO: Epoch 15 out of 20
+2018-09-28 11:43:30,872:INFO: acc 98.85 - precision 0.93 - f1 93.08 - recall 0.93
+2018-09-28 11:43:30,873:INFO: Epoch 16 out of 20
+2018-09-28 11:45:07,831:INFO: acc 98.87 - precision 0.93 - f1 93.19 - recall 0.93
+2018-09-28 11:45:08,775:INFO: - new best score!
+2018-09-28 11:45:08,810:INFO: Epoch 17 out of 20
+2018-09-28 11:46:44,921:INFO: acc 98.82 - precision 0.93 - f1 92.94 - recall 0.93
+2018-09-28 11:46:44,923:INFO: Epoch 18 out of 20
+2018-09-28 11:48:23,010:INFO: acc 98.86 - precision 0.93 - f1 93.21 - recall 0.93
+2018-09-28 11:48:23,941:INFO: - new best score!
+2018-09-28 11:48:23,969:INFO: Epoch 19 out of 20
+2018-09-28 11:50:02,832:INFO: acc 98.82 - precision 0.93 - f1 92.96 - recall 0.93
+2018-09-28 11:50:02,834:INFO: Epoch 20 out of 20
+2018-09-28 11:51:40,702:INFO: acc 98.83 - precision 0.93 - f1 93.04 - recall 0.93
+2018-09-28 11:51:40,704:INFO: Reloading the latest trained model...
+2018-09-28 11:51:40,706:INFO: Restoring parameters from results/model.weights/
+2018-09-28 11:51:40,853:INFO: Testing model over test set
+2018-09-28 11:51:48,975:INFO: acc 97.73 - precision 0.88 - f1 88.44 - recall 0.89
+2018-09-28 11:51:48,977:INFO: glove word embeddings
+2018-09-28 11:51:48,978:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 11:51:48,979:INFO: language model word embeddings
+2018-09-28 11:51:48,980:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 11:51:48,981:INFO: init chars d100:	True
+2018-09-28 11:51:48,982:INFO: using CRF:	True
+2018-09-28 11:51:48,982:INFO: 
+
+
+2018-09-28 11:51:52,922:INFO: Initializing tf session
+2018-09-28 11:51:55,932:INFO: Epoch 1 out of 20
+2018-09-28 11:53:36,532:INFO: acc 97.93 - precision 0.87 - f1 87.55 - recall 0.88
+2018-09-28 11:53:37,466:INFO: - new best score!
+2018-09-28 11:53:37,495:INFO: Epoch 2 out of 20
+2018-09-28 11:55:15,671:INFO: acc 98.35 - precision 0.91 - f1 90.34 - recall 0.90
+2018-09-28 11:55:16,588:INFO: - new best score!
+2018-09-28 11:55:16,621:INFO: Epoch 3 out of 20
+2018-09-28 11:56:54,971:INFO: acc 98.51 - precision 0.91 - f1 91.16 - recall 0.91
+2018-09-28 11:56:56,069:INFO: - new best score!
+2018-09-28 11:56:56,107:INFO: Epoch 4 out of 20
+2018-09-28 11:58:34,743:INFO: acc 98.66 - precision 0.92 - f1 92.08 - recall 0.92
+2018-09-28 11:58:35,637:INFO: - new best score!
+2018-09-28 11:58:35,662:INFO: Epoch 5 out of 20
+2018-09-28 12:00:14,525:INFO: acc 98.73 - precision 0.93 - f1 92.56 - recall 0.93
+2018-09-28 12:00:15,512:INFO: - new best score!
+2018-09-28 12:00:15,550:INFO: Epoch 6 out of 20
+2018-09-28 12:01:52,898:INFO: acc 98.74 - precision 0.92 - f1 92.59 - recall 0.93
+2018-09-28 12:01:54,043:INFO: - new best score!
+2018-09-28 12:01:54,080:INFO: Epoch 7 out of 20
+2018-09-28 12:03:31,469:INFO: acc 98.78 - precision 0.93 - f1 92.62 - recall 0.93
+2018-09-28 12:03:32,400:INFO: - new best score!
+2018-09-28 12:03:32,434:INFO: Epoch 8 out of 20
+2018-09-28 12:05:09,875:INFO: acc 98.76 - precision 0.93 - f1 92.83 - recall 0.93
+2018-09-28 12:05:10,956:INFO: - new best score!
+2018-09-28 12:05:10,992:INFO: Epoch 9 out of 20
+2018-09-28 12:06:48,837:INFO: acc 98.83 - precision 0.93 - f1 92.97 - recall 0.93
+2018-09-28 12:06:49,705:INFO: - new best score!
+2018-09-28 12:06:49,737:INFO: Epoch 10 out of 20
+2018-09-28 12:08:28,880:INFO: acc 98.78 - precision 0.93 - f1 92.88 - recall 0.93
+2018-09-28 12:08:28,882:INFO: Epoch 11 out of 20
+2018-09-28 12:10:08,169:INFO: acc 98.77 - precision 0.93 - f1 92.94 - recall 0.93
+2018-09-28 12:10:08,170:INFO: Epoch 12 out of 20
+2018-09-28 12:11:46,841:INFO: acc 98.78 - precision 0.93 - f1 92.97 - recall 0.93
+2018-09-28 12:11:47,765:INFO: - new best score!
+2018-09-28 12:11:47,803:INFO: Epoch 13 out of 20
+2018-09-28 12:13:27,233:INFO: acc 98.80 - precision 0.93 - f1 93.01 - recall 0.93
+2018-09-28 12:13:28,118:INFO: - new best score!
+2018-09-28 12:13:28,146:INFO: Epoch 14 out of 20
+2018-09-28 12:15:06,837:INFO: acc 98.79 - precision 0.93 - f1 92.98 - recall 0.93
+2018-09-28 12:15:06,839:INFO: Epoch 15 out of 20
+2018-09-28 12:16:45,849:INFO: acc 98.80 - precision 0.93 - f1 93.16 - recall 0.93
+2018-09-28 12:16:46,820:INFO: - new best score!
+2018-09-28 12:16:46,855:INFO: Epoch 16 out of 20
+2018-09-28 12:18:25,531:INFO: acc 98.78 - precision 0.93 - f1 93.06 - recall 0.93
+2018-09-28 12:18:25,533:INFO: Epoch 17 out of 20
+2018-09-28 12:20:04,599:INFO: acc 98.81 - precision 0.93 - f1 93.18 - recall 0.93
+2018-09-28 12:20:05,559:INFO: - new best score!
+2018-09-28 12:20:05,597:INFO: Epoch 18 out of 20
+2018-09-28 12:21:42,860:INFO: acc 98.79 - precision 0.93 - f1 93.03 - recall 0.93
+2018-09-28 12:21:42,862:INFO: Epoch 19 out of 20
+2018-09-28 12:23:20,675:INFO: acc 98.82 - precision 0.93 - f1 93.04 - recall 0.93
+2018-09-28 12:23:20,677:INFO: Epoch 20 out of 20
+2018-09-28 12:24:57,930:INFO: acc 98.81 - precision 0.93 - f1 93.21 - recall 0.93
+2018-09-28 12:24:58,877:INFO: - new best score!
+2018-09-28 12:24:58,908:INFO: Reloading the latest trained model...
+2018-09-28 12:24:58,910:INFO: Restoring parameters from results/model.weights/
+2018-09-28 12:24:59,037:INFO: Testing model over test set
+2018-09-28 12:25:06,844:INFO: acc 97.80 - precision 0.88 - f1 88.56 - recall 0.89
+2018-09-28 12:25:06,847:INFO: glove word embeddings
+2018-09-28 12:25:06,848:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 12:25:06,849:INFO: language model word embeddings
+2018-09-28 12:25:06,850:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 12:25:06,851:INFO: init chars d100:	True
+2018-09-28 12:25:06,852:INFO: using CRF:	True
+2018-09-28 12:25:06,853:INFO: 
+
+
+2018-09-28 12:25:10,615:INFO: Initializing tf session
+2018-09-28 12:25:12,982:INFO: Epoch 1 out of 20
+2018-09-28 12:26:54,431:INFO: acc 97.90 - precision 0.86 - f1 87.00 - recall 0.88
+2018-09-28 12:26:55,639:INFO: - new best score!
+2018-09-28 12:26:55,683:INFO: Epoch 2 out of 20
+2018-09-28 12:28:34,545:INFO: acc 98.34 - precision 0.90 - f1 89.87 - recall 0.90
+2018-09-28 12:28:35,555:INFO: - new best score!
+2018-09-28 12:28:35,600:INFO: Epoch 3 out of 20
+2018-09-28 12:30:14,748:INFO: acc 98.58 - precision 0.91 - f1 91.47 - recall 0.91
+2018-09-28 12:30:15,718:INFO: - new best score!
+2018-09-28 12:30:15,754:INFO: Epoch 4 out of 20
+2018-09-28 12:31:54,676:INFO: acc 98.69 - precision 0.93 - f1 92.31 - recall 0.92
+2018-09-28 12:31:55,671:INFO: - new best score!
+2018-09-28 12:31:55,718:INFO: Epoch 5 out of 20
+2018-09-28 12:33:33,977:INFO: acc 98.75 - precision 0.93 - f1 92.64 - recall 0.92
+2018-09-28 12:33:34,957:INFO: - new best score!
+2018-09-28 12:33:34,992:INFO: Epoch 6 out of 20
+2018-09-28 12:35:14,311:INFO: acc 98.78 - precision 0.93 - f1 92.70 - recall 0.93
+2018-09-28 12:35:15,483:INFO: - new best score!
+2018-09-28 12:35:15,519:INFO: Epoch 7 out of 20
+2018-09-28 12:36:54,380:INFO: acc 98.75 - precision 0.93 - f1 92.66 - recall 0.93
+2018-09-28 12:36:54,381:INFO: Epoch 8 out of 20
+2018-09-28 12:38:33,522:INFO: acc 98.76 - precision 0.92 - f1 92.63 - recall 0.93
+2018-09-28 12:38:33,523:INFO: Epoch 9 out of 20
+2018-09-28 12:40:11,355:INFO: acc 98.80 - precision 0.93 - f1 92.99 - recall 0.93
+2018-09-28 12:40:12,485:INFO: - new best score!
+2018-09-28 12:40:12,528:INFO: Epoch 10 out of 20
+2018-09-28 12:41:48,886:INFO: acc 98.79 - precision 0.93 - f1 92.85 - recall 0.93
+2018-09-28 12:41:48,887:INFO: Epoch 11 out of 20
+2018-09-28 12:43:25,524:INFO: acc 98.81 - precision 0.93 - f1 92.95 - recall 0.93
+2018-09-28 12:43:25,526:INFO: Epoch 12 out of 20
+2018-09-28 12:45:03,024:INFO: acc 98.81 - precision 0.93 - f1 92.88 - recall 0.93
+2018-09-28 12:45:03,026:INFO: - early stopping 3 epochs without improvement
+2018-09-28 12:45:03,027:INFO: Reloading the latest trained model...
+2018-09-28 12:45:03,028:INFO: Restoring parameters from results/model.weights/
+2018-09-28 12:45:03,161:INFO: Testing model over test set
+2018-09-28 12:45:11,165:INFO: acc 97.80 - precision 0.88 - f1 88.48 - recall 0.89
+2018-09-28 12:45:11,168:INFO: glove word embeddings
+2018-09-28 12:45:11,168:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 12:45:11,169:INFO: language model word embeddings
+2018-09-28 12:45:11,170:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 12:45:11,171:INFO: init chars d100:	True
+2018-09-28 12:45:11,172:INFO: using CRF:	True
+2018-09-28 12:45:11,173:INFO: 
+
+
+2018-09-28 12:45:15,044:INFO: Initializing tf session
+2018-09-28 12:45:18,033:INFO: Epoch 1 out of 20
+2018-09-28 12:46:59,327:INFO: acc 97.86 - precision 0.86 - f1 86.76 - recall 0.87
+2018-09-28 12:47:00,277:INFO: - new best score!
+2018-09-28 12:47:00,307:INFO: Epoch 2 out of 20
+2018-09-28 12:48:38,870:INFO: acc 98.35 - precision 0.90 - f1 90.10 - recall 0.90
+2018-09-28 12:48:39,824:INFO: - new best score!
+2018-09-28 12:48:39,860:INFO: Epoch 3 out of 20
+2018-09-28 12:50:18,988:INFO: acc 98.54 - precision 0.91 - f1 91.35 - recall 0.91
+2018-09-28 12:50:20,120:INFO: - new best score!
+2018-09-28 12:50:20,158:INFO: Epoch 4 out of 20
+2018-09-28 12:51:58,847:INFO: acc 98.65 - precision 0.92 - f1 92.02 - recall 0.92
+2018-09-28 12:51:59,766:INFO: - new best score!
+2018-09-28 12:51:59,804:INFO: Epoch 5 out of 20
+2018-09-28 12:53:38,826:INFO: acc 98.71 - precision 0.92 - f1 92.28 - recall 0.92
+2018-09-28 12:53:39,737:INFO: - new best score!
+2018-09-28 12:53:39,779:INFO: Epoch 6 out of 20
+2018-09-28 12:55:18,505:INFO: acc 98.78 - precision 0.93 - f1 92.74 - recall 0.93
+2018-09-28 12:55:19,632:INFO: - new best score!
+2018-09-28 12:55:19,662:INFO: Epoch 7 out of 20
+2018-09-28 12:56:57,771:INFO: acc 98.79 - precision 0.93 - f1 92.84 - recall 0.93
+2018-09-28 12:56:58,715:INFO: - new best score!
+2018-09-28 12:56:58,744:INFO: Epoch 8 out of 20
+2018-09-28 12:58:37,716:INFO: acc 98.77 - precision 0.92 - f1 92.63 - recall 0.93
+2018-09-28 12:58:37,718:INFO: Epoch 9 out of 20
+2018-09-28 13:00:15,192:INFO: acc 98.78 - precision 0.92 - f1 92.59 - recall 0.93
+2018-09-28 13:00:15,194:INFO: Epoch 10 out of 20
+2018-09-28 13:01:52,184:INFO: acc 98.79 - precision 0.93 - f1 92.68 - recall 0.93
+2018-09-28 13:01:52,186:INFO: - early stopping 3 epochs without improvement
+2018-09-28 13:01:52,188:INFO: Reloading the latest trained model...
+2018-09-28 13:01:52,190:INFO: Restoring parameters from results/model.weights/
+2018-09-28 13:01:52,316:INFO: Testing model over test set
+2018-09-28 13:02:00,223:INFO: acc 97.60 - precision 0.87 - f1 87.76 - recall 0.88
+2018-09-28 13:02:00,225:INFO: glove word embeddings
+2018-09-28 13:02:00,226:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 13:02:00,227:INFO: language model word embeddings
+2018-09-28 13:02:00,228:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 13:02:00,229:INFO: init chars d100:	True
+2018-09-28 13:02:00,230:INFO: using CRF:	True
+2018-09-28 13:02:00,231:INFO: 
+
+
+2018-09-28 13:02:04,437:INFO: Initializing tf session
+2018-09-28 13:02:07,128:INFO: Epoch 1 out of 20
+2018-09-28 13:03:46,075:INFO: acc 97.94 - precision 0.87 - f1 87.57 - recall 0.88
+2018-09-28 13:03:47,080:INFO: - new best score!
+2018-09-28 13:03:47,116:INFO: Epoch 2 out of 20
+2018-09-28 13:05:26,500:INFO: acc 98.31 - precision 0.90 - f1 90.09 - recall 0.90
+2018-09-28 13:05:27,672:INFO: - new best score!
+2018-09-28 13:05:27,720:INFO: Epoch 3 out of 20
+2018-09-28 13:07:06,708:INFO: acc 98.55 - precision 0.92 - f1 91.43 - recall 0.91
+2018-09-28 13:07:07,671:INFO: - new best score!
+2018-09-28 13:07:07,704:INFO: Epoch 4 out of 20
+2018-09-28 13:08:46,707:INFO: acc 98.66 - precision 0.92 - f1 92.11 - recall 0.92
+2018-09-28 13:08:47,935:INFO: - new best score!
+2018-09-28 13:08:47,972:INFO: Epoch 5 out of 20
+2018-09-28 13:10:26,969:INFO: acc 98.68 - precision 0.92 - f1 92.05 - recall 0.92
+2018-09-28 13:10:26,971:INFO: Epoch 6 out of 20
+2018-09-28 13:12:06,121:INFO: acc 98.75 - precision 0.93 - f1 92.62 - recall 0.93
+2018-09-28 13:12:07,142:INFO: - new best score!
+2018-09-28 13:12:07,180:INFO: Epoch 7 out of 20
+2018-09-28 13:13:46,120:INFO: acc 98.78 - precision 0.93 - f1 92.86 - recall 0.93
+2018-09-28 13:13:47,102:INFO: - new best score!
+2018-09-28 13:13:47,136:INFO: Epoch 8 out of 20
+2018-09-28 13:15:26,123:INFO: acc 98.72 - precision 0.92 - f1 92.47 - recall 0.93
+2018-09-28 13:15:26,125:INFO: Epoch 9 out of 20
+2018-09-28 13:17:05,230:INFO: acc 98.73 - precision 0.93 - f1 92.72 - recall 0.93
+2018-09-28 13:17:05,232:INFO: Epoch 10 out of 20
+2018-09-28 13:18:44,105:INFO: acc 98.78 - precision 0.93 - f1 92.98 - recall 0.93
+2018-09-28 13:18:45,079:INFO: - new best score!
+2018-09-28 13:18:45,120:INFO: Epoch 11 out of 20
+2018-09-28 13:20:22,490:INFO: acc 98.79 - precision 0.93 - f1 92.86 - recall 0.93
+2018-09-28 13:20:22,492:INFO: Epoch 12 out of 20
+2018-09-28 13:21:59,498:INFO: acc 98.82 - precision 0.93 - f1 93.16 - recall 0.93
+2018-09-28 13:22:00,414:INFO: - new best score!
+2018-09-28 13:22:00,449:INFO: Epoch 13 out of 20
+2018-09-28 13:23:38,041:INFO: acc 98.80 - precision 0.93 - f1 93.04 - recall 0.93
+2018-09-28 13:23:38,043:INFO: Epoch 14 out of 20
+2018-09-28 13:25:17,776:INFO: acc 98.83 - precision 0.93 - f1 93.10 - recall 0.93
+2018-09-28 13:25:17,778:INFO: Epoch 15 out of 20
+2018-09-28 13:26:57,749:INFO: acc 98.83 - precision 0.93 - f1 93.00 - recall 0.93
+2018-09-28 13:26:57,751:INFO: - early stopping 3 epochs without improvement
+2018-09-28 13:26:57,752:INFO: Reloading the latest trained model...
+2018-09-28 13:26:57,753:INFO: Restoring parameters from results/model.weights/
+2018-09-28 13:26:57,918:INFO: Testing model over test set
+2018-09-28 13:27:05,796:INFO: acc 97.73 - precision 0.88 - f1 88.32 - recall 0.89
+2018-09-28 13:27:05,798:INFO: glove word embeddings
+2018-09-28 13:27:05,800:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 13:27:05,801:INFO: language model word embeddings
+2018-09-28 13:27:05,802:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 13:27:05,804:INFO: init chars d100:	True
+2018-09-28 13:27:05,805:INFO: using CRF:	True
+2018-09-28 13:27:05,806:INFO: 
+
+
+2018-09-28 13:27:09,626:INFO: Initializing tf session
+2018-09-28 13:27:12,336:INFO: Epoch 1 out of 20
+2018-09-28 13:28:53,813:INFO: acc 97.88 - precision 0.87 - f1 86.99 - recall 0.87
+2018-09-28 13:28:54,965:INFO: - new best score!
+2018-09-28 13:28:55,003:INFO: Epoch 2 out of 20
+2018-09-28 13:30:34,225:INFO: acc 98.36 - precision 0.91 - f1 90.22 - recall 0.90
+2018-09-28 13:30:35,200:INFO: - new best score!
+2018-09-28 13:30:35,237:INFO: Epoch 3 out of 20
+2018-09-28 13:32:14,054:INFO: acc 98.59 - precision 0.92 - f1 91.61 - recall 0.91
+2018-09-28 13:32:15,017:INFO: - new best score!
+2018-09-28 13:32:15,059:INFO: Epoch 4 out of 20
+2018-09-28 13:33:54,105:INFO: acc 98.63 - precision 0.92 - f1 92.03 - recall 0.92
+2018-09-28 13:33:55,282:INFO: - new best score!
+2018-09-28 13:33:55,324:INFO: Epoch 5 out of 20
+2018-09-28 13:35:34,385:INFO: acc 98.68 - precision 0.92 - f1 92.19 - recall 0.92
+2018-09-28 13:35:35,366:INFO: - new best score!
+2018-09-28 13:35:35,403:INFO: Epoch 6 out of 20
+2018-09-28 13:37:13,861:INFO: acc 98.72 - precision 0.93 - f1 92.49 - recall 0.92
+2018-09-28 13:37:14,806:INFO: - new best score!
+2018-09-28 13:37:14,841:INFO: Epoch 7 out of 20
+2018-09-28 13:38:53,065:INFO: acc 98.73 - precision 0.93 - f1 92.66 - recall 0.92
+2018-09-28 13:38:53,990:INFO: - new best score!
+2018-09-28 13:38:54,026:INFO: Epoch 8 out of 20
+2018-09-28 13:40:31,053:INFO: acc 98.80 - precision 0.93 - f1 93.08 - recall 0.93
+2018-09-28 13:40:32,065:INFO: - new best score!
+2018-09-28 13:40:32,106:INFO: Epoch 9 out of 20
+2018-09-28 13:42:09,557:INFO: acc 98.80 - precision 0.93 - f1 92.99 - recall 0.93
+2018-09-28 13:42:09,559:INFO: Epoch 10 out of 20
+2018-09-28 13:43:47,683:INFO: acc 98.77 - precision 0.93 - f1 93.06 - recall 0.93
+2018-09-28 13:43:47,685:INFO: Epoch 11 out of 20
+2018-09-28 13:45:25,501:INFO: acc 98.82 - precision 0.93 - f1 93.19 - recall 0.93
+2018-09-28 13:45:26,487:INFO: - new best score!
+2018-09-28 13:45:26,521:INFO: Epoch 12 out of 20
+2018-09-28 13:47:05,363:INFO: acc 98.82 - precision 0.93 - f1 93.18 - recall 0.93
+2018-09-28 13:47:05,366:INFO: Epoch 13 out of 20
+2018-09-28 13:48:45,060:INFO: acc 98.80 - precision 0.93 - f1 93.11 - recall 0.93
+2018-09-28 13:48:45,063:INFO: Epoch 14 out of 20
+2018-09-28 13:50:24,617:INFO: acc 98.80 - precision 0.93 - f1 92.99 - recall 0.93
+2018-09-28 13:50:24,619:INFO: - early stopping 3 epochs without improvement
+2018-09-28 13:50:24,620:INFO: Reloading the latest trained model...
+2018-09-28 13:50:24,621:INFO: Restoring parameters from results/model.weights/
+2018-09-28 13:50:24,764:INFO: Testing model over test set
+2018-09-28 13:50:32,746:INFO: acc 97.74 - precision 0.88 - f1 88.49 - recall 0.89
+2018-09-28 13:50:32,748:INFO: glove word embeddings
+2018-09-28 13:50:32,750:INFO: >> d300		pretrained = True	trainable = False
+2018-09-28 13:50:32,751:INFO: language model word embeddings
+2018-09-28 13:50:32,752:INFO: >> d1024		pretrained = True	trainable = False
+2018-09-28 13:50:32,753:INFO: init chars d100:	True
+2018-09-28 13:50:32,754:INFO: using CRF:	True
+2018-09-28 13:50:32,755:INFO: 
+
+
+2018-09-28 13:50:37,044:INFO: Initializing tf session
+2018-09-28 13:50:39,757:INFO: Epoch 1 out of 20
+2018-09-28 13:52:20,808:INFO: acc 97.90 - precision 0.87 - f1 87.33 - recall 0.88
+2018-09-28 13:52:21,979:INFO: - new best score!
+2018-09-28 13:52:22,016:INFO: Epoch 2 out of 20
+2018-09-28 13:54:00,785:INFO: acc 98.29 - precision 0.90 - f1 89.77 - recall 0.90
+2018-09-28 13:54:01,712:INFO: - new best score!
+2018-09-28 13:54:01,756:INFO: Epoch 3 out of 20
+2018-09-28 13:55:41,166:INFO: acc 98.48 - precision 0.92 - f1 91.24 - recall 0.91
+2018-09-28 13:55:42,219:INFO: - new best score!
+2018-09-28 13:55:42,263:INFO: Epoch 4 out of 20
+2018-09-28 13:57:20,089:INFO: acc 98.62 - precision 0.92 - f1 91.83 - recall 0.92
+2018-09-28 13:57:21,063:INFO: - new best score!
+2018-09-28 13:57:21,104:INFO: Epoch 5 out of 20
+2018-09-28 13:58:58,594:INFO: acc 98.72 - precision 0.92 - f1 92.24 - recall 0.92
+2018-09-28 13:58:59,651:INFO: - new best score!
+2018-09-28 13:58:59,687:INFO: Epoch 6 out of 20
+2018-09-28 14:00:36,692:INFO: acc 98.76 - precision 0.92 - f1 92.43 - recall 0.92
+2018-09-28 14:00:37,682:INFO: - new best score!
+2018-09-28 14:00:37,719:INFO: Epoch 7 out of 20
+2018-09-28 14:02:14,389:INFO: acc 98.79 - precision 0.93 - f1 92.68 - recall 0.93
+2018-09-28 14:02:15,246:INFO: - new best score!
+2018-09-28 14:02:15,257:INFO: Epoch 8 out of 20
+2018-09-28 14:03:54,060:INFO: acc 98.77 - precision 0.93 - f1 92.61 - recall 0.93
+2018-09-28 14:03:54,062:INFO: Epoch 9 out of 20
+2018-09-28 14:05:33,201:INFO: acc 98.79 - precision 0.93 - f1 92.81 - recall 0.93
+2018-09-28 14:05:34,105:INFO: - new best score!
+2018-09-28 14:05:34,137:INFO: Epoch 10 out of 20
+2018-09-28 14:07:13,577:INFO: acc 98.77 - precision 0.93 - f1 92.68 - recall 0.93
+2018-09-28 14:07:13,579:INFO: Epoch 11 out of 20
+2018-09-28 14:08:52,120:INFO: acc 98.78 - precision 0.93 - f1 92.80 - recall 0.93
+2018-09-28 14:08:52,122:INFO: Epoch 12 out of 20
+2018-09-28 14:10:30,358:INFO: acc 98.77 - precision 0.93 - f1 92.81 - recall 0.93
+2018-09-28 14:10:30,359:INFO: - early stopping 3 epochs without improvement
+2018-09-28 14:10:30,360:INFO: Reloading the latest trained model...
+2018-09-28 14:10:30,361:INFO: Restoring parameters from results/model.weights/
+2018-09-28 14:10:30,520:INFO: Testing model over test set
+2018-09-28 14:10:38,479:INFO: acc 97.69 - precision 0.88 - f1 88.09 - recall 0.88
