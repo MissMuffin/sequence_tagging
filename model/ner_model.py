@@ -209,6 +209,7 @@ class NERModel:
         """
         best_score = 0
         nepoch_no_imprv = 0  # for early stopping
+        self.add_summary()  # tensorboard
 
         for epoch in range(self.config.nepochs):
             self.logger.info("Epoch {:} out of {:}".format(epoch + 1, self.config.nepochs))
@@ -220,6 +221,7 @@ class NERModel:
             if score >= best_score:
                 nepoch_no_imprv = 0
                 best_score = score
+                self.save_session()
                 self.logger.info("- new best score!")
             else:
                 nepoch_no_imprv += 1
@@ -250,9 +252,13 @@ class NERModel:
         for i, (words, labels) in enumerate(train.get_minibatches(batch_size)):
             fd, _ = self.get_feed_dict(words, labels, self.config.lr, self.config.dropout)
 
-            _, train_loss = self.sess.run([self.train_op, self.loss], feed_dict=fd)
+            _, train_loss, summary = self.sess.run([self.train_op, self.loss, self.merged], feed_dict=fd)
 
             prog.update(i + 1, [("train loss", train_loss)])
+
+            # tensorboard
+            if i % 10 == 0:
+                self.file_writer.add_summary(summary, epoch * nbatches + i)
 
         metrics = self.run_evaluate(dev)
         msg = " - ".join(["{} {:04.2f}".format(k, v) for k, v in metrics.items()])
