@@ -1,5 +1,6 @@
 import os
 import sys
+import tensorflow as tf
 
 from model.conll_dataset import CoNLLDataset
 from .data_utils import get_trimmed_embeddings, load_vocab, processing_chars_word_id, \
@@ -12,7 +13,7 @@ class Config:
     # general config
     dir_output = "results/test/"
     dir_model = dir_output + "model.weights/"
-    path_log = dir_output + "log.txt"
+    logger = get_logger(dir_output + "log.txt")
 
     dim_word = 300
     dim_char = 300
@@ -42,6 +43,8 @@ class Config:
     use_crf = True      # if crf, training is 1.7x slower on CPU
     use_chars = True    # if char embedding, training is 3.5x slower on CPU
 
+    tf_config = tf.ConfigProto(gpu_options=tf.GPUOptions(per_process_gpu_memory_fraction=2/12))
+
     def __init__(self, load=True,
                  dim_word=dim_word,
                  dim_char=dim_char,
@@ -58,7 +61,6 @@ class Config:
         self.dim_char = dim_char
         self.use_pretrained_words = use_pretrained_words
         self.use_pretrained_chars = use_pretrained_chars
-        self.logger = get_logger(self.path_log)
 
         # directory for training outputs
         if not os.path.exists(self.dir_output):
