@@ -1,0 +1,28 @@
+F1 Scores,n15 pretrained,n20 pretrained,n20 pretrained trainable,n20 init trainable,,Spannweite,n15 pretrained,n20 pretrained,n20 pretrained trainable,n20 init trainable
+baseline,89.52,89.49,,,,baseline,1.01,0.67,,
+baseline + trainable,88.90,88.98,,,,baseline + trainable,0.87,1.08,,
+d50,89.51,89.52,89.63,87.92,,d50,0.76,0.99,1.46,0.61
+d100,89.76,89.55,89.54,87.22,,d100,0.82,1.18,1.06,1.05
+d200,89.48,89.67,89.58,86.71,,d200,0.87,1.09,0.87,1.09
+d300,89.51,89.48,89.55,86.32,,d300,1.35,0.83,0.95,1.06
+d1024,89.62,89.53,89.47,85.65,,d1024,0.88,8.0,0.85,1.33
+d1024 no pca,,88.38,87.26,,,,,,,
+,,,,,,Varianz,n15 pretrained,n20 pretrained,n20 pretrained trainable,n20 init trainable
+,,,,,,baseline,0.1075,0.0471,,
+Best F1 Score,n15 pretrained,n20 pretrained,n20 pretrained trainable,n20 init trainable,,baseline + trainable,0.0632,0.0976,,
+baseline,89.87,89.79,,,,d50,0.0673,0.0821,0.1750,0.0408
+baseline + trainable,89.33,89.41,,,,d100,0.0518,0.1432,0.1300,0.1113
+d50,89.88,90.08,90.64,88.24,,d200,0.0786,0.1037,0.0660,0.0912
+d100,90.12,90.07,90.02,87.69,,d300,0.1538,0.0808,0.1431,0.1409
+d200,89.84,90.03,90.10,87.26,,d1024,0.0614,6.7667,0.0583,0.1882
+d300,89.92,89.85,90.02,86.84,,,,,,
+d1024,90.02,16.0,89.81,86.23,,,,,,
+,,,,,,,,,,
+Avg stop,n15 pretrained,n20 pretrained,n20 pretrained trainable,n20 init trainable,,,,,,
+baseline,12.0,,,,,,,,,
+baseline + trainable,10.8,,,,,,,,,
+d50,11.3,11.8,13.6,8,,,,,,
+d100,13.3,12.6,12.8,6,,,,,,
+d200,12.1,14.2,14.4,5,,,,,,
+d300,11.6,11.7,12.1,6,,,,,,
+d1024,13.2,12.1,11.8,4,,,,,,
